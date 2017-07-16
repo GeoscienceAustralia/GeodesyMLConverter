@@ -50,9 +50,15 @@ def lambda_handler(event, context):
         raise
 
 
-    # Get XML from GWS
+    # Get XML from prod GWS
     #request_url = 'https://gws.geodesy.ga.gov.au/siteLogs/search/findByFourCharacterId?id={}'.format(
     #    sns_message['fourCharacterId'])
     #request = urllib2.Request(request_url, headers={'Accept': 'application/xml'})
     #xml_string = urllib2.urlopen(request).read()
 
+    # Get XML from prod GWS as JSON object
+    #request_url = 'https://gws.geodesy.ga.gov.au/siteLogs/search/findByFourCharacterId?id={}'.format(
+    #    sns_message['fourCharacterId'])
+    #request = urllib2.Request(request_url)
+    #response = urllib2.urlopen(request).read()
+    #xml_string = json.loads(response)['siteLogText']
