@@ -19,7 +19,7 @@ variable "environment" {
 
 variable "application" {
   description = "Application name. Used as webapp S3 bucket name, suffixed by the deployment environment name."
-  default     = "auscors-users"
+  default     = "auscors-sitelogs"
 }
 
 variable "owner" {
@@ -27,3 +27,7 @@ variable "owner" {
   default     = "Geodesy Operations"
 }
 
+variable "sns_arn" {
+  description = "ARN of SNS topic which converter Lambda is invoked by."
+  default     = "arn:aws:sns:ap-southeast-2:094928090547:DevGeodesy-SiteLogReceived-EYB2P4K966EE"
+}

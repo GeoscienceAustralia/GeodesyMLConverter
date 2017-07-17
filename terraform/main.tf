@@ -24,6 +24,7 @@ module iam {
   source      = "./modules/iam/"
 
   bucket_name = "${module.s3.bucket_name}"
+  sns_arn     = "${var.sns_arn}"
 
   environment = "${var.environment}"
   application = "${var.application}"

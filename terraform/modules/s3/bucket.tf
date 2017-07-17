@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "data_bucket" {
-  bucket = "${var.application}-site-logs-${var.environment}"
+  bucket = "${var.application}-converted-${var.environment}"
 
   lifecycle {
     # Will change to true before prod deployment
