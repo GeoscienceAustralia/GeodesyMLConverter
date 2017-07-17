@@ -42,7 +42,7 @@ EOF
 
 resource "aws_iam_role_policy" "allow_log_creation" {
   name   = "${var.application}-allow-log-creation-${var.environment}"
-  role   = "${aws_iam_role.lambda_role.id}"
+  role   = "${aws_iam_role.iam_role.id}"
   policy = <<POLICY
 {
   "Version": "2012-10-17",
@@ -62,5 +62,5 @@ POLICY
 }
 
 output "iam_role_arn" {
-  value = "${aws_iam_role.lambda_role.arn}"
+  value = "${aws_iam_role.iam_role.arn}"
 }

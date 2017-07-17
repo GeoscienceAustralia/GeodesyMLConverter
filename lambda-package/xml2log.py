@@ -15,7 +15,7 @@ class SiteLog(object):
 
     def __init__(self, xml):
         doc = domutils.StringToDOM(xml)
-        response = iGeodesy.CreateFromDOM(doc.documentElement)
+        response = xml2log_bindings.CreateFromDOM(doc.documentElement)
         if len(response.AbstractSiteLog) == 1:
             self.siteLog = response.AbstractSiteLog[0]
         else:

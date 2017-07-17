@@ -18,8 +18,8 @@ def lambda_handler(event, context):
         logger.info('SiteLogReceived event for fourCharacterId {}'.format(
             sns_message['fourCharacterId']))
 
-    #except KeyError, IndexError, ValueError:
     except:
+        #except KeyError, IndexError, ValueError:
         logger.error('Malformed Event or SNS Message object:\n{}'.format(event))
         raise
 
@@ -38,7 +38,7 @@ def lambda_handler(event, context):
             Bucket=output_bucket_name, Key=site_log_filename, Body=site_log_data)
 
         logger.info('Site log XML for {} parsed to s3://{}/{}'.format(
-            sns_message['fourCharacterId'], output_bucket_name, site_log_filename)
+            sns_message['fourCharacterId'], output_bucket_name, site_log_filename))
 
     except KeyError:
         logger.error('Output bucket name not given as Lambda environment variable')
@@ -46,7 +46,7 @@ def lambda_handler(event, context):
 
     except:
         logger.error('Failed to output Site Log data to s3://{}/{}'.format(
-            output_bucket_name, site_log_filename)
+            output_bucket_name, site_log_filename))
         raise
 
 

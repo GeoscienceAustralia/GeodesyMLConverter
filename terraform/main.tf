@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "${var.region}"
+}
+
 data "terraform_remote_state" "state" {
   backend = "s3"
   config {
@@ -24,7 +28,6 @@ module iam {
   source      = "./modules/iam/"
 
   bucket_name = "${module.s3.bucket_name}"
-  sns_arn     = "${var.sns_arn}"
 
   environment = "${var.environment}"
   application = "${var.application}"
@@ -34,6 +37,7 @@ module iam {
 module "lambda" {
   source       = "./modules/lambda/"
 
+  sns_arn      = "${var.sns_arn}"
   bucket_name  = "${module.s3.bucket_name}"
   iam_role_arn = "${module.iam.iam_role_arn}"
 
