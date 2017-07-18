@@ -18,7 +18,7 @@ variable "environment" {
 }
 
 variable "application" {
-  description = "Application name. Used as webapp S3 bucket name, suffixed by the deployment environment name."
+  description = "Application name. Used to prefix most created objects, including terraform state file."
   default     = "auscors-sitelogs"
 }
 
