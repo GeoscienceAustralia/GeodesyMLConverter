@@ -16,7 +16,7 @@ import pyxb.bundles.opengis.om_2_0 as om
 import pyxb.bundles.opengis.iso19139.v20070417.gco as gco
 import pyxb.bundles.common.xlink as xlink
 import pyxb.bundles.opengis as opengis
-import eGeodesy as geo
+import sitelogtogeodesyml as geo
 
 import sensors
 import parser
