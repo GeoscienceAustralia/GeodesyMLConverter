@@ -1,10 +1,10 @@
 resource "aws_lambda_function" "xml_converter" {
-  filename         = "${path.module}/xml_converter_lambda.zip"
+  filename         = "${path.module}/geodesymltositelog_lambda.zip"
   function_name    = "${var.application}-lambda-${var.environment}"
   role             = "${var.iam_role_arn}"
-  handler          = "xml_converter_lambda.lambda_handler"
+  handler          = "geodesymltositelog_lambda.lambda_handler"
   runtime          = "python2.7"
-  source_code_hash = "${base64sha256(file("${path.module}/xml_converter_lambda.zip"))}"
+  source_code_hash = "${base64sha256(file("${path.module}/geodesymltositelog_lambda.zip"))}"
   memory_size      = 512
   timeout          = 30
 

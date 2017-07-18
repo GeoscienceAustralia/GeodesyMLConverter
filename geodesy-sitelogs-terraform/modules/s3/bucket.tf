@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "data_bucket" {
 
   lifecycle {
     # Will change to true before prod deployment
-    prevent_destroy = true
+    prevent_destroy = false
   }
 
   versioning {
