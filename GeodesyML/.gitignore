@@ -1,0 +1,12 @@
+*swp
+*tmp
+*sch.xsl
+.idea/
+.project
+*.iml
+*jpeg
+*html
+*css
+img/
+target/
+doc/
