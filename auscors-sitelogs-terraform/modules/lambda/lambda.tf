@@ -11,6 +11,7 @@ resource "aws_lambda_function" "xml_converter" {
   environment {
     variables = {
       output_bucket_name = "${var.bucket_name}"
+      gws_url            = "${var.gws_url}"
     }
   }
 }

@@ -13,7 +13,6 @@ def lambda_handler(event, context):
 
     try:
         sns_message = json.loads(event['Records'][0]['Sns']['Message'])
-        xml_string = sns_message['siteLogText']
 
         logger.info('SiteLogReceived event for fourCharacterId {}'.format(
             sns_message['fourCharacterId']))
@@ -21,6 +20,21 @@ def lambda_handler(event, context):
     except:
         #except KeyError, IndexError, ValueError:
         logger.error('Malformed Event or SNS Message object:\n{}'.format(event))
+        raise
+
+    try:
+        request_url = 'https://{}/siteLogs/search/findByFourCharacterId?id={}'.format(
+            os.environ['gws_url'], sns_message['fourCharacterId'])
+        request = urllib2.Request(request_url, headers={'Accept': 'application/xml'})
+        xml_string = urllib2.urlopen(request).read()
+
+    except KeyError:
+        logger.error('Output bucket name not given as Lambda environment variable')
+        raise 
+
+    except:
+        logger.error('Failed to get GeodesyML document for {} from GWS API'.format(
+            sns_message['fourCharacterId']))
         raise
 
     try:
@@ -49,6 +63,10 @@ def lambda_handler(event, context):
             output_bucket_name, site_log_filename))
         raise
 
+
+    # Get XML from SNS message
+    #sns_message = json.loads(event['Records'][0]['Sns']['Message'])
+    #xml_string = sns_message['siteLogText']
 
     # Get XML from prod GWS
     #request_url = 'https://gws.geodesy.ga.gov.au/siteLogs/search/findByFourCharacterId?id={}'.format(

@@ -5,6 +5,7 @@ variable "region" {
 variable "bucket_name" {}
 variable "sns_arn" {}
 variable "iam_role_arn" {}
+variable "gws_url" {}
 
 variable "application" {}
 variable "environment" {}

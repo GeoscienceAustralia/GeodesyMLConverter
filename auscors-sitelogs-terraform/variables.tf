@@ -31,3 +31,8 @@ variable "sns_arn" {
   description = "ARN of SNS topic which converter Lambda is invoked by."
   default     = "arn:aws:sns:ap-southeast-2:094928090547:DevGeodesy-SiteLogReceived-EYB2P4K966EE"
 }
+
+variable "gws_url" {
+  description = "Geodesy Web Services URL for Lambda to retrieve GeodesyML from."
+  default     = "dev.geodesy.ga.gov.au"
+}

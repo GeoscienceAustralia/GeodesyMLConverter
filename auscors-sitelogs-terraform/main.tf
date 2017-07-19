@@ -40,6 +40,7 @@ module "lambda" {
   sns_arn      = "${var.sns_arn}"
   bucket_name  = "${module.s3.bucket_name}"
   iam_role_arn = "${module.iam.iam_role_arn}"
+  gws_url      = "${var.gws_url}"
 
   environment  = "${var.environment}"
   application  = "${var.application}"

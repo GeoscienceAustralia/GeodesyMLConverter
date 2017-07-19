@@ -15,7 +15,7 @@ class SiteLog(object):
 
     def __init__(self, xml):
         doc = domutils.StringToDOM(xml)
-        response = xml2log_bindings.CreateFromDOM(doc.documentElement)
+        response = geodesymltositelog_bindings.CreateFromDOM(doc.documentElement)
         if len(response.AbstractSiteLog) == 1:
             self.siteLog = response.AbstractSiteLog[0]
         else:
@@ -676,7 +676,7 @@ class FrequencyStandardProperty(object):
         def __init__(self, frequencyStandard):
             self.standardType = SiteLog.complexValue(frequencyStandard.standardType)
             frequency = SiteLog.simpleValue(frequencyStandard.inputFrequency)
-            self.inputFrequency = (str(int(frequency)) + " MHz") if frequency > 0.0 else ""
+            self.inputFrequency = (str(int(frequency)) + " MHz") if frequency else ""
             try:
                 begin = SiteLog.date(str(SiteLog.complexValue(frequencyStandard.validTime.AbstractTimePrimitive.beginPosition)))
                 if not str(begin):
@@ -1794,7 +1794,7 @@ class MoreInformation(object):
 
 ################################################################################
 def options():
-    options = argparse.ArgumentParser(prog='xml2log',
+    options = argparse.ArgumentParser(prog='GeodesyMLToSiteLog',
             description="Convert GeodesyML file to site log file")
 
     options.add_argument('--version', action='version',
