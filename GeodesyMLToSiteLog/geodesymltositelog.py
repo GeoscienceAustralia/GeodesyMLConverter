@@ -54,13 +54,10 @@ class SiteLog(object):
     @classmethod
     def toMultiple(cls, line):
         """ To handle field span multiple lines """
-# PLEASE NOT TOUCH THIS FUNCTION, FULLY TESTED ALREADY
-
         if not line:
             return  "\n"
 
-# Pad with 32 spaces
-        padding = "                                "
+        padding = ' ' * 32
 
         start = 0
         multiple = ""
@@ -78,22 +75,29 @@ class SiteLog(object):
                     if previous > 0:
                         if len(segment) <= LEFT:
                             multiple += segment + "\n"
+
                         else:
                             multiple += segment[0:previous] + "\n"
                             multiple += padding + segment[previous+1:] + "\n"
+
                     else:
                         multiple += segment + "\n"
+
                     firstTime = False
+
                 else:
                     if previous > 0:
                         if len(segment) <= LEFT:
                             multiple += padding + segment + "\n"
+
                         else:
                             multiple += padding + segment[0:previous] + "\n"
                             multiple += padding + segment[previous+1:] + "\n"
+
                     else:
                         multiple += padding + segment + "\n"
                 break
+
             elif position > LEFT:
                 if firstTime:
                     multiple += segment[0:previous] + "\n"
@@ -101,6 +105,7 @@ class SiteLog(object):
                     start = 0
                     previous = 0
                     firstTime = False
+
                 else:
                     multiple += padding + segment[0:previous] + "\n"
                     segment = segment[previous+1:]
@@ -109,6 +114,7 @@ class SiteLog(object):
             else:
                 previous = position
                 start = position + 1
+
         return multiple
 
     @classmethod
