@@ -4,6 +4,7 @@ import re
 import os
 import math
 import argparse
+import textwrap
 from cStringIO import StringIO
 import iso3166
 from pyxb.utils.six.moves.urllib import request as urllib_request
@@ -58,64 +59,10 @@ class SiteLog(object):
             return  "\n"
 
         padding = ' ' * 32
+        # 48 = 80 - 32 padding
+        length = 48
 
-        start = 0
-        multiple = ""
-        segment = line
-        firstTime = True
-        previous = 0
-
-# 48 = 80 - 32 paddings
-        LEFT = 48
-
-        while start <= LEFT + 1:
-            position = segment.find(' ', start)
-            if position < 0:
-                if firstTime:
-                    if previous > 0:
-                        if len(segment) <= LEFT:
-                            multiple += segment + "\n"
-
-                        else:
-                            multiple += segment[0:previous] + "\n"
-                            multiple += padding + segment[previous+1:] + "\n"
-
-                    else:
-                        multiple += segment + "\n"
-
-                    firstTime = False
-
-                else:
-                    if previous > 0:
-                        if len(segment) <= LEFT:
-                            multiple += padding + segment + "\n"
-
-                        else:
-                            multiple += padding + segment[0:previous] + "\n"
-                            multiple += padding + segment[previous+1:] + "\n"
-
-                    else:
-                        multiple += padding + segment + "\n"
-                break
-
-            elif position > LEFT:
-                if firstTime:
-                    multiple += segment[0:previous] + "\n"
-                    segment = segment[previous+1:]
-                    start = 0
-                    previous = 0
-                    firstTime = False
-
-                else:
-                    multiple += padding + segment[0:previous] + "\n"
-                    segment = segment[previous+1:]
-                    start = 0
-                    previous = 0
-            else:
-                previous = position
-                start = position + 1
-
-        return multiple
+        return ('\n'+padding).join(textwrap.wrap(line, 48)) + '\n'
 
     @classmethod
     def country(cls, code):
