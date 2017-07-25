@@ -5,5 +5,5 @@ PYTHON_PREFIX=.
 PYXBGEN=${PYTHON_PREFIX}/pyxbgen
 
 ${PYXBGEN} -u ../modified-schemas/geodesyML.xsd \
-	-m sitelogtogeodesyml \
+    -m sitelogtogeodesyml_bindings \
 	--archive-path "${PYTHON_PREFIX}"/pyxb/bundles/common/raw/:"${PYTHON_PREFIX}"/pyxb/bundles/opengis/raw/:.:+

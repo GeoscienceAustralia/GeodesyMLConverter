@@ -1588,7 +1588,14 @@ class AgencyProperty(object):
 
         io.write(type(self).Agency + SiteLog.toMultiple(self.allCI_ResponsiblePartys[0].organisationName))
         io.write(type(self).Abbreviation)
-        io.write(type(self).MailingAddress + SiteLog.toMultiple(self.allCI_ResponsiblePartys[0].deliveryPoint))
+
+        size = len(self.allCI_ResponsiblePartys[0].deliveryPoint)
+        if size == 0:
+            io.write(type(self).MailingAddress + "\n")
+        else:
+            io.write(type(self).MailingAddress + self.allCI_ResponsiblePartys[0].deliveryPoint[0] + "\n")
+            for z in range(size-1):
+                io.write("                                " + self.allCI_ResponsiblePartys[0].deliveryPoint[z+1] + "\n")
 
         for responsibleParty in self.allCI_ResponsiblePartys:
             io.write(responsibleParty.output())
@@ -1615,7 +1622,7 @@ class AgencyProperty(object):
             if not responsibleParty:
                 self.individualName = ""
                 self.organisationName = ""
-                self.deliveryPoint = ""
+                self.deliveryPoint = []
                 self.electronicMailAddress = ""
                 self.primaryVoice = ""
                 self.secondVoice = ""
@@ -1627,14 +1634,16 @@ class AgencyProperty(object):
             self.organisationName = SiteLog.simpleValue(responsibleParty.organisationName.CharacterString)
 
             try:
-                self.deliveryPoint = SiteLog.simpleValue(responsibleParty.contactInfo.CI_Contact.address.CI_Address.deliveryPoint[0].CharacterString)
+                self.deliveryPoint = []
+                for deliveryPoint in responsibleParty.contactInfo.CI_Contact.address.CI_Address.deliveryPoint:
+                    self.deliveryPoint.append(SiteLog.simpleValue(deliveryPoint.CharacterString))
             except:
-                self.deliveryPoint = ""
+                self.deliveryPoint = []
 
             try:
                 self.electronicMailAddress = SiteLog.simpleValue(responsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress[0].CharacterString)
             except:
-                self.electronicMailAddress = "" 
+                self.electronicMailAddress = ""
 
             try:
                 self.primaryVoice = SiteLog.simpleValue(responsibleParty.contactInfo.CI_Contact.phone.CI_Telephone.voice[0].CharacterString)
