@@ -7,17 +7,16 @@ Deploying GeodesyMLToSiteLog to Lambda using terraform.
 
 ```bash
 ./install-pyxb.sh
+pip install iso3166 --target=.
 
 cd GeodesyMLToSiteLog
-
-pip install iso3166 --target=.
 
 ./generate-bindings-for-geodesymltositelog.sh
 
 zip geodesymltositelog_lambda.zip -r \
 	geodesymltositelog_lambda.py geodesymltositelog.py \
 	geodesymltositelog_bindings.py ../pyxb/ \
-	iso3166/
+	../iso3166/
 
 mv geodesymltositelog_lambda.zip ../aws/auscors-sitelogs-terraform/modules/lambda/
 
