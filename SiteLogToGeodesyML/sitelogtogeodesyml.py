@@ -164,16 +164,16 @@ def parseCountryCodeType(target, field, pattern, text, line,
             fullname = countryFullname(country)
             if not fullname:
                 fullname = country
-            tuples = iso3166.countries.get(fullname)
-            if tuples:
+            try: 
+                tuples = iso3166.countries.get(fullname)
                 code = tuples.alpha3
                 if code and len(code) == 3:
                     countryCode = code
                     SiteLog.CountryCode = code
                 else:
-                    errorMessage(line, country, "No matching ISO 3166 alpha3 code")
-            else:
-                errorMessage(line, country, "Country name not matching ISO 3166")
+                    parser.errorMessage(line, country, "No matching ISO 3166 alpha3 code")
+            except KeyError:
+                parser.errorMessage(line, country, "Country name not matching ISO 3166")
 
         code = geo.countryCodeType(SiteLog.CountryCode, codeSpace=space, codeList=theCodeList, codeListValue=country)
         setattr(target, field, code)
