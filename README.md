@@ -6,16 +6,17 @@ Tools for converting between Geodesy XML Site Log and Text Site Log formats
 Deploying GeodesyMLToSiteLog to Lambda using terraform.
 
 ```bash
+./install-pyxb.sh
+
 cd GeodesyMLToSiteLog
 
 pip install iso3166 --target=.
 
-../install-pyxb.sh
 ./generate-bindings-for-geodesymltositelog.sh
 
 zip geodesymltositelog_lambda.zip -r \
 	geodesymltositelog_lambda.py geodesymltositelog.py \
-	geodesymltositelog_bindings.py pyxb/ \
+	geodesymltositelog_bindings.py ../pyxb/ \
 	iso3166/
 
 mv geodesymltositelog_lambda.zip ../auscors-sitelogs-terraform/modules/lambda/
