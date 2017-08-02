@@ -19,9 +19,9 @@ zip geodesymltositelog_lambda.zip -r \
 	geodesymltositelog_bindings.py ../pyxb/ \
 	iso3166/
 
-mv geodesymltositelog_lambda.zip ../auscors-sitelogs-terraform/modules/lambda/
+mv geodesymltositelog_lambda.zip ../aws/auscors-sitelogs-terraform/modules/lambda/
 
-cd ../auscors-sitelogs-terraform
+cd ../aws/auscors-sitelogs-terraform
 
 terraform init \
 	-backend-config "bucket=auscors-terraform-state-dev" \
