@@ -25,7 +25,7 @@ import iso3166
 
 
 ################################################################################
-logger = logging.getLogger('log2xml')
+logger = logging.getLogger('sitelogtogeodesyml')
 
 
 ################################################################################
@@ -40,7 +40,7 @@ def setup():
 
 ################################################################################
 def options():
-    options = argparse.ArgumentParser(prog='log2xml',
+    options = argparse.ArgumentParser(prog='sitelogtogeodesyml',
             description="Convert site log file to GeodesyML file")
 
     options.add_argument('--version', action='version',

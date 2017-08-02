@@ -1,6 +1,6 @@
 ################################################################################
 #
-# This module contains the parsing and logging functions for the log2xml program
+# This module contains the parsing and logging functions
 #
 ################################################################################
 
@@ -23,7 +23,7 @@ import pyxb.bundles.common.xlink as xlink
 import pyxb.bundles.opengis as opengis
 
 ################################################################################
-logger = logging.getLogger('log2xml')
+logger = logging.getLogger('sitelogtogeodesyml')
     
 ################################################################################
 def errorMessage(line, content, comment):

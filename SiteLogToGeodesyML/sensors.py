@@ -7,7 +7,7 @@
 import re
 import sitelogtogeodesyml_bindings as geo
 import parser
-from log2xml import SiteLog
+from sitelogtogeodesyml import SiteLog
 
 class HumiditySensor(object):
     Current = None
