@@ -5,7 +5,7 @@
 ################################################################################
 
 import re
-import eGeodesy as geo
+import sitelogtogeodesyml_bindings as geo
 import parser
 from log2xml import SiteLog
 

@@ -7,7 +7,7 @@
 import sys
 import re
 import pyxb.bundles.opengis.gml_3_2 as gml
-import eGeodesy as geo
+import sitelogtogeodesyml_bindings as geo
 import logging
 import logging.config
 
