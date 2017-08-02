@@ -7,7 +7,7 @@
 import re
 import eGeodesy as geo
 import parser
-from log2xml import SiteLog
+from sitelogtogeodesyml import SiteLog
 
 class HumiditySensor(object):
     Current = None
