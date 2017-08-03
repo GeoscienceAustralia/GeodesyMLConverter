@@ -232,7 +232,7 @@ class SiteLocation(object):
             self.lng = ""
 
         try:
-            self.hgt = '{:<7.1f}'.format(siteLocation.approximatePositionITRF.geodeticPosition.Point.pos.value()[2])
+            self.hgt = '{:<7.1f}'.format(siteLocation.approximatePositionITRF.geodeticPosition.Point.pos.value()[2]).rstrip()
         except:
             self.hgt = ""
 
