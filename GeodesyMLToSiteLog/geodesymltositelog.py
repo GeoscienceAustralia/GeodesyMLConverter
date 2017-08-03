@@ -41,7 +41,7 @@ class SiteLog(object):
         if ok:
             return ok.group('date') + 'T' + ok.group('hour') + ':' + ok.group('minute') + 'Z'
         else:
-            return "CCYY-MM-DDThh:mmZ"
+            return "(CCYY-MM-DDThh:mmZ)"
 
     @classmethod
     def date(cls, text):
@@ -50,7 +50,7 @@ class SiteLog(object):
         if ok:
             return ok.group('date')
         else:
-            return "CCYY-MM-DD"
+            return "(CCYY-MM-DD)"
 
     @classmethod
     def toMultiple(cls, line):
