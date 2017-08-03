@@ -66,10 +66,9 @@ class SiteLog(object):
 
     @classmethod
     def country(cls, code):
-        shard = iso3166.countries.get(code)
-        if shard:
-            return shard.name
-        else:
+        try:
+            return iso3166.countries.get(code).name
+        except KeyError:
             return code
 
 
