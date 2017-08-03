@@ -78,9 +78,7 @@ class Introduction(object):
     Content = """     XXXX Site Information Form (site log)
      International GNSS Service
      See Instructions at:
-       ftp://igs.org/pub/station/general/sitelog_instr.txt
-
-    """
+       ftp://igs.org/pub/station/general/sitelog_instr.txt\n"""
 
     def __init__(self, fourCharacterID):
         content = type(self).Content
@@ -94,8 +92,7 @@ class Introduction(object):
 class FormInformation(object):
     Extra = """     If Update:
       Previous Site Log       : (ssss_ccyymmdd.log)
-      Modified/Added Sections : (n.n,n.n,...)
-    """
+      Modified/Added Sections : (n.n,n.n,...)\n"""
 
     def __init__(self, siteLog):
         formInformation = siteLog.formInformation
@@ -273,8 +270,7 @@ class GnssReceiverProperty(object):
      Date Installed           : (CCYY-MM-DDThh:mmZ)
      Date Removed             : (CCYY-MM-DDThh:mmZ)
      Temperature Stabiliz.    : (none or tolerance in degrees C)
-     Additional Information   : (multiple lines)
-        """
+     Additional Information   : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allReceivers = []
@@ -377,8 +373,7 @@ class GnssAntennaProperty(object):
      Antenna Cable Length     : (m)
      Date Installed           : (CCYY-MM-DDThh:mmZ)
      Date Removed             : (CCYY-MM-DDThh:mmZ)
-     Additional Information   : (multiple lines)
-    """
+     Additional Information   : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allAntennas = []
@@ -488,8 +483,7 @@ class SurveyedLocalTieProperty(object):
      Accuracy (mm)            : (mm)
      Survey method            : (GPS CAMPAIGN/TRILATERATION/TRIANGULATION/etc)
      Date Measured            : (CCYY-MM-DDThh:mmZ)
-     Additional Information   : (multiple lines)
-        """
+     Additional Information   : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allLocalTies = []
@@ -589,8 +583,7 @@ class FrequencyStandardProperty(object):
     Default = """6.x  Standard Type            : (INTERNAL or EXTERNAL H-MASER/CESIUM/etc)
        Input Frequency        : (if external)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Notes                  : (multiple lines)
-        """
+       Notes                  : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allFrequencyStandards = []
@@ -671,8 +664,7 @@ class CollocationInformationProperty(object):
     Default = """7.x  Instrumentation Type     : (GPS/GLONASS/DORIS/PRARE/SLR/VLBI/TIME/etc)
        Status                 : (PERMANENT/MOBILE)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Notes                  : (multiple lines)
-        """
+       Notes                  : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allCollocationInformations = []
@@ -758,8 +750,7 @@ class HumiditySensorProperty(object):
        Height Diff to Ant     : (m)
        Calibration date       : (CCYY-MM-DD)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Notes                  : (multiple lines)
-        """
+       Notes                  : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allHumiditySensors = []
@@ -863,8 +854,7 @@ class PressureSensorProperty(object):
        Height Diff to Ant     : (m)
        Calibration date       : (CCYY-MM-DD)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Notes                  : (multiple lines)
-        """
+       Notes                  : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allPressureSensors = []
@@ -965,8 +955,7 @@ class TemperatureSensorProperty(object):
        Height Diff to Ant     : (m)
        Calibration date       : (CCYY-MM-DD)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Notes                  : (multiple lines)
-        """
+       Notes                  : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allTemperatureSensors = []
@@ -1067,8 +1056,7 @@ class WaterVaporSensorProperty(object):
        Height Diff to Ant     : (m)
        Calibration date       : (CCYY-MM-DD)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Notes                  : (multiple lines)
-        """
+       Notes                  : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allWaterVaporSensors = []
@@ -1154,8 +1142,7 @@ class OtherInstrumentationProperty(object):
 
     Title = ""
 
-    Default = """8.5.x Other Instrumentation   : (multiple lines)
-        """
+    Default = """8.5.x Other Instrumentation   : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allOtherInstrumentations = []
@@ -1212,8 +1199,7 @@ class RadioInterferenceProperty(object):
     Default = """9.1.x Radio Interferences     : (TV/CELL PHONE ANTENNA/RADAR/etc)
        Observed Degradations  : (SN RATIO/DATA GAPS/etc)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Additional Information : (multiple lines)
-        """
+       Additional Information : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allRadioInterferences = []
@@ -1291,8 +1277,7 @@ class MultipathSourceProperty(object):
 
     Default = """9.2.x Multipath Sources       : (METAL ROOF/DOME/VLBI ANTENNA/etc)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Additional Information : (multiple lines)
-        """
+       Additional Information : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allMultipathSources = []
@@ -1365,8 +1350,7 @@ class SignalObstructionProperty(object):
 
     Default = """9.3.x Signal Obstructions     : (TREES/BUILDINGS/etc)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Additional Information : (multiple lines)
-        """
+       Additional Information : (multiple lines)\n"""
 
     def __init__(self, siteLog):
         self.allSignalObstructions = []
@@ -1439,8 +1423,7 @@ class LocalEpisodicEffectProperty(object):
     Title = "10.  Local Episodic Effects Possibly Affecting Data Quality\n"
 
     Default = """10.x Date                     : (CCYY-MM-DD/CCYY-MM-DD)
-     Event                    : (TREE CLEARING/CONSTRUCTION/etc)
-        """
+     Event                    : (TREE CLEARING/CONSTRUCTION/etc)\n"""
 
     def __init__(self, siteLog):
         self.allLocalEpisodicEffects = []
@@ -1695,9 +1678,7 @@ class MoreInformation(object):
      Additional Information   : (multiple lines)
      Antenna Graphics with Dimensions
 
-     (insert text graphic from file antenna.gra)
-
-    """
+     (insert text graphic from file antenna.gra)\n"""
 
     def __init__(self, siteLog):
         moreInformation = siteLog.moreInformation
