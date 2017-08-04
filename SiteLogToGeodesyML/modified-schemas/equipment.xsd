@@ -243,9 +243,9 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
 
     <complexType name="differentialComponentsGNSSMarkerToTiedMonumentITRS">
 	    <sequence>
-	        <element name="dx" type="geo:NillableDouble"/>
-	        <element name="dy" type="geo:NillableDouble"/>
-	        <element name="dz" type="geo:NillableDouble"/>
+            <element name="dx" minOccurs="0"/>
+            <element name="dy" minOccurs="0"/>
+            <element name="dz" minOccurs="0"/>
 	    </sequence>
     </complexType>
 
@@ -257,7 +257,7 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
                     <element name="tiedMarkerUsage" type="string"/>
                     <element name="tiedMarkerCDPNumber" type="string"/>
                     <element name="tiedMarkerDOMESNumber" type="string"/>
-                    <element name="differentialComponentsGNSSMarkerToTiedMonumentITRS" type="geo:differentialComponentsGNSSMarkerToTiedMonumentITRS"/>
+                    <element name="differentialComponentsGNSSMarkerToTiedMonumentITRS" type="geo:differentialComponentsGNSSMarkerToTiedMonumentITRS" nillable="true"/>
                     <element name="localSiteTiesAccuracy" type="geo:NillableDouble"/>
                     <element name="surveyMethod" type="string"/>
                     <element name="dateMeasured" type="gml:TimePositionType"/>

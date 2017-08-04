@@ -516,9 +516,9 @@ class LocalTie(object):
         text = "local-tie-" + str(sequence)
         self.localTie = geo.SurveyedLocalTieType(id=text)
         
-        self.dx = [geo.NillableDouble()]
-        self.dy = [geo.NillableDouble()]
-        self.dz = [geo.NillableDouble()]
+        self.dx = [None]
+        self.dy = [None]
+        self.dz = [None]
 
         self.notes = [""]
         self.notesAppended = False
@@ -536,13 +536,13 @@ class LocalTie(object):
         if parser.setTextAttribute(self.localTie, "tiedMarkerDOMESNumber", type(self).DOMESNumber, text, line):
             return
 
-        if parser.assignNillableDouble(self.dx, type(self).DX, text, line):
+        if parser.assignDouble(self.dx, type(self).DX, text, line):
             return
 
-        if parser.assignNillableDouble(self.dy, type(self).DY, text, line):
+        if parser.assignDouble(self.dy, type(self).DY, text, line):
             return
 
-        if parser.assignNillableDouble(self.dz, type(self).DZ, text, line):
+        if parser.assignDouble(self.dz, type(self).DZ, text, line):
             return
 
         if parser.setDoubleAttribute(self.localTie, "localSiteTiesAccuracy", type(self).Accuracy, text, line, True, True):
@@ -566,9 +566,13 @@ class LocalTie(object):
     def complete(self):
 
         differentialComponents = geo.differentialComponentsGNSSMarkerToTiedMonumentITRS()
-        setattr(differentialComponents, "dx", self.dx[0])
-        setattr(differentialComponents, "dy", self.dy[0])
-        setattr(differentialComponents, "dz", self.dz[0])
+
+        if self.dx[0] is None and self.dy[0] is None and self.dz[0] is None:
+            differentialComponents._setIsNil()
+        else:
+            setattr(differentialComponents, "dx", self.dx[0])
+            setattr(differentialComponents, "dy", self.dy[0])
+            setattr(differentialComponents, "dz", self.dz[0])
 
         setattr(self.localTie, "differentialComponentsGNSSMarkerToTiedMonumentITRS", differentialComponents)
 
