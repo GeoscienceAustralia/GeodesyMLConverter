@@ -2,11 +2,10 @@
 
 set -e
 
-SCRIPT_DIR=${BASH_SOURCE%/*}
-PYTHON_PREFIX=${SCRIPT_DIR}/..
+scriptDir=${BASH_SOURCE%/*}
+pyxb=$(pip show pyxb | grep ^Location: | cut -f2 -d: | sed 's/^ //')/pyxb
 
-PYXBGEN=${PYTHON_PREFIX}/pyxbgen
+pyxbgen -u "$scriptDir/modified-schemas/geodesyML.xsd" \
+	-m sitelogtogeodesyml_bindings \
+	--archive-path "$pyxb"/bundles/common/raw/:"$pyxb"/bundles/opengis/raw/:.:+
 
-${PYXBGEN} -u "${SCRIPT_DIR}/modified-schemas/geodesyML.xsd" \
-    -m sitelogtogeodesyml_bindings \
-	--archive-path "${PYTHON_PREFIX}"/pyxb/bundles/common/raw/:"${PYTHON_PREFIX}"/pyxb/bundles/opengis/raw/:.:+
