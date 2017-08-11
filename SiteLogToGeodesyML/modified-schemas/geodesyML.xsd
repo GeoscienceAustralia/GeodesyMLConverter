@@ -37,7 +37,31 @@ Copyright: Commonwealth Government (Geoscience Australia) 2016
             <extension base="gml:AbstractFeatureType">
                 <sequence>
                     <element minOccurs="0" ref="gml:validTime"/>
-                    <element ref="geo:siteLog"/>
+                    <choice maxOccurs="unbounded">
+                        <element ref="geo:Node"/>
+                        <element ref="geo:AbstractPosition"/>
+                        <element ref="geo:PositionPairCovariance"/>
+                        <element ref="geo:Site"/>
+                        <element ref="geo:siteVisit"/>
+                        <element ref="geo:Monument"/>
+                        <element ref="geo:SupplementaryMark"/>
+                        <element ref="geo:AbstractMeasurement"/>
+                        <element ref="geo:Instrument"/>
+                        <element ref="geo:Sensor"/>
+                        <element ref="geo:AbstractPositionSource"/>
+                        <element ref="geo:AbstractPositionEstimator"/>
+                        <element ref="geo:AbstractMeasurementSource"/>
+                        <element ref="geo:AbstractMeasurementOperation"/>
+                        <element ref="geo:AbstractDefinitionSource"/>
+                        <element ref="geo:AbstractDefinitionOperation"/>
+                        <element ref="geo:AbstractSiteLog"/>
+                        <element ref="geo:Project"/>
+                        <element ref="geo:Document"/>
+                        <element ref="geo:Setup"/>
+                        <element ref="geo:TerrestrialReferenceFrame"/>
+                        <element ref="geo:DynamicTransformation"/>
+                        <element ref="gml:AbstractCRS"/>
+                    </choice>
                 </sequence>
                 <attributeGroup ref="gml:SRSReferenceGroup"/>
             </extension>
