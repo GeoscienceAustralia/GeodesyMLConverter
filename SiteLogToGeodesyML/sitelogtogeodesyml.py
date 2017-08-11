@@ -39,8 +39,7 @@ def setup():
 
 ################################################################################
 def options():
-    options = argparse.ArgumentParser(prog='sitelogtogeodesyml',
-            description="Convert site log file to GeodesyML file")
+    options = argparse.ArgumentParser(description="Convert site log file to GeodesyML file")
 
     options.add_argument('--version', action='version',
             version='%(prog)s 1.0, Copyright (c) 2016 by Geodesy, Geoscience Australia')

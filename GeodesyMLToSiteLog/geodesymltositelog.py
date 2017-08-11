@@ -1736,8 +1736,7 @@ class MoreInformation(object):
 
 ################################################################################
 def options():
-    options = argparse.ArgumentParser(prog='GeodesyMLToSiteLog',
-            description="Convert GeodesyML file to site log file")
+    options = argparse.ArgumentParser(description="Convert GeodesyML file to site log file")
 
     options.add_argument('--version', action='version',
             version='%(prog)s 1.0, Copyright (c) 2016 by Geodesy, Geoscience Australia')
