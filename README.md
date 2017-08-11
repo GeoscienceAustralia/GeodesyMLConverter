@@ -1,26 +1,21 @@
-# GMLConverter
-Tools for converting between Geodesy XML Site Log and Text Site Log formats
+# GeodesyML Site Log Converter
+Command line tools for converting between GeodesyML site log and text site log formats:
 
-## Deployment
+* `sitelog-to-geodesyml`
+* `geodesyml-to-sitelog`
 
-Deploying GeodesyMLToSiteLog to Lambda using terraform.
+## Installation
 
 ```bash
-./install-pyxb.sh
-pip install iso3166 --target=.
+pip install -r requirements.txt
+pip install .
+```
 
-cd GeodesyMLToSiteLog
+## Deployment to AWS Lambda
 
-./generate-bindings-for-geodesymltositelog.sh
-
-zip geodesymltositelog_lambda.zip -r \
-	geodesymltositelog_lambda.py geodesymltositelog.py \
-	geodesymltositelog_bindings.py ../pyxb/ \
-	../iso3166/
-
-mv geodesymltositelog_lambda.zip ../aws/auscors-sitelogs-terraform/modules/lambda/
-
+```bash
 cd ../aws/auscors-sitelogs-terraform
+./module/lambda/create-deployment-package.sh
 
 terraform init \
 	-backend-config "bucket=auscors-terraform-state-dev" \
