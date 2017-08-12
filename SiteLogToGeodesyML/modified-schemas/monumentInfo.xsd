@@ -226,13 +226,6 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
            <element ref="gml:Point"/>
         </sequence>
     </complexType>   
-
-    <complexType name="ApproximatePositionITRF">
-		<sequence>
-		    <element name="cartesianPosition" type="geo:cartesianPosition" minOccurs="0"/>
-		    <element name="geodeticPosition" type="geo:geodeticPosition" minOccurs="0"/>
-		</sequence>
-    </complexType>   
     
     <complexType name="siteLocationType">
         <sequence>
@@ -242,7 +235,15 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
             <!-- TODO: use gco -->
             <element name="tectonicPlate" type="gml:CodeType"/>
             
-            <element name="approximatePositionITRF" type="geo:ApproximatePositionITRF"/>
+            <element name="approximatePositionITRF">
+                <complexType>
+                    <!-- TODO Allow one or both, but not none of the allowed positioning points -->
+		            <sequence>
+		                <element name="cartesianPosition" type="geo:cartesianPosition" minOccurs="0"/>
+		                <element name="geodeticPosition" type="geo:geodeticPosition" minOccurs="0"/>
+		            </sequence>
+                </complexType>
+            </element>
             
             <element name="notes" type="string"/>
         </sequence>
