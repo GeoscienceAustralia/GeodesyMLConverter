@@ -1503,13 +1503,13 @@ class SiteIdentification(object):
                 text, line, "urn:ga-gov-au:monument-description-type"):
             return
 
-        if parser.setDoubleAttribute(self.siteIdentification, "heightOfTheMonument", type(self).HeightOfTheMonument, text, line, True, False):
+        if parser.setDoubleAttribute(self.siteIdentification, "heightOfTheMonument", type(self).HeightOfTheMonument, text, line):
             return
 
         if parser.setTextAttribute(self.siteIdentification, "monumentFoundation", type(self).MonumentFoundation, text, line):
             return
 
-        if parser.setDoubleAttribute(self.siteIdentification, "foundationDepth", type(self).FoundationDepth, text, line, True, False):
+        if parser.setDoubleAttribute(self.siteIdentification, "foundationDepth", type(self).FoundationDepth, text, line):
             return
 
         if parser.setTextAttribute(self.siteIdentification, "markerDescription", type(self).MarkerDescription, text, line):
