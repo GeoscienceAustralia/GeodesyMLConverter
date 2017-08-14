@@ -28,6 +28,11 @@ setup(
             'sitelog-to-geodesyml=SiteLogToGeodesyML.sitelogtogeodesyml:main',
             ],
     },
+    setup_requires=['pytest-runner'],
+    tests_require=[
+        'pytest',
+        'pytest-console-scripts'
+    ],
     install_requires=[
         'iso3166',
         'pyxb',

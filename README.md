@@ -11,6 +11,12 @@ pip install -r requirements.txt
 pip install .
 ```
 
+## Tests
+
+``` bash
+python setup.py test
+```
+
 ## Deployment to AWS Lambda
 
 ```bash
