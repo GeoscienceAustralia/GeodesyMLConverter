@@ -27,7 +27,7 @@ terraform init \
 	-backend-config "bucket=auscors-terraform-state-dev" \
 	-backend-config "lock_table=auscors-terraform-state-dev" \
 	-backend-config "region=ap-southeast-2" \
-	-backend-config "key=auscors-sitelogs/dev"
+	-backend-config "key=auscors-sitelogs/dev/terraform.tfstate"
 
 terraform get
 terraform plan
