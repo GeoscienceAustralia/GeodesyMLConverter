@@ -1,1 +1,6 @@
+[MASTER]
+
+# Tell pylint to consider .eggs when resolving module imports
+init-hook='sys.path.extend([".eggs/" + p for p in next(os.walk(".eggs"))[1]])'
+
 max-line-length=120
