@@ -4,6 +4,7 @@ python:
   - "2.7"
 
 install:
+  - pip -v install -r requirements-dev.txt
   - pip -v install -r requirements.txt
   - pip -v install .
 

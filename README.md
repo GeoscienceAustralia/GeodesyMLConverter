@@ -14,6 +14,7 @@ pip install .
 ## Tests
 
 ``` bash
+pip install -r requirements-dev.txt
 python setup.py test
 ```
 
