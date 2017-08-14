@@ -9,7 +9,7 @@ install:
   - pip -v install . --upgrade
 
 script:
-  - python setup.py test
+  - pytest
 
 cache:
   - pip
