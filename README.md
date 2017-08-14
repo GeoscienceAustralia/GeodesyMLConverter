@@ -21,7 +21,7 @@ python setup.py test
 
 ```bash
 cd ../aws/auscors-sitelogs-terraform
-./module/lambda/create-deployment-package.sh
+./modules/lambda/create-deployment-package.sh
 
 terraform init \
 	-backend-config "bucket=auscors-terraform-state-dev" \
