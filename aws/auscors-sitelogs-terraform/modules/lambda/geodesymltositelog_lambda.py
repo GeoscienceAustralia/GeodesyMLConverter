@@ -4,7 +4,7 @@ import urllib2
 import logging
 import boto3
 
-import geodesymltositelog
+from GeodesyMLToSiteLog import geodesymltositelog
 
 def lambda_handler(event, context):
     logger = logging.getLogger(__name__)

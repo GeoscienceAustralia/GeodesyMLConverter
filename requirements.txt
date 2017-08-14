@@ -1,0 +1,2 @@
+git+https://github.com/geoscienceaustralia/pyxb.git@03d263b510e9f4d64341e355c92fedb4480baa67#egg=pyxb
+
