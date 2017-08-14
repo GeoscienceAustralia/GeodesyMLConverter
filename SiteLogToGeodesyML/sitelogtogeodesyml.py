@@ -1220,7 +1220,7 @@ class SiteLocation(object):
 
     def complete(self):
         
-        self.siteLocation.approximatePositionITRF = geo.ApproximatePositionITRF()
+        self.siteLocation.approximatePositionITRF = pyxb.BIND()
         
         cartesianPositionPoint = gml.Point(id="itrf_cartesian")
         directPositionType = gml.DirectPositionType([self.x[0], self.y[0], self.z[0]])      
