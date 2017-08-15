@@ -35,5 +35,4 @@ def test_geodesyml_to_sitelog(script_runner):
     print(return_status.stdout)
     print(return_status.stderr)
     assert return_status.success
-    assert return_status.stdout == '\n\tSite log file "alic_20170223.log" has been successfully generated\n'
     assert return_status.stderr == ''

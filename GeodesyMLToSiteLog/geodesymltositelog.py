@@ -5,6 +5,7 @@ import os
 import math
 import argparse
 import textwrap
+import sys
 from cStringIO import StringIO
 import iso3166
 from pyxb.utils.six.moves.urllib import request as urllib_request
@@ -1746,6 +1747,10 @@ def options():
             required=True,
             help='The geodesyML file for specific station')
 
+    options.add_argument("-l", "--sitelog",
+            metavar='ssss_yyyydoy.log',
+            help='Output text site log file (default stdout)')
+
     options.add_argument("-v", "--verbose", help="log verbose information to file",
             action="store_true")
 
@@ -1759,9 +1764,18 @@ def main():
     with open(args.geodesyML, 'r') as f:
         xml = f.read()
 
-    parseXML(xml, True)
+    defaultOutputFileName, outputContent = parseXML(xml)
+    outputFileName = args.sitelog
 
-def parseXML(xml, toFile=False):
+    if (outputFileName):
+        with open(outputFileName, 'w') as output:
+            output.write(outputContent)
+    
+        print('\n\tSite log file \"' + outputFileName + '\" has been successfully generated')
+    else:
+        sys.stdout.write(outputContent)
+
+def parseXML(xml):
     siteLog = SiteLog(xml)
 
     siteLogType = siteLog.siteLogType()
@@ -1824,14 +1838,7 @@ def parseXML(xml, toFile=False):
         multipathSourceList.output(), signalObstructionList.output(), localEpisodicEffectList.output(),
         siteContactList.output(), siteMetadataCustodian.output(), moreInformation.output())
 
-    if toFile:
-        with open(siteLogFilename, 'w') as output:
-            output.write(outputContent)
-        
-        print('\n\tSite log file \"' + siteLogFilename + '\" has been successfully generated')
-
-    else:
-        return siteLogFilename, outputContent
+    return siteLogFilename, outputContent
 
 
 ################################################################################
