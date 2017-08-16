@@ -2126,7 +2126,7 @@ class SiteLog(object):
         ok = re.match(pattern, nameOnly)
         if ok:
             nameOnly = "_" + nameOnly
-        self.siteLog = geo.SiteLogType(id=nameOnly)
+        self.siteLog = geo.siteLog(id=nameOnly)
 
 
     def readFile(self, coding):
