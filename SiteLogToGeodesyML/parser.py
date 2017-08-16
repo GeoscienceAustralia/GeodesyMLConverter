@@ -1,8 +1,6 @@
-################################################################################
-#
-# This module contains the parsing and logging functions
-#
-################################################################################
+"""
+This module contains the parsing and logging functions
+"""
 
 import sys
 import re
@@ -22,10 +20,8 @@ import pyxb.bundles.opengis.iso19139.v20070417.gco as gco
 import pyxb.bundles.common.xlink as xlink
 import pyxb.bundles.opengis as opengis
 
-################################################################################
 logger = logging.getLogger('sitelogtogeodesyml')
     
-################################################################################
 def errorMessage(line, content, comment):
     sys.stderr.write("{\n")
     sys.stderr.write("    Line no: %s\n" % line)
@@ -34,7 +30,6 @@ def errorMessage(line, content, comment):
     sys.stderr.write("}\n")
 
 
-################################################################################
 def infoMessage(line, content, comment):
     sys.stderr.write("{\n")
     sys.stderr.write("    Line no: %s\n" % line)
@@ -43,7 +38,6 @@ def infoMessage(line, content, comment):
     sys.stderr.write("}\n")
 
 
-################################################################################    
 def processingNotes(text):
     pattern = re.compile(r'^\(multiple lines\)$', re.IGNORECASE)
     ok = re.match(pattern, text)
@@ -53,7 +47,6 @@ def processingNotes(text):
         return text    
     
     
-################################################################################
 def parseCodeTypeAndVersion(target, field, pattern, text, line, space, versionRef):
     ok = re.match(pattern, text)
     if ok:
@@ -66,7 +59,6 @@ def parseCodeTypeAndVersion(target, field, pattern, text, line, space, versionRe
         return False
         
         
-################################################################################
 def parseText(variable, pattern, text, line):
     ok = re.match(pattern, text)
     if ok:
@@ -76,7 +68,6 @@ def parseText(variable, pattern, text, line):
     else:
         return False
     
-################################################################################
 def setTextAttribute(target, field, pattern, text, line, mandatory=False):
     ok = re.match(pattern, text)
     if ok:
@@ -89,7 +80,6 @@ def setTextAttribute(target, field, pattern, text, line, mandatory=False):
         return False
   
 
-################################################################################
 def setDoubleAttribute(target, field, pattern, text, line, mandatory=False, withDefault=False, output=True):
     floatPattern = re.compile(r'(?P<float>[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?)', re.IGNORECASE)
     ok = re.match(pattern, text)
@@ -117,7 +107,6 @@ def setDoubleAttribute(target, field, pattern, text, line, mandatory=False, with
     else:
         return False
 
-################################################################################
 def setNillableDoubleAttribute(target, field, pattern, text, line, mandatory=True, output=True):
     floatPattern = re.compile(r'(?P<float>[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?)', re.IGNORECASE)
     nonePattern = re.compile(r'none', re.IGNORECASE)
@@ -165,7 +154,6 @@ def setNillableDoubleAttribute(target, field, pattern, text, line, mandatory=Tru
     else:
         return False
 
-################################################################################
 def setDateTimeAttribute(target, field, pattern, text, line, mandatory=True):
     ok = re.match(pattern, text)
     if ok:
@@ -189,7 +177,6 @@ def setDateTimeAttribute(target, field, pattern, text, line, mandatory=True):
     else:
         return False
     
-################################################################################
 def parseNillableDouble(variable, pattern, text, line, mandatory=True, output=True):
     floatPattern = re.compile(r'(?P<float>[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?)', re.IGNORECASE)
     nonePattern = re.compile(r'none', re.IGNORECASE)
@@ -238,7 +225,6 @@ def parseNillableDouble(variable, pattern, text, line, mandatory=True, output=Tr
         return False
 
 
-################################################################################
 def parseDouble(variable, pattern, text, line, mandatory=False, output=True):
     floatPattern = re.compile(r'(?P<float>[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?)', re.IGNORECASE)
     ok = re.match(pattern, text)
@@ -263,7 +249,6 @@ def parseDouble(variable, pattern, text, line, mandatory=False, output=True):
         return False
 
 
-################################################################################
 def parseInt(variable, pattern, text, line, mandatory=False):
     intPattern = re.compile(r'(?P<number>[+-]?(?<!\.)\b[0-9]+\b(?!\.[0-9]))', re.IGNORECASE)
     ok = re.match(pattern, text)
@@ -287,7 +272,6 @@ def parseInt(variable, pattern, text, line, mandatory=False):
         return False
 
 
-################################################################################
 def parseCodeType(target, field, pattern, text, line, space):
     ok = re.match(pattern, text)
     if ok:
@@ -299,7 +283,6 @@ def parseCodeType(target, field, pattern, text, line, space):
         return False
 
     
-################################################################################
 def parseRadomeModelCodeType(variable, pattern, text, line,
         space="urn:igs-org:gnss-radome-model-code"):
     ok = re.match(pattern, text)
@@ -311,7 +294,6 @@ def parseRadomeModelCodeType(variable, pattern, text, line,
     else:
         return False
     
-################################################################################
 def parseAntennaModelCodeType(variable, pattern, text, line, versionRef,
         space="urn:xml-gov-au:icsm:egeodesy:0.4",
         theCodeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode"):
@@ -326,7 +308,6 @@ def parseAntennaModelCodeType(variable, pattern, text, line, versionRef,
         return False
 
 
-################################################################################
 def parseReceiverModelCodeType(variable, pattern, text, line, versionRef,
         space="urn:xml-gov-au:icsm:egeodesy:0.4",
         theCodeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode"):
@@ -341,7 +322,6 @@ def parseReceiverModelCodeType(variable, pattern, text, line, versionRef,
         return False
 
 
-################################################################################
 def parseDateTime(variable, pattern, text, line, mandatory=True):
     ok = re.match(pattern, text)
     if ok:
@@ -367,7 +347,6 @@ def parseDateTime(variable, pattern, text, line, mandatory=True):
         return False
 
 
-################################################################################
 def textToDateTime(text, line, mandatory = False):
     pattern = re.compile(r'[\(]?CCYY-MM-DD[\)]?', re.IGNORECASE)
     matched = re.match(pattern, text)
@@ -389,7 +368,6 @@ def textToDateTime(text, line, mandatory = False):
         return dateTime
 
 
-################################################################################
 def setTimePeriodAttribute(target, field, pattern, text, line, siteLog, mandatory = True):
     ok = re.match(pattern, text)
     if ok:
@@ -424,7 +402,6 @@ def setTimePeriodAttribute(target, field, pattern, text, line, siteLog, mandator
     else:
         return False
 
-################################################################################
 def parseTimePeriod(variable, pattern, text, line, siteLog, mandatory = True):
     ok = re.match(pattern, text)
     if ok:
@@ -460,7 +437,6 @@ def parseTimePeriod(variable, pattern, text, line, siteLog, mandatory = True):
         return False
         
         
-################################################################################
 def validateDate(text, reference):
     pattern = re.compile(r'^(\d{4})-(\d{2})-(\d{2})T*$', re.IGNORECASE)
     ok = re.match(pattern, text)
@@ -482,7 +458,6 @@ def validateDate(text, reference):
         raise e
 
 
-################################################################################
 def validateDateTime(text, reference):
     pattern = re.compile(r'^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})Z$', re.IGNORECASE)
     ok = re.match(pattern, text)
@@ -509,7 +484,6 @@ def validateDateTime(text, reference):
 
 
 
-################################################################################
 def assignNotes(variable, pattern, text, line):
     ok = re.match(pattern, text)
     if ok:
@@ -522,7 +496,6 @@ def assignNotes(variable, pattern, text, line):
     else:
         return False
         
-################################################################################
 def assignText(variable, pattern, text, line):
     ok = re.match(pattern, text)
     if ok:
@@ -532,7 +505,6 @@ def assignText(variable, pattern, text, line):
     else:
         return False
 
-################################################################################
 def assignNillableDouble(variable, pattern, text, line, mandatory=False):
     floatPattern = re.compile(r'(?P<float>[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?)', re.IGNORECASE)
     ok = re.match(pattern, text)
@@ -559,7 +531,6 @@ def assignNillableDouble(variable, pattern, text, line, mandatory=False):
         return False
 
 
-################################################################################
 def assignDouble(variable, pattern, text, line, mandatory=False):
     floatPattern = re.compile(r'(?P<float>[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?)', re.IGNORECASE)
     ok = re.match(pattern, text)
