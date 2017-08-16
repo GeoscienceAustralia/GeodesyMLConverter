@@ -39,7 +39,8 @@ Copyright: Commonwealth Government (Geoscience Australia) 2016
                     <element minOccurs="0" ref="gml:validTime"/>
                     <choice maxOccurs="unbounded">
                         <element ref="geo:Node"/>
-                        <element ref="geo:AbstractPosition"/>
+                        <!-- TODO: Why does AbstractPosition break pyxb? -->
+                        <!-- <element ref="geo:AbstractPosition"/> -->
                         <element ref="geo:PositionPairCovariance"/>
                         <element ref="geo:Site"/>
                         <element ref="geo:siteVisit"/>
