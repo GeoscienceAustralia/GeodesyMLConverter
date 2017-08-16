@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<geo:GeodesyML gml:id="T00000" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.4" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2">
-    <geo:siteLog gml:id="t000_20170101.log">
+<geo:GeodesyML gml:id="T00100" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.4" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2">
+    <geo:siteLog gml:id="t001_20170101.log">
         <geo:formInformation>
             <geo:preparedBy></geo:preparedBy>
             <geo:datePrepared></geo:datePrepared>
@@ -28,7 +28,18 @@
             <geo:state></geo:state>
             <geo:countryCodeISO codeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode" codeListValue="" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4"></geo:countryCodeISO>
             <geo:tectonicPlate codeSpace="urn:ga-gov-au:plate-type"></geo:tectonicPlate>
-            <geo:approximatePositionITRF/>
+            <geo:approximatePositionITRF>
+                <geo:cartesianPosition>
+                    <gml:Point gml:id="itrf_cartesian" srsName="EPSG:7789">
+                        <gml:pos>1.0 2.0 3.0</gml:pos>
+                    </gml:Point>
+                </geo:cartesianPosition>
+                <geo:geodeticPosition>
+                    <gml:Point gml:id="itrf_geodetic" srsName="EPSG:7912">
+                        <gml:pos>12.2033888889 123.203388889 1.0</gml:pos>
+                    </gml:Point>
+                </geo:geodeticPosition>
+            </geo:approximatePositionITRF>
             <geo:notes></geo:notes>
         </geo:siteLocation>
         <geo:siteContact gml:id="agency-1">
