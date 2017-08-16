@@ -81,7 +81,7 @@ def setTextAttribute(target, field, pattern, text, line, mandatory=False):
     ok = re.match(pattern, text)
     if ok:
         value = ok.group('value').strip()
-        setattr(target, field, value)
+        setattr(target, field, '' if re.match(r'\(.*\)', value) else value)
         return True
     else:
         if mandatory:
