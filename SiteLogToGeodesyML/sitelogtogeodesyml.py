@@ -23,11 +23,9 @@ from SiteLogToGeodesyML import parser
 import iso3166
 
 
-################################################################################
 logger = logging.getLogger('sitelogtogeodesyml')
 
 
-################################################################################
 def setup():
     pyxb.utils.domutils.BindingDOMSupport.DeclareNamespace(gml.Namespace, 'gml')
     pyxb.utils.domutils.BindingDOMSupport.DeclareNamespace(xlink.Namespace, 'xlink')
@@ -37,7 +35,6 @@ def setup():
     pyxb.RequireValidWhenGenerating(True)
 
 
-################################################################################
 def options():
     options = argparse.ArgumentParser(description="Convert site log file to GeodesyML file")
 
@@ -70,13 +67,11 @@ def options():
     return options.parse_args()
 
 
-################################################################################
 def isEmpty(line):
     text = line.strip()
     return not text
 
 
-################################################################################
 def toLatitude(value, line):
     text = str(value)
     pattern = re.compile(r'[+-]?(\d{2})(\d{2})((\d{2})(\.\d*)?)')
@@ -96,7 +91,6 @@ def toLatitude(value, line):
         return 0.0
 
 
-################################################################################
 def toLongitude(value, line):
     text = str(value)
     pattern = re.compile(r'[+-]?(\d{3})(\d{2})((\d{2})(\.\d*)?)')
@@ -147,7 +141,6 @@ def countryFullname(name):
     else:
         return None
  
-################################################################################
 def parseCountryCodeType(target, field, pattern, text, line,
         space="urn:xml-gov-au:icsm:egeodesy:0.4",
         theCodeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode"):
@@ -181,7 +174,6 @@ def parseCountryCodeType(target, field, pattern, text, line,
         return False
 
 
-################################################################################
 def parseSatelliteSystem(target, field, pattern, text, line, space):
     ok = re.match(pattern, text)
     if ok:
@@ -195,7 +187,6 @@ def parseSatelliteSystem(target, field, pattern, text, line, space):
         return False
 
 
-################################################################################
 def parseDataCenter(target, pattern, text, line):
     ok = re.match(pattern, text)
     if ok:
@@ -205,7 +196,6 @@ def parseDataCenter(target, pattern, text, line):
     else:
         return False
 
-################################################################################
 def assignString(variable, pattern, text, line, isPrimary):
     ok = re.match(pattern, text)
     if ok:
@@ -218,7 +208,6 @@ def assignString(variable, pattern, text, line, isPrimary):
     else:
         return False
 
-################################################################################
 class FormInformation(object):
     Current = None
     Index = 0
@@ -257,7 +246,6 @@ class FormInformation(object):
         return self.formInformation
 
 
-################################################################################
 class EpisodicEvent(object):
     Current = None
     Index = 0
@@ -296,7 +284,6 @@ class EpisodicEvent(object):
         return self.episodicEffect
 
 
-################################################################################
 class CollocationInformation(object):
     Current = None
     Index = 0
@@ -358,7 +345,6 @@ class CollocationInformation(object):
         return self.collocation
 
 
-################################################################################
 class HumiditySensor(object):
     Current = None
     Index = 0
@@ -454,7 +440,6 @@ class HumiditySensor(object):
         return self.humiditySensor
 
 
-################################################################################
 class WaterVapor(object):
     Current = None
     Index = 0
@@ -542,7 +527,6 @@ class WaterVapor(object):
         return self.waterVaporSensor
 
 
-################################################################################
 class PressureSensor(object):
     Current = None
     Index = 0
@@ -725,7 +709,6 @@ class TemperatureSensor(object):
                 self.notesAppended = True
         return self.temperatureSensor
 
-################################################################################
 class OtherInstrumentation(object):
     Current = None
     Index = 0
@@ -838,7 +821,6 @@ class FrequencyStandard(object):
         return self.frequencyStandard
 
 
-################################################################################
 
 class LocalTie(object):
     Current = None
@@ -944,7 +926,6 @@ class LocalTie(object):
         return self.localTie
 
 
-################################################################################
 class RadioInterference(object):
     Current = None
     Index = 0
@@ -1009,7 +990,6 @@ class RadioInterference(object):
         return self.radioInterference
 
 
-################################################################################
 class MultipathSource(object):
     Current = None
     Index = 0
@@ -1071,7 +1051,6 @@ class MultipathSource(object):
         return self.multipathSource
 
 
-################################################################################
 class SignalObstruction(object):
     Current = None
     Index = 0
@@ -1133,7 +1112,6 @@ class SignalObstruction(object):
         return self.signalObstruction
 
 
-################################################################################
 class SiteLocation(object):
     Current = None
     Index = 0
@@ -1247,7 +1225,6 @@ class SiteLocation(object):
         return self.siteLocation
     
 
-################################################################################
 class GNSSReceiver(object):
     Current = None
     Index = 0
@@ -1329,7 +1306,6 @@ class GNSSReceiver(object):
         return self.gnssReceiver
 
 
-################################################################################
 class GNSSAntenna(object):
     Current = None
     Index = 0
@@ -1439,7 +1415,6 @@ class GNSSAntenna(object):
         return self.gnssAntenna
 
 
-################################################################################
 class SiteIdentification(object):
     Current = None
     Index = 0
@@ -1555,7 +1530,6 @@ class SiteIdentification(object):
         return self.siteIdentification
 
 
-################################################################################
 class MoreInformation(object):
     Current = None
     Index = 0
@@ -1673,7 +1647,6 @@ class MoreInformation(object):
         return self.moreInformation
 
 
-################################################################################
 class ContactAgency(object):
     Current = None
     Index = 0
@@ -2008,7 +1981,6 @@ class ContactAgency(object):
 
 
 
-################################################################################
 class SiteLog(object):
     TimePeriodIndex = 0
     TimeInstantIndex = 0
@@ -2613,7 +2585,6 @@ def logfile():
     logger.addHandler(fh)
 
 
-################################################################################
 def convert(logfile, xmlfile):
     # convert site log file silently
     logging.Logger.disabled = True
@@ -2653,7 +2624,6 @@ def convert(logfile, xmlfile):
     # probably unnecessary
 
 
-################################################################################
 def main():
     args = options()
 
@@ -2698,7 +2668,6 @@ def main():
         sys.stdout.write(contents)
 
 
-################################################################################
 if __name__ == "__main__":
 
     main()
