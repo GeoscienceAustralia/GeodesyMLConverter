@@ -2132,12 +2132,11 @@ class SiteLog(object):
 
         for line in textLines:
             lineNo += 1
+            line = line.encode('ascii', 'xmlcharrefreplace')
             print(line)
 
             if isEmpty(line):
                 continue
-
-            line = line.encode('ascii', 'xmlcharrefreplace')
 
             if re.match(type(self).Template1, line):
                 flag = -2
