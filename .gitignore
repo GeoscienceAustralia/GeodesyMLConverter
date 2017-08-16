@@ -1,2 +1,3 @@
 *.pyc
 .terraform/
+tests/sitelog_to_geodesyml/generated_output

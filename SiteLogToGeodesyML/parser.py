@@ -46,7 +46,12 @@ def processingNotes(text):
     else:
         return text    
     
-    
+
+def normaliseString(string):
+    str = string.strip()
+    return '' if re.match(r'^\(.*\)$', str) else str
+
+
 def parseCodeTypeAndVersion(target, field, pattern, text, line, space, versionRef):
     ok = re.match(pattern, text)
     if ok:
@@ -62,8 +67,7 @@ def parseCodeTypeAndVersion(target, field, pattern, text, line, space, versionRe
 def parseText(variable, pattern, text, line):
     ok = re.match(pattern, text)
     if ok:
-        value = ok.group('value').strip()
-        variable.append(value)
+        variable.append(normaliseString(ok.group('value')))
         return True
     else:
         return False
@@ -71,8 +75,7 @@ def parseText(variable, pattern, text, line):
 def setTextAttribute(target, field, pattern, text, line, mandatory=False):
     ok = re.match(pattern, text)
     if ok:
-        value = ok.group('value').strip()
-        setattr(target, field, '' if re.match(r'\(.*\)', value) else value)
+        setattr(target, field, normaliseString(ok.group('value')))
         return True
     else:
         if mandatory:
@@ -275,7 +278,7 @@ def parseInt(variable, pattern, text, line, mandatory=False):
 def parseCodeType(target, field, pattern, text, line, space):
     ok = re.match(pattern, text)
     if ok:
-        value = ok.group('value').strip()
+        value = normaliseString(ok.group('value'))
         code = gml.CodeType(value, codeSpace=space)
         setattr(target, field, code)
         return True
@@ -499,7 +502,7 @@ def assignNotes(variable, pattern, text, line):
 def assignText(variable, pattern, text, line):
     ok = re.match(pattern, text)
     if ok:
-        value = ok.group('value').strip()
+        value = normaliseString(ok.group('value'))
         variable[0] = value
         return True
     else:
