@@ -184,6 +184,45 @@
             </geo:PressureSensor>
             <geo:dateInserted></geo:dateInserted>
         </geo:pressureSensor>
+        <geo:temperatureSensor>
+            <geo:TemperatureSensor gml:id="temperature-sensor-1">
+                <geo:type codeSpace="urn:ga-gov-au:temperature-sensor-type">Temperature Sensor Model A</geo:type>
+                <geo:notes>notes</geo:notes>
+                <geo:manufacturer>Manufacturer A</geo:manufacturer>
+                <geo:serialNumber>48</geo:serialNumber>
+                <geo:heightDiffToAntenna>0.333333</geo:heightDiffToAntenna>
+                <geo:calibrationDate>2016-01-01</geo:calibrationDate>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="temperature-sensor-1--time-period-5">
+                        <gml:beginPosition>2015-01-01</gml:beginPosition>
+                        <gml:endPosition>2017-02-02</gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:dataSamplingInterval>2.333333</geo:dataSamplingInterval>
+                <geo:accuracy-degreesCelcius>0.8888</geo:accuracy-degreesCelcius>
+                <geo:aspiration>FAN</geo:aspiration>
+            </geo:TemperatureSensor>
+            <geo:dateInserted>2015-01-01</geo:dateInserted>
+        </geo:temperatureSensor>
+        <geo:temperatureSensor>
+            <geo:TemperatureSensor gml:id="temperature-sensor-2">
+                <geo:type codeSpace="urn:ga-gov-au:temperature-sensor-type">Temperature Sensor Model B</geo:type>
+                <geo:manufacturer></geo:manufacturer>
+                <geo:serialNumber></geo:serialNumber>
+                <geo:heightDiffToAntenna>0.0</geo:heightDiffToAntenna>
+                <geo:calibrationDate></geo:calibrationDate>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="temperature-sensor-2--time-period-6">
+                        <gml:beginPosition></gml:beginPosition>
+                        <gml:endPosition></gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:dataSamplingInterval>0.0</geo:dataSamplingInterval>
+                <geo:accuracy-degreesCelcius>0.0</geo:accuracy-degreesCelcius>
+                <geo:aspiration></geo:aspiration>
+            </geo:TemperatureSensor>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:temperatureSensor>
         <geo:waterVaporSensor>
             <geo:WaterVaporSensor gml:id="water-vapor-1">
                 <geo:type codeSpace="urn:ga-gov-au:water-vapor-sensor-type">Water Vapor Radiometer A</geo:type>
@@ -193,7 +232,7 @@
                 <geo:heightDiffToAntenna>1.2</geo:heightDiffToAntenna>
                 <geo:calibrationDate>2001-10-10</geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="water-vapor-1--time-period-5">
+                    <gml:TimePeriod gml:id="water-vapor-1--time-period-7">
                         <gml:beginPosition>2002-10-01</gml:beginPosition>
                         <gml:endPosition>2013-10-10</gml:endPosition>
                     </gml:TimePeriod>
@@ -210,7 +249,7 @@
                 <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
                 <geo:calibrationDate></geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="water-vapor-2--time-period-6">
+                    <gml:TimePeriod gml:id="water-vapor-2--time-period-8">
                         <gml:beginPosition></gml:beginPosition>
                         <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
