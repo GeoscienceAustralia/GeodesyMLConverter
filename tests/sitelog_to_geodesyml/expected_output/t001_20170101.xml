@@ -137,7 +137,7 @@
                     <geo:dy xsi:nil="true"></geo:dy>
                     <geo:dz xsi:nil="true"></geo:dz>
                 </geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
-                <geo:localSiteTiesAccuracy>0.0</geo:localSiteTiesAccuracy>
+                <geo:localSiteTiesAccuracy xsi:nil="true"></geo:localSiteTiesAccuracy>
                 <geo:surveyMethod></geo:surveyMethod>
                 <geo:dateMeasured></geo:dateMeasured>
                 <geo:notes></geo:notes>
