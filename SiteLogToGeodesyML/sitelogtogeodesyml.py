@@ -892,7 +892,7 @@ class LocalTie(object):
         if parser.assignNillableDouble(self.dz, type(self).DZ, text, line):
             return
 
-        if parser.setDoubleAttribute(self.localTie, "localSiteTiesAccuracy", type(self).Accuracy, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.localTie, "localSiteTiesAccuracy", type(self).Accuracy, text, line, True, True):
             return
 
         if parser.setTextAttribute(self.localTie, "surveyMethod", type(self).Method, text, line):
