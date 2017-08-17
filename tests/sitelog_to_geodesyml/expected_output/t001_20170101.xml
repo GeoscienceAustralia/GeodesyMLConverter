@@ -209,7 +209,7 @@
                 <geo:type codeSpace="urn:ga-gov-au:temperature-sensor-type">Temperature Sensor Model B</geo:type>
                 <geo:manufacturer></geo:manufacturer>
                 <geo:serialNumber></geo:serialNumber>
-                <geo:heightDiffToAntenna>0.0</geo:heightDiffToAntenna>
+                <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
                 <geo:calibrationDate></geo:calibrationDate>
                 <gml:validTime>
                     <gml:TimePeriod gml:id="temperature-sensor-2--time-period-6">
@@ -217,8 +217,8 @@
                         <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
                 </gml:validTime>
-                <geo:dataSamplingInterval>0.0</geo:dataSamplingInterval>
-                <geo:accuracy-degreesCelcius>0.0</geo:accuracy-degreesCelcius>
+                <geo:dataSamplingInterval xsi:nil="true"></geo:dataSamplingInterval>
+                <geo:accuracy-degreesCelcius xsi:nil="true"></geo:accuracy-degreesCelcius>
                 <geo:aspiration></geo:aspiration>
             </geo:TemperatureSensor>
             <geo:dateInserted></geo:dateInserted>

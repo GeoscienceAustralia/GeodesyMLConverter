@@ -674,16 +674,16 @@ class TemperatureSensor(object):
         if parser.setTextAttribute(self.temperatureSensor, "serialNumber", type(self).SerialNumber, text, line):
             return
 
-        if parser.setDoubleAttribute(self.temperatureSensor, "dataSamplingInterval", type(self).Interval, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.temperatureSensor, "dataSamplingInterval", type(self).Interval, text, line, True, True):
             return
 
-        if parser.setDoubleAttribute(self.temperatureSensor, "accuracy_degreesCelcius", type(self).Accuracy, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.temperatureSensor, "accuracy_degreesCelcius", type(self).Accuracy, text, line, True, True):
             return
 
         if parser.setTextAttribute(self.temperatureSensor, "aspiration", type(self).Aspiration, text, line):
             return
 
-        if parser.setDoubleAttribute(self.temperatureSensor, "heightDiffToAntenna", type(self).DiffToAnt, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.temperatureSensor, "heightDiffToAntenna", type(self).DiffToAnt, text, line, True, True):
             return
 
         if parser.setDateTimeAttribute(self.temperatureSensor, "calibrationDate", type(self).CalibrationDate, text, line):
