@@ -411,16 +411,16 @@ class HumiditySensor(object):
         if parser.setTextAttribute(self.humiditySensor, "serialNumber", type(self).SerialNumber, text, line):
             return
 
-        if parser.setDoubleAttribute(self.humiditySensor, "dataSamplingInterval", type(self).Interval, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.humiditySensor, "dataSamplingInterval", type(self).Interval, text, line, True, True):
             return
 
-        if parser.setDoubleAttribute(self.humiditySensor, "accuracy_percentRelativeHumidity", type(self).Accuracy, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.humiditySensor, "accuracy_percentRelativeHumidity", type(self).Accuracy, text, line, True, True):
             return
 
         if parser.setTextAttribute(self.humiditySensor, "aspiration", type(self).Aspiration, text, line):
             return
 
-        if parser.setDoubleAttribute(self.humiditySensor, "heightDiffToAntenna", type(self).DiffToAnt, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.humiditySensor, "heightDiffToAntenna", type(self).DiffToAnt, text, line, True, True):
             return
 
         if parser.setDateTimeAttribute(self.humiditySensor, "calibrationDate", type(self).CalibrationDate, text, line):
