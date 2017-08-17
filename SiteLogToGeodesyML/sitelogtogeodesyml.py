@@ -496,10 +496,10 @@ class WaterVapor(object):
         if parser.setTextAttribute(self.waterVaporSensor, "serialNumber", type(self).SerialNumber, text, line):
             return
 
-        if parser.setDoubleAttribute(self.waterVaporSensor, "distanceToAntenna", type(self).Distance, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.waterVaporSensor, "distanceToAntenna", type(self).Distance, text, line, True, True):
             return
 
-        if parser.setDoubleAttribute(self.waterVaporSensor, "heightDiffToAntenna", type(self).DiffToAnt, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.waterVaporSensor, "heightDiffToAntenna", type(self).DiffToAnt, text, line, True, True):
             return
 
         if parser.setDateTimeAttribute(self.waterVaporSensor, "calibrationDate", type(self).CalibrationDate, text, line):
