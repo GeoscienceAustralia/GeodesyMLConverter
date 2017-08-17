@@ -95,9 +95,9 @@
                 <geo:manufacturerSerialNumber></geo:manufacturerSerialNumber>
                 <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="Antenna Type B" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">Antenna Type B</geo:igsModelCode>
                 <geo:antennaReferencePoint codeSpace="urn:ga-gov-au:antenna-reference-point-type"></geo:antennaReferencePoint>
-                <geo:marker-arpUpEcc. xsi:nil="true"></geo:marker-arpUpEcc.>
-                <geo:marker-arpNorthEcc. xsi:nil="true"></geo:marker-arpNorthEcc.>
-                <geo:marker-arpEastEcc. xsi:nil="true"></geo:marker-arpEastEcc.>
+                <geo:marker-arpUpEcc.>0.0</geo:marker-arpUpEcc.>
+                <geo:marker-arpNorthEcc.>0.0</geo:marker-arpNorthEcc.>
+                <geo:marker-arpEastEcc.>0.0</geo:marker-arpEastEcc.>
                 <geo:alignmentFromTrueNorth xsi:nil="true"></geo:alignmentFromTrueNorth>
                 <geo:antennaRadomeType codeSpace="urn:igs-org:gnss-radome-model-code"></geo:antennaRadomeType>
                 <geo:radomeSerialNumber></geo:radomeSerialNumber>

@@ -1367,13 +1367,13 @@ class GNSSAntenna(object):
                 "urn:ga-gov-au:antenna-reference-point-type"):
             return
 
-        if parser.setNillableDoubleAttribute(self.gnssAntenna, "marker_arpUpEcc", type(self).Up, text, line, True, True):
+        if parser.setDoubleAttribute(self.gnssAntenna, "marker_arpUpEcc", type(self).Up, text, line, True, True):
             return
         
-        if parser.setNillableDoubleAttribute(self.gnssAntenna, "marker_arpNorthEcc", type(self).North, text, line, True, True):
+        if parser.setDoubleAttribute(self.gnssAntenna, "marker_arpNorthEcc", type(self).North, text, line, True, True):
             return
 
-        if parser.setNillableDoubleAttribute(self.gnssAntenna, "marker_arpEastEcc", type(self).East, text, line, True, True):
+        if parser.setDoubleAttribute(self.gnssAntenna, "marker_arpEastEcc", type(self).East, text, line, True, True):
             return
         
         if parser.setNillableDoubleAttribute(self.gnssAntenna, "alignmentFromTrueNorth", type(self).Alignment, text, line, True, False):
