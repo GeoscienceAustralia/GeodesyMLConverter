@@ -140,6 +140,24 @@
             </geo:SurveyedLocalTie>
             <geo:dateInserted></geo:dateInserted>
         </geo:surveyedLocalTie>
+        <geo:surveyedLocalTie>
+            <geo:SurveyedLocalTie gml:id="local-tie-3">
+                <geo:tiedMarkerName>Marker C</geo:tiedMarkerName>
+                <geo:tiedMarkerUsage></geo:tiedMarkerUsage>
+                <geo:tiedMarkerCDPNumber></geo:tiedMarkerCDPNumber>
+                <geo:tiedMarkerDOMESNumber></geo:tiedMarkerDOMESNumber>
+                <geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                    <geo:dx xsi:nil="true"></geo:dx>
+                    <geo:dy>2.0</geo:dy>
+                    <geo:dz>3.0</geo:dz>
+                </geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                <geo:localSiteTiesAccuracy xsi:nil="true"></geo:localSiteTiesAccuracy>
+                <geo:surveyMethod></geo:surveyMethod>
+                <geo:dateMeasured></geo:dateMeasured>
+                <geo:notes></geo:notes>
+            </geo:SurveyedLocalTie>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:surveyedLocalTie>
         <geo:humiditySensor>
             <geo:HumiditySensor gml:id="humidity-sensor-1">
                 <geo:type codeSpace="urn:ga-gov-au:humidity-sensor-type">Humidity Sensor Model A</geo:type>
