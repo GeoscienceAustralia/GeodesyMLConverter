@@ -253,14 +253,23 @@
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
        Notes                  : (multiple lines)
 
-8.4.1 Water Vapor Radiometer  : 
-       Manufacturer           : 
-       Serial Number          : 
-       Distance to Antenna    : (m)
-       Height Diff to Ant     : (m)
-       Calibration date       : (CCYY-MM-DD)
-       Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Notes                  : (multiple lines)
+8.4.1 Water Vapor Radiometer  : Water Vapor Radiometer A
+       Manufacturer           : Manufacturer A
+       Serial Number          : 86
+       Distance to Antenna    : 8.8
+       Height Diff to Ant     : 1.2
+       Calibration date       : 2001-10-10
+       Effective Dates        : 2002-10-01/2013-10-10
+       Notes                  : notes
+
+8.4.2 Water Vapor Radiometer  : Water Vapor Radiometer B
+       Manufacturer           :
+       Serial Number          :
+       Distance to Antenna    :
+       Height Diff to Ant     :
+       Calibration date       :
+       Effective Dates        :
+       Notes                  :
 
 8.4.x Water Vapor Radiometer  : 
        Manufacturer           : 
