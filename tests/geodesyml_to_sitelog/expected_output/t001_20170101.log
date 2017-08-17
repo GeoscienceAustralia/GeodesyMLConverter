@@ -205,6 +205,28 @@
 
 8.   Meteorological Instrumentation
 
+8.1.1 Humidity Sensor Model   : Humidity Sensor Model A
+       Manufacturer           : Manufacturer A
+       Serial Number          : 123
+       Data Sampling Interval : 12 sec
+       Accuracy (% rel h)     : 2.00
+       Aspiration             : FAN
+       Height Diff to Ant     : 3.0 m
+       Calibration date       : 2017-10-10
+       Effective Dates        : 2017-10-10/2018-10-10
+       Notes                  : notes
+
+8.1.2 Humidity Sensor Model   : Humidity Sensor Model B
+       Manufacturer           : 
+       Serial Number          : 
+       Data Sampling Interval : 
+       Accuracy (% rel h)     : 
+       Aspiration             : 
+       Height Diff to Ant     : 0.0 m
+       Calibration date       : (CCYY-MM-DD)
+       Effective Dates        : (CCYY-MM-DD)/(CCYY-MM-DD)
+       Notes                  : 
+
 8.1.x Humidity Sensor Model   :
        Manufacturer           :
        Serial Number          :

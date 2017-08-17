@@ -158,6 +158,45 @@
             </geo:SurveyedLocalTie>
             <geo:dateInserted></geo:dateInserted>
         </geo:surveyedLocalTie>
+        <geo:humiditySensor>
+            <geo:HumiditySensor gml:id="humidity-sensor-1">
+                <geo:type codeSpace="urn:ga-gov-au:humidity-sensor-type">Humidity Sensor Model A</geo:type>
+                <geo:notes>notes</geo:notes>
+                <geo:manufacturer>Manufacturer A</geo:manufacturer>
+                <geo:serialNumber>123</geo:serialNumber>
+                <geo:heightDiffToAntenna>3.0</geo:heightDiffToAntenna>
+                <geo:calibrationDate>2017-10-10</geo:calibrationDate>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="humidity-sensor-1--time-period-1">
+                        <gml:beginPosition>2017-10-10</gml:beginPosition>
+                        <gml:endPosition>2018-10-10</gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:dataSamplingInterval>12.0</geo:dataSamplingInterval>
+                <geo:accuracy-percentRelativeHumidity>2.0</geo:accuracy-percentRelativeHumidity>
+                <geo:aspiration>FAN</geo:aspiration>
+            </geo:HumiditySensor>
+            <geo:dateInserted>2017-10-10</geo:dateInserted>
+        </geo:humiditySensor>
+        <geo:humiditySensor>
+            <geo:HumiditySensor gml:id="humidity-sensor-2">
+                <geo:type codeSpace="urn:ga-gov-au:humidity-sensor-type">Humidity Sensor Model B</geo:type>
+                <geo:manufacturer></geo:manufacturer>
+                <geo:serialNumber></geo:serialNumber>
+                <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
+                <geo:calibrationDate></geo:calibrationDate>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="humidity-sensor-2--time-period-2">
+                        <gml:beginPosition></gml:beginPosition>
+                        <gml:endPosition></gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:dataSamplingInterval xsi:nil="true"></geo:dataSamplingInterval>
+                <geo:accuracy-percentRelativeHumidity xsi:nil="true"></geo:accuracy-percentRelativeHumidity>
+                <geo:aspiration></geo:aspiration>
+            </geo:HumiditySensor>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:humiditySensor>
         <geo:siteMetadataCustodian gml:id="agency-3">
             <gmd:MD_SecurityConstraints>
                 <gmd:classification gco:nilReason="missing"/>
