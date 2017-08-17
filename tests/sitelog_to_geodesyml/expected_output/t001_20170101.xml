@@ -170,7 +170,7 @@
                 <geo:type codeSpace="urn:ga-gov-au:water-vapor-sensor-type">Water Vapor Radiometer B</geo:type>
                 <geo:manufacturer></geo:manufacturer>
                 <geo:serialNumber></geo:serialNumber>
-                <geo:heightDiffToAntenna>0.0</geo:heightDiffToAntenna>
+                <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
                 <geo:calibrationDate></geo:calibrationDate>
                 <gml:validTime>
                     <gml:TimePeriod gml:id="water-vapor-2--time-period-4">
@@ -178,7 +178,7 @@
                         <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
                 </gml:validTime>
-                <geo:distanceToAntenna>0.0</geo:distanceToAntenna>
+                <geo:distanceToAntenna xsi:nil="true"></geo:distanceToAntenna>
             </geo:WaterVaporSensor>
             <geo:dateInserted></geo:dateInserted>
         </geo:waterVaporSensor>
