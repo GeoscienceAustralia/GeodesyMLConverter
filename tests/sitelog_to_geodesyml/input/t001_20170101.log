@@ -54,15 +54,27 @@
 
 3.   GNSS Receiver Information
 
-3.1  Receiver Type            : (A20, from rcvr_ant.tab; see instructions)
-     Satellite System         : (GPS+GLO+GAL+BDS+QZSS+SBAS)
-     Serial Number            : (A20, but note the first A5 is used in SINEX)
-     Firmware Version         : (A11)
-     Elevation Cutoff Setting : (deg)
-     Date Installed           : (CCYY-MM-DDThh:mmZ)
-     Date Removed             : (CCYY-MM-DDThh:mmZ)
-     Temperature Stabiliz.    : (none or tolerance in degrees C)
-     Additional Information   : (multiple lines)
+3.1  Receiver Type            : Receiver Type A
+     Satellite System         : GPS+GLO+GAL
+     Serial Number            : 123
+     Firmware Version         : 0.11
+     Elevation Cutoff Setting : 32
+     Date Installed           : 2017-01-01
+     Date Removed             : 
+     Temperature Stabiliz.    : 3
+     Additional Information   : line one
+                              : line two
+
+3.2  Receiver Type            : Receiver Type B
+     Satellite System         : 
+     Serial Number            : 
+     Firmware Version         : 
+     Elevation Cutoff Setting : 
+     Date Installed           : 
+     Date Removed             : 
+     Temperature Stabiliz.    : 
+     Additional Information   : 
+                              : 
 
 3.x  Receiver Type            : (A20, from rcvr_ant.tab; see instructions)
      Satellite System         : (GPS+GLO+GAL+BDS+QZSS+SBAS)
