@@ -104,7 +104,6 @@ def setDoubleAttribute(target, field, pattern, text, line, mandatory=False, with
                 if withDefault:
                     setattr(target, field, 0.0)
                 else:
-                    target
                     setattr(target, field, None)
         return True
     else:
