@@ -136,6 +136,32 @@
 
 5.   Surveyed Local Ties
 
+5.1  Tied Marker Name         : Marker A
+     Tied Marker Usage        : LOCAL CONTROL
+     Tied Marker CDP Number   : abc
+     Tied Marker DOMES Number : def
+     Differential Components from GNSS Marker to the tied monument (ITRS)
+       dx (m)                 : 1
+       dy (m)                 : 2
+       dz (m)                 : 3
+     Accuracy (mm)            : 4
+     Survey method            : TRIANGULATION
+     Date Measured            : 2013-01-01T03:03Z
+     Additional Information   : notes
+
+5.2  Tied Marker Name         : Marker B
+     Tied Marker Usage        :
+     Tied Marker CDP Number   :
+     Tied Marker DOMES Number :
+     Differential Components from GNSS Marker to the tied monument (ITRS)
+       dx (m)                 :
+       dy (m)                 :
+       dz (m)                 :
+     Accuracy (mm)            :
+     Survey method            :
+     Date Measured            :
+     Additional Information   :
+
 5.x  Tied Marker Name         : 
      Tied Marker Usage        : (SLR/VLBI/LOCAL CONTROL/FOOTPRINT/etc)
      Tied Marker CDP Number   : (A4)
@@ -148,7 +174,6 @@
      Survey method            : (GPS CAMPAIGN/TRILATERATION/TRIANGULATION/etc)
      Date Measured            : (CCYY-MM-DDThh:mmZ)
      Additional Information   : (multiple lines)
-
 
 6.   Frequency Standard
 

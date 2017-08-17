@@ -108,6 +108,42 @@
             </geo:GnssAntenna>
             <geo:dateInserted></geo:dateInserted>
         </geo:gnssAntenna>
+        <geo:surveyedLocalTie>
+            <geo:SurveyedLocalTie gml:id="local-tie-1">
+                <geo:tiedMarkerName>Marker A</geo:tiedMarkerName>
+                <geo:tiedMarkerUsage>LOCAL CONTROL</geo:tiedMarkerUsage>
+                <geo:tiedMarkerCDPNumber>abc</geo:tiedMarkerCDPNumber>
+                <geo:tiedMarkerDOMESNumber>def</geo:tiedMarkerDOMESNumber>
+                <geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                    <geo:dx>1.0</geo:dx>
+                    <geo:dy>2.0</geo:dy>
+                    <geo:dz>3.0</geo:dz>
+                </geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                <geo:localSiteTiesAccuracy>4.0</geo:localSiteTiesAccuracy>
+                <geo:surveyMethod>TRIANGULATION</geo:surveyMethod>
+                <geo:dateMeasured>2013-01-01T03:03:00Z</geo:dateMeasured>
+                <geo:notes>notes</geo:notes>
+            </geo:SurveyedLocalTie>
+            <geo:dateInserted>2013-01-01T03:03:00Z</geo:dateInserted>
+        </geo:surveyedLocalTie>
+        <geo:surveyedLocalTie>
+            <geo:SurveyedLocalTie gml:id="local-tie-2">
+                <geo:tiedMarkerName>Marker B</geo:tiedMarkerName>
+                <geo:tiedMarkerUsage></geo:tiedMarkerUsage>
+                <geo:tiedMarkerCDPNumber></geo:tiedMarkerCDPNumber>
+                <geo:tiedMarkerDOMESNumber></geo:tiedMarkerDOMESNumber>
+                <geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                    <geo:dx xsi:nil="true"></geo:dx>
+                    <geo:dy xsi:nil="true"></geo:dy>
+                    <geo:dz xsi:nil="true"></geo:dz>
+                </geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                <geo:localSiteTiesAccuracy>0.0</geo:localSiteTiesAccuracy>
+                <geo:surveyMethod></geo:surveyMethod>
+                <geo:dateMeasured></geo:dateMeasured>
+                <geo:notes></geo:notes>
+            </geo:SurveyedLocalTie>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:surveyedLocalTie>
         <geo:humiditySensor>
             <geo:HumiditySensor gml:id="humidity-sensor-1">
                 <geo:type codeSpace="urn:ga-gov-au:humidity-sensor-type">Humidity Sensor Model A</geo:type>
