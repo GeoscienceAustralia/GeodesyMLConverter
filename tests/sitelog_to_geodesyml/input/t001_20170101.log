@@ -162,6 +162,19 @@
      Date Measured            :
      Additional Information   :
 
+5.3  Tied Marker Name         : Marker C
+     Tied Marker Usage        : 
+     Tied Marker CDP Number   : 
+     Tied Marker DOMES Number : 
+     Differential Components from GNSS Marker to the tied monument (ITRS)
+       dx (m)                 : 
+       dy (m)                 : 2.0
+       dz (m)                 : 3.0
+     Accuracy (mm)            : 
+     Survey method            : 
+     Date Measured            :
+     Additional Information   : 
+
 5.x  Tied Marker Name         : 
      Tied Marker Usage        : (SLR/VLBI/LOCAL CONTROL/FOOTPRINT/etc)
      Tied Marker CDP Number   : (A4)
