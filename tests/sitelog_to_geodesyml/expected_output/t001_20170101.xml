@@ -132,11 +132,7 @@
                 <geo:tiedMarkerUsage></geo:tiedMarkerUsage>
                 <geo:tiedMarkerCDPNumber></geo:tiedMarkerCDPNumber>
                 <geo:tiedMarkerDOMESNumber></geo:tiedMarkerDOMESNumber>
-                <geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
-                    <geo:dx xsi:nil="true"></geo:dx>
-                    <geo:dy xsi:nil="true"></geo:dy>
-                    <geo:dz xsi:nil="true"></geo:dz>
-                </geo:differentialComponentsGNSSMarkerToTiedMonumentITRS>
+                <geo:differentialComponentsGNSSMarkerToTiedMonumentITRS xsi:nil="true"/>
                 <geo:localSiteTiesAccuracy xsi:nil="true"></geo:localSiteTiesAccuracy>
                 <geo:surveyMethod></geo:surveyMethod>
                 <geo:dateMeasured></geo:dateMeasured>
