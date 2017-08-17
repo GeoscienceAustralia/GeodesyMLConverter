@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<geo:GeodesyML gml:id="T00100" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.4" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <geo:siteLog gml:id="t001_20170101.log">
+        <geo:formInformation>
+            <geo:preparedBy></geo:preparedBy>
+            <geo:datePrepared></geo:datePrepared>
+            <geo:reportType></geo:reportType>
+        </geo:formInformation>
+        <geo:siteIdentification>
+            <geo:siteName></geo:siteName>
+            <geo:fourCharacterID>T001</geo:fourCharacterID>
+            <geo:monumentInscription></geo:monumentInscription>
+            <geo:iersDOMESNumber></geo:iersDOMESNumber>
+            <geo:cdpNumber></geo:cdpNumber>
+            <geo:monumentDescription codeSpace="urn:ga-gov-au:monument-description-type"></geo:monumentDescription>
+            <geo:monumentFoundation></geo:monumentFoundation>
+            <geo:markerDescription></geo:markerDescription>
+            <geo:dateInstalled></geo:dateInstalled>
+            <geo:geologicCharacteristic codeSpace="urn:ga-gov-au:geologic-characteristic-type"></geo:geologicCharacteristic>
+            <geo:bedrockType></geo:bedrockType>
+            <geo:bedrockCondition></geo:bedrockCondition>
+            <geo:fractureSpacing></geo:fractureSpacing>
+            <geo:faultZonesNearby codeSpace="urn:ga-gov-au:fault-zones-type"></geo:faultZonesNearby>
+            <geo:notes></geo:notes>
+        </geo:siteIdentification>
+        <geo:siteLocation>
+            <geo:city></geo:city>
+            <geo:state></geo:state>
+            <geo:countryCodeISO codeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode" codeListValue="" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4"></geo:countryCodeISO>
+            <geo:tectonicPlate codeSpace="urn:ga-gov-au:plate-type"></geo:tectonicPlate>
+            <geo:approximatePositionITRF>
+                <geo:cartesianPosition>
+                    <gml:Point gml:id="itrf_cartesian" srsName="EPSG:7789">
+                        <gml:pos>1.0 2.0 3.0</gml:pos>
+                    </gml:Point>
+                </geo:cartesianPosition>
+                <geo:geodeticPosition>
+                    <gml:Point gml:id="itrf_geodetic" srsName="EPSG:7912">
+                        <gml:pos>12.2033888889 123.203388889 1.0</gml:pos>
+                    </gml:Point>
+                </geo:geodeticPosition>
+            </geo:approximatePositionITRF>
+            <geo:notes></geo:notes>
+        </geo:siteLocation>
+        <geo:gnssReceiver>
+            <geo:GnssReceiver gml:id="gnss-receiver-1">
+                <geo:notes>line one line two</geo:notes>
+                <geo:manufacturerSerialNumber>123</geo:manufacturerSerialNumber>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="Receiver Type A" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">Receiver Type A</geo:igsModelCode>
+                <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GPS</geo:satelliteSystem>
+                <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GLO</geo:satelliteSystem>
+                <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GAL</geo:satelliteSystem>
+                <geo:firmwareVersion>0.11</geo:firmwareVersion>
+                <geo:elevationCutoffSetting>32.0</geo:elevationCutoffSetting>
+                <geo:dateInstalled>2017-01-01</geo:dateInstalled>
+                <geo:dateRemoved></geo:dateRemoved>
+                <geo:temperatureStabilization>3.0</geo:temperatureStabilization>
+            </geo:GnssReceiver>
+            <geo:dateInserted>2017-01-01</geo:dateInserted>
+        </geo:gnssReceiver>
+        <geo:gnssReceiver>
+            <geo:GnssReceiver gml:id="gnss-receiver-2">
+                <geo:manufacturerSerialNumber></geo:manufacturerSerialNumber>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="Receiver Type B" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">Receiver Type B</geo:igsModelCode>
+                <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type"></geo:satelliteSystem>
+                <geo:firmwareVersion></geo:firmwareVersion>
+                <geo:elevationCutoffSetting xsi:nil="true"></geo:elevationCutoffSetting>
+                <geo:dateInstalled></geo:dateInstalled>
+                <geo:dateRemoved></geo:dateRemoved>
+                <geo:temperatureStabilization xsi:nil="true"></geo:temperatureStabilization>
+            </geo:GnssReceiver>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:gnssReceiver>
+        <geo:siteMetadataCustodian gml:id="agency-3">
+            <gmd:MD_SecurityConstraints>
+                <gmd:classification gco:nilReason="missing"/>
+            </gmd:MD_SecurityConstraints>
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString></gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString></gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString></gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:voice>
+                                    <gco:CharacterString></gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString></gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address id="address-3">
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString></gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString></gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString></gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString></gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString></gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"></gmd:CI_RoleCode>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteMetadataCustodian>
+    </geo:siteLog>
+</geo:GeodesyML>
