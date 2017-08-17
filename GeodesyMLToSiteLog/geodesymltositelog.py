@@ -328,7 +328,7 @@ class GnssReceiverProperty(object):
             self.dateInstalled = SiteLog.dateTime(str(SiteLog.complexValue(receiver.dateInstalled)))
             self.dateRemoved = SiteLog.dateTime(str(SiteLog.complexValue(receiver.dateRemoved)))
             stabilizer = SiteLog.simpleValue(receiver.temperatureStabilization)
-            self.temperatureStabilization = str(stabilizer) if (stabilizer > 0.0 or stabilizer < 0.0) else "none" 
+            self.temperatureStabilization = str(stabilizer) if stabilizer is not "" else "none" 
             self.notes = SiteLog.simpleValue(receiver.notes)
 
             self.typeOfReceiver = type(self).ReceiverType
