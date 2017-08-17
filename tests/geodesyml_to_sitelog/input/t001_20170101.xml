@@ -71,6 +71,43 @@
             </geo:GnssReceiver>
             <geo:dateInserted></geo:dateInserted>
         </geo:gnssReceiver>
+        <geo:gnssAntenna>
+            <geo:GnssAntenna gml:id="gnss-antenna-1">
+                <geo:notes>notes</geo:notes>
+                <geo:manufacturerSerialNumber>1234</geo:manufacturerSerialNumber>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="Antenna Type A" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">Antenna Type A</geo:igsModelCode>
+                <geo:antennaReferencePoint codeSpace="urn:ga-gov-au:antenna-reference-point-type">BPA</geo:antennaReferencePoint>
+                <geo:marker-arpUpEcc.>1.0</geo:marker-arpUpEcc.>
+                <geo:marker-arpNorthEcc.>2.0</geo:marker-arpNorthEcc.>
+                <geo:marker-arpEastEcc.>3.0</geo:marker-arpEastEcc.>
+                <geo:alignmentFromTrueNorth>5.0</geo:alignmentFromTrueNorth>
+                <geo:antennaRadomeType codeSpace="urn:igs-org:gnss-radome-model-code">Radome Type A</geo:antennaRadomeType>
+                <geo:radomeSerialNumber>123456</geo:radomeSerialNumber>
+                <geo:antennaCableType>Cable Type</geo:antennaCableType>
+                <geo:antennaCableLength>3.2345</geo:antennaCableLength>
+                <geo:dateInstalled>2017-01-01T00:01:00Z</geo:dateInstalled>
+                <geo:dateRemoved>2017-01-02T00:01:00Z</geo:dateRemoved>
+            </geo:GnssAntenna>
+            <geo:dateInserted>2017-01-01T00:01:00Z</geo:dateInserted>
+        </geo:gnssAntenna>
+        <geo:gnssAntenna>
+            <geo:GnssAntenna gml:id="gnss-antenna-2">
+                <geo:manufacturerSerialNumber></geo:manufacturerSerialNumber>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="Antenna Type B" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">Antenna Type B</geo:igsModelCode>
+                <geo:antennaReferencePoint codeSpace="urn:ga-gov-au:antenna-reference-point-type"></geo:antennaReferencePoint>
+                <geo:marker-arpUpEcc.>0.0</geo:marker-arpUpEcc.>
+                <geo:marker-arpNorthEcc.>0.0</geo:marker-arpNorthEcc.>
+                <geo:marker-arpEastEcc.>0.0</geo:marker-arpEastEcc.>
+                <geo:alignmentFromTrueNorth xsi:nil="true"></geo:alignmentFromTrueNorth>
+                <geo:antennaRadomeType codeSpace="urn:igs-org:gnss-radome-model-code"></geo:antennaRadomeType>
+                <geo:radomeSerialNumber></geo:radomeSerialNumber>
+                <geo:antennaCableType></geo:antennaCableType>
+                <geo:antennaCableLength xsi:nil="true"></geo:antennaCableLength>
+                <geo:dateInstalled></geo:dateInstalled>
+                <geo:dateRemoved></geo:dateRemoved>
+            </geo:GnssAntenna>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:gnssAntenna>
         <geo:siteMetadataCustodian gml:id="agency-3">
             <gmd:MD_SecurityConstraints>
                 <gmd:classification gco:nilReason="missing"/>
