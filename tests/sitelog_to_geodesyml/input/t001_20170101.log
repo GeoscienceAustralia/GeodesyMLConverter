@@ -89,20 +89,35 @@
 
 4.   GNSS Antenna Information
 
-4.1  Antenna Type             : (A20, from rcvr_ant.tab; see instructions)
-     Serial Number            : (A*, but note the first A5 is used in SINEX)
-     Antenna Reference Point  : (BPA/BCR/XXX from "antenna.gra"; see instr.)
-     Marker->ARP Up Ecc. (m)  : (F8.4)
-     Marker->ARP North Ecc(m) : (F8.4)
-     Marker->ARP East Ecc(m)  : (F8.4)
-     Alignment from True N    : (deg; + is clockwise/east)
-     Antenna Radome Type      : (A4 from rcvr_ant.tab; see instructions)
-     Radome Serial Number     : 
-     Antenna Cable Type       : (vendor & type number)
-     Antenna Cable Length     : (m)
-     Date Installed           : (CCYY-MM-DDThh:mmZ)
-     Date Removed             : (CCYY-MM-DDThh:mmZ)
-     Additional Information   : (multiple lines)
+4.1  Antenna Type             : Antenna Type A
+     Serial Number            : 1234
+     Antenna Reference Point  : BPA
+     Marker->ARP Up Ecc. (m)  : 1
+     Marker->ARP North Ecc(m) : 2
+     Marker->ARP East Ecc(m)  : 3
+     Alignment from True N    : 5
+     Antenna Radome Type      : Radome Type A
+     Radome Serial Number     : 123456
+     Antenna Cable Type       : Cable Type
+     Antenna Cable Length     : 3.2345 m
+     Date Installed           : 2017-01-01T00:01Z
+     Date Removed             : 2017-01-02T00:01Z
+     Additional Information   : notes
+
+4.2  Antenna Type             : Antenna Type B
+     Serial Number            :
+     Antenna Reference Point  :
+     Marker->ARP Up Ecc. (m)  :
+     Marker->ARP North Ecc(m) :
+     Marker->ARP East Ecc(m)  :
+     Alignment from True N    :
+     Antenna Radome Type      :
+     Radome Serial Number     :
+     Antenna Cable Type       :
+     Antenna Cable Length     :
+     Date Installed           :
+     Date Removed             :
+     Additional Information   :
 
 4.x  Antenna Type             : (A20, from rcvr_ant.tab; see instructions)
      Serial Number            : (A*, but note the first A5 is used in SINEX)
