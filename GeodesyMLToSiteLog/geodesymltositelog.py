@@ -432,7 +432,7 @@ class GnssAntennaProperty(object):
             self.radomeSerialNumber = SiteLog.simpleValue(antenna.radomeSerialNumber)
             self.antennaCableType = SiteLog.simpleValue(antenna.antennaCableType)
             length = SiteLog.simpleValue(antenna.antennaCableLength)
-            self.antennaCableLength = (str(length) + " m") if length > 0.0 else ""
+            self.antennaCableLength = (str(length) + " m") if length is not "" else ""
             self.dateInstalled = SiteLog.dateTime(str(SiteLog.complexValue(antenna.dateInstalled)))
             self.dateRemoved = SiteLog.dateTime(str(SiteLog.complexValue(antenna.dateRemoved)))
             self.notes = SiteLog.simpleValue(antenna.notes)
