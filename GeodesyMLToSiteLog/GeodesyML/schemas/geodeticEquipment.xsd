@@ -25,6 +25,10 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
             </ul>
         </documentation>
     </annotation>
+    <simpleType name="NillableDouble" nillable="true">
+        <restriction base="double" nillable="true">
+        </restriction>
+    </simpleType>
     <complexType name="geodeticEquipmentItemPropertyType">
         <sequence>
             <sequence minOccurs="0">

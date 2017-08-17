@@ -165,7 +165,7 @@
      Tied Marker CDP Number   : 
      Tied Marker DOMES Number : 
      Differential Components from GNSS Marker to the tied monument (ITRS)
-       dx (m)                 : 0.0
+       dx (m)                 : 
        dy (m)                 : 2.0
        dz (m)                 : 3.0
      Accuracy (mm)            : 
