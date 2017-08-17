@@ -913,9 +913,13 @@ class LocalTie(object):
     def complete(self):
 
         differentialComponents = geo.differentialComponentsGNSSMarkerToTiedMonumentITRS()
-        setattr(differentialComponents, "dx", self.dx[0])
-        setattr(differentialComponents, "dy", self.dy[0])
-        setattr(differentialComponents, "dz", self.dz[0])
+
+        if self.dx[0]._isNil() and self.dy[0]._isNil() and self.dz[0]._isNil():
+            differentialComponents._setIsNil()
+        else:
+            setattr(differentialComponents, "dx", self.dx[0])
+            setattr(differentialComponents, "dy", self.dy[0])
+            setattr(differentialComponents, "dz", self.dz[0])
 
         setattr(self.localTie, "differentialComponentsGNSSMarkerToTiedMonumentITRS", differentialComponents)
 
