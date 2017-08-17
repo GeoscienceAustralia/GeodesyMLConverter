@@ -32,7 +32,7 @@ class SiteLog(object):
 
     @classmethod
     def simpleValue(cls, item):
-        return "" if item is None else item
+        return "" if item is None or item._isNil() else item
 
     @classmethod
     def dateTime(cls, text):
@@ -319,7 +319,12 @@ class GnssReceiverProperty(object):
             self.manufacturerSerialNumber = SiteLog.simpleValue(receiver.manufacturerSerialNumber)
             self.firmwareVersion = SiteLog.simpleValue(receiver.firmwareVersion)
             cutoff = SiteLog.simpleValue(receiver.elevationCutoffSetting)
-            self.elevationCutoffSetting = str(int(cutoff)) + " deg" if str(cutoff) else ""
+
+            if cutoff is not None and str(cutoff):
+                self.elevationCutoffSetting = str(int(cutoff)) + " deg"
+            else:
+                self.elevationCutoffSetting = ""
+
             self.dateInstalled = SiteLog.dateTime(str(SiteLog.complexValue(receiver.dateInstalled)))
             self.dateRemoved = SiteLog.dateTime(str(SiteLog.complexValue(receiver.dateRemoved)))
             stabilizer = SiteLog.simpleValue(receiver.temperatureStabilization)
