@@ -211,15 +211,25 @@
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
        Notes                  : (multiple lines)
 
-8.2.1 Pressure Sensor Model   : 
-       Manufacturer           : 
-       Serial Number          : 
-       Data Sampling Interval : (sec)
-       Accuracy               : (hPa)
-       Height Diff to Ant     : (m)
-       Calibration date       : (CCYY-MM-DD)
-       Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Notes                  : (multiple lines)
+8.2.1 Pressure Sensor Model   : Pressure Sensor Model A
+       Manufacturer           : Manufacturer A
+       Serial Number          : 94375
+       Data Sampling Interval : 23.34456
+       Accuracy               : 2.32
+       Height Diff to Ant     : 3.4
+       Calibration date       : 2005-03-03
+       Effective Dates        : 2004-01-01/2006-03-03
+       Notes                  : notes
+
+8.2.2 Pressure Sensor Model   : Pressure Sensor Model B
+       Manufacturer           :
+       Serial Number          :
+       Data Sampling Interval :
+       Accuracy               :
+       Height Diff to Ant     :
+       Calibration date       :
+       Effective Dates        :
+       Notes                  :
 
 8.2.x Pressure Sensor Model   : 
        Manufacturer           : 
