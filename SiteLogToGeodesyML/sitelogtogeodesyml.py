@@ -88,7 +88,7 @@ def toLatitude(value, line):
         return float(text)
     else:
         parser.errorMessage(line, text, "A latude value in format '[+-]ddmmss.s' (d:degree, m:minute, s:second) is expected")
-        return 0.0
+        return None
 
 
 def toLongitude(value, line):
@@ -107,7 +107,7 @@ def toLongitude(value, line):
         return float(text)
     else:
         parser.errorMessage(line, text, "A longitude value in format '[+-]dddmmss.s' (d:degree, m:minute, s:second) is expected")
-        return 0.0
+        return None
 
 
 def countryFullname(name):
@@ -1147,12 +1147,12 @@ class SiteLocation(object):
         self.siteLocation = geo.siteLocationType()
         self.notes = [""]
         self.notesAppended = False
-        self.x = [0.0]
-        self.y = [0.0]
-        self.z = [0.0]
-        self.lat = [0.0]
-        self.lng = [0.0]
-        self.ele = [0.0]
+        self.x = [None]
+        self.y = [None]
+        self.z = [None]
+        self.lat = [None]
+        self.lng = [None]
+        self.ele = [None]
 
     def parse(self, text, line):
         if parser.setTextAttribute(self.siteLocation, "city", type(self).City, text, line):
@@ -1167,13 +1167,13 @@ class SiteLocation(object):
         if parser.parseCodeType(self.siteLocation, "tectonicPlate", type(self).Tectonic, text, line, "urn:ga-gov-au:plate-type"):
             return
 
-        if parser.assignDouble(self.x, type(self).XCoordinate, text, line, True):
+        if parser.assignDouble(self.x, type(self).XCoordinate, text, line):
             return
 
-        if parser.assignDouble(self.y, type(self).YCoordinate, text, line, True):
+        if parser.assignDouble(self.y, type(self).YCoordinate, text, line):
             return
 
-        if parser.assignDouble(self.z, type(self).ZCoordinate, text, line, True):
+        if parser.assignDouble(self.z, type(self).ZCoordinate, text, line):
             return
 
         if parser.assignText(self.lat, type(self).Latitude, text, line):
@@ -1184,7 +1184,7 @@ class SiteLocation(object):
             self.lng[0] = toLongitude(self.lng[0], line)
             return
 
-        if parser.assignDouble(self.ele, type(self).Elevation, text, line, True):
+        if parser.assignDouble(self.ele, type(self).Elevation, text, line):
             return
 
         if parser.assignNotes(self.notes, type(self).Notes, text, line):
@@ -1199,24 +1199,24 @@ class SiteLocation(object):
     def complete(self):
         
         self.siteLocation.approximatePositionITRF = pyxb.BIND()
-        
-        cartesianPositionPoint = gml.Point(id="itrf_cartesian")
-        directPositionType = gml.DirectPositionType([self.x[0], self.y[0], self.z[0]])      
-        cartesianPositionPoint.srsName = "EPSG:7789"
-        cartesianPositionPoint.pos = directPositionType;
-        cartesianPosition = geo.cartesianPosition()
-        cartesianPosition.append(cartesianPositionPoint)
-        
-        self.siteLocation.approximatePositionITRF.append(cartesianPosition);
-                
-        geodeticPositionPoint = gml.Point(id="itrf_geodetic")
-        directPositionType = gml.DirectPositionType([self.lat[0], self.lng[0], self.ele[0]])
-        geodeticPositionPoint.srsName = "EPSG:7912" 
-        geodeticPositionPoint.pos = directPositionType;
-        geodeticPosition = geo.geodeticPosition()
-        geodeticPosition.append(geodeticPositionPoint)
-        
-        self.siteLocation.approximatePositionITRF.append(geodeticPosition);
+
+        if self.x[0] is not None and self.y[0] is not None and self.z[0] is not None:
+            cartesianPositionPoint = gml.Point(id="itrf_cartesian")
+            directPositionType = gml.DirectPositionType([self.x[0], self.y[0], self.z[0]])
+            cartesianPositionPoint.srsName = "EPSG:7789"
+            cartesianPositionPoint.pos = directPositionType
+            cartesianPosition = geo.cartesianPosition()
+            cartesianPosition.append(cartesianPositionPoint)
+            self.siteLocation.approximatePositionITRF.append(cartesianPosition);
+
+        if self.lat[0] is not None and self.lng[0] is not None and self.ele[0] is not None:
+            geodeticPositionPoint = gml.Point(id="itrf_geodetic")
+            directPositionType = gml.DirectPositionType([self.lat[0], self.lng[0], self.ele[0]])
+            geodeticPositionPoint.srsName = "EPSG:7912"
+            geodeticPositionPoint.pos = directPositionType
+            geodeticPosition = geo.geodeticPosition()
+            geodeticPosition.append(geodeticPositionPoint)
+            self.siteLocation.approximatePositionITRF.append(geodeticPosition)
                                               
         if not self.notesAppended:
             self.notes[0] = parser.processingNotes(self.notes[0])

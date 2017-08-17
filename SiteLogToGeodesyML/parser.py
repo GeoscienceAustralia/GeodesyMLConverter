@@ -534,7 +534,7 @@ def assignNillableDouble(variable, pattern, text, line, mandatory=False):
         return False
 
 
-def assignDouble(variable, pattern, text, line, mandatory=False):
+def assignDouble(variable, pattern, text, line):
     floatPattern = re.compile(r'(?P<float>[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?)', re.IGNORECASE)
     ok = re.match(pattern, text)
     if ok:
@@ -546,12 +546,10 @@ def assignDouble(variable, pattern, text, line, mandatory=False):
                 variable[0] = float(floatValue)
             else:
                 logger.info("line %s: invalid value as %s", line, value)
-                if mandatory:
-                    variable[0] = 0.0
+                variable[0] = None
         else:
             logger.info("line %s: missing value", line)
-            if mandatory:
-                variable[0] = 0.0
+            variable[0] = None
         return True
     else:
         return False
