@@ -584,13 +584,13 @@ class PressureSensor(object):
         if parser.setTextAttribute(self.pressureSensor, "serialNumber", type(self).SerialNumber, text, line):
             return
 
-        if parser.setDoubleAttribute(self.pressureSensor, "dataSamplingInterval", type(self).Interval, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.pressureSensor, "dataSamplingInterval", type(self).Interval, text, line, True, True):
             return
 
-        if parser.setDoubleAttribute(self.pressureSensor, "accuracy_hPa", type(self).Accuracy, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.pressureSensor, "accuracy_hPa", type(self).Accuracy, text, line, True, True):
             return
 
-        if parser.setDoubleAttribute(self.pressureSensor, "heightDiffToAntenna", type(self).DiffToAnt, text, line, True, True):
+        if parser.setNillableDoubleAttribute(self.pressureSensor, "heightDiffToAntenna", type(self).DiffToAnt, text, line, True, True):
             return
 
         if parser.setDateTimeAttribute(self.pressureSensor, "calibrationDate", type(self).CalibrationDate, text, line):

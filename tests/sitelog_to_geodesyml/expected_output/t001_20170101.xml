@@ -171,7 +171,7 @@
                 <geo:type codeSpace="urn:ga-gov-au:pressure-sensor-type">Pressure Sensor Model B</geo:type>
                 <geo:manufacturer></geo:manufacturer>
                 <geo:serialNumber></geo:serialNumber>
-                <geo:heightDiffToAntenna>0.0</geo:heightDiffToAntenna>
+                <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
                 <geo:calibrationDate></geo:calibrationDate>
                 <gml:validTime>
                     <gml:TimePeriod gml:id="pressure-sensor-2--time-period-4">
@@ -179,8 +179,8 @@
                         <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
                 </gml:validTime>
-                <geo:dataSamplingInterval>0.0</geo:dataSamplingInterval>
-                <geo:accuracy-hPa>0.0</geo:accuracy-hPa>
+                <geo:dataSamplingInterval xsi:nil="true"></geo:dataSamplingInterval>
+                <geo:accuracy-hPa xsi:nil="true"></geo:accuracy-hPa>
             </geo:PressureSensor>
             <geo:dateInserted></geo:dateInserted>
         </geo:pressureSensor>
