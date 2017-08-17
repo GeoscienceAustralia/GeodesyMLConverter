@@ -1,4 +1,6 @@
 *.pyc
 .terraform/
+.eggs
+build
 tests/sitelog_to_geodesyml/generated_output
 tests/geodesyml_to_sitelog/generated_output
