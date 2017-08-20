@@ -57,7 +57,7 @@
      Satellite System         : GPS+GLO+GAL
      Serial Number            : 123
      Firmware Version         : 0.11
-     Elevation Cutoff Setting : 32 deg
+     Elevation Cutoff Setting : 33 deg
      Date Installed           : 2017-01-01T00:00Z
      Date Removed             : (CCYY-MM-DDThh:mmZ)
      Temperature Stabiliz.    : 3.0
@@ -222,7 +222,7 @@
        Data Sampling Interval : 
        Accuracy (% rel h)     : 
        Aspiration             : 
-       Height Diff to Ant     : 0.0 m
+       Height Diff to Ant     : 
        Calibration date       : (CCYY-MM-DD)
        Effective Dates        : (CCYY-MM-DD)/(CCYY-MM-DD)
        Notes                  : 
