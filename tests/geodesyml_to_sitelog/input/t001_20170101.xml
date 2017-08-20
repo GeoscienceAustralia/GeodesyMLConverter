@@ -51,7 +51,7 @@
                 <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GLO</geo:satelliteSystem>
                 <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GAL</geo:satelliteSystem>
                 <geo:firmwareVersion>0.11</geo:firmwareVersion>
-                <geo:elevationCutoffSetting>32.0</geo:elevationCutoffSetting>
+                <geo:elevationCutoffSetting>32.8</geo:elevationCutoffSetting>
                 <geo:dateInstalled>2017-01-01</geo:dateInstalled>
                 <geo:dateRemoved></geo:dateRemoved>
                 <geo:temperatureStabilization>3.0</geo:temperatureStabilization>

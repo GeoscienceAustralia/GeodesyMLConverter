@@ -62,7 +62,7 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
                     <group ref="geo:RemarksGroup"/>
                     <element name="manufacturer" type="string"/>
                     <element name="serialNumber" type="string"/>
-                    <element name="heightDiffToAntenna" type="double"/>
+                    <element name="heightDiffToAntenna" type="geo:NillableDouble" nillable="true"/>
                     <element name="calibrationDate" type="gml:TimePositionType"/>
                     <element ref="gml:validTime"/>
                 </sequence>
@@ -198,8 +198,8 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
         <complexContent>
             <extension base="geo:BaseSensorEquipmentType">
                 <sequence>
-                    <element name="dataSamplingInterval" type="double"/>
-                    <element name="accuracy-percentRelativeHumidity" type="double"/>
+                    <element name="dataSamplingInterval" type="geo:NillableDouble" nillable="true"/>
+                    <element name="accuracy-percentRelativeHumidity" type="geo:NillableDouble" nillable="true"/>
                     <element name="aspiration" type="string"/>
                 </sequence>
             </extension>

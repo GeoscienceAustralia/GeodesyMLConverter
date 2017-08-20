@@ -31,8 +31,11 @@ class SiteLog(object):
         return "" if item is None else item.value()
 
     @classmethod
-    def simpleValue(cls, item):
-        return "" if item is None or item._isNil() else item
+    def simpleValue(cls, item, pattern=None):
+        if item is None or item._isNil():
+            return ""
+        else:
+            return (pattern.format(item) if pattern else str(item)).strip()
 
     @classmethod
     def dateTime(cls, text):
@@ -318,17 +321,11 @@ class GnssReceiverProperty(object):
 
             self.manufacturerSerialNumber = SiteLog.simpleValue(receiver.manufacturerSerialNumber)
             self.firmwareVersion = SiteLog.simpleValue(receiver.firmwareVersion)
-            cutoff = SiteLog.simpleValue(receiver.elevationCutoffSetting)
-
-            if cutoff is not None and str(cutoff):
-                self.elevationCutoffSetting = str(int(cutoff)) + " deg"
-            else:
-                self.elevationCutoffSetting = ""
-
+            self.elevationCutoffSetting = SiteLog.simpleValue(receiver.elevationCutoffSetting, "{:.0f} deg")
             self.dateInstalled = SiteLog.dateTime(str(SiteLog.complexValue(receiver.dateInstalled)))
             self.dateRemoved = SiteLog.dateTime(str(SiteLog.complexValue(receiver.dateRemoved)))
             stabilizer = SiteLog.simpleValue(receiver.temperatureStabilization)
-            self.temperatureStabilization = str(stabilizer) if stabilizer is not "" else "none" 
+            self.temperatureStabilization = stabilizer or "none"
             self.notes = SiteLog.simpleValue(receiver.notes)
 
             self.typeOfReceiver = type(self).ReceiverType
@@ -420,19 +417,17 @@ class GnssAntennaProperty(object):
             self.antennaModel = SiteLog.complexValue(antenna.igsModelCode)
             self.manufacturerSerialNumber = SiteLog.simpleValue(antenna.manufacturerSerialNumber)
             self.antennaReferencePoint = SiteLog.complexValue(antenna.antennaReferencePoint)
-            self.marker_arpUpEcc = '{:08.4f}'.format(SiteLog.simpleValue(antenna.marker_arpUpEcc))
-            self.marker_arpNorthEcc = '{:08.4f}'.format(SiteLog.simpleValue(antenna.marker_arpNorthEcc))
-            self.marker_arpEastEcc = '{:08.4f}'.format(SiteLog.simpleValue(antenna.marker_arpEastEcc))
-            trueNorth = SiteLog.simpleValue(antenna.alignmentFromTrueNorth)
-            if trueNorth > 0.0 or trueNorth < 0.0:
-                self.alignmentFromTrueNorth = '{:+d}'.format(int(trueNorth)) + " deg" if str(trueNorth) else ""
-            else:
-                self.alignmentFromTrueNorth = '{:d}'.format(int(trueNorth)) + " deg" if str(trueNorth) else ""
+            self.marker_arpUpEcc = SiteLog.simpleValue(antenna.marker_arpUpEcc, "{:08.4f}")
+            self.marker_arpNorthEcc = SiteLog.simpleValue(antenna.marker_arpNorthEcc, "{:08.4f}")
+            self.marker_arpEastEcc = SiteLog.simpleValue(antenna.marker_arpEastEcc, "{:08.4f}")
+
+            trueNorth = SiteLog.simpleValue(antenna.alignmentFromTrueNorth, "{:+.0f} deg")
+            self.alignmentFromTrueNorth = "0" if trueNorth == "+0" else trueNorth
+
             self.antennaRadomeType = SiteLog.complexValue(antenna.antennaRadomeType)
             self.radomeSerialNumber = SiteLog.simpleValue(antenna.radomeSerialNumber)
             self.antennaCableType = SiteLog.simpleValue(antenna.antennaCableType)
-            length = SiteLog.simpleValue(antenna.antennaCableLength)
-            self.antennaCableLength = (str(length) + " m") if length is not "" else ""
+            self.antennaCableLength = SiteLog.simpleValue(antenna.antennaCableLength, "{} m")
             self.dateInstalled = SiteLog.dateTime(str(SiteLog.complexValue(antenna.dateInstalled)))
             self.dateRemoved = SiteLog.dateTime(str(SiteLog.complexValue(antenna.dateRemoved)))
             self.notes = SiteLog.simpleValue(antenna.notes)
@@ -528,6 +523,7 @@ class SurveyedLocalTieProperty(object):
             self.tiedMarkerUsage = SiteLog.simpleValue(localTie.tiedMarkerUsage)
             self.tiedMarkerCDPNumber = SiteLog.simpleValue(localTie.tiedMarkerCDPNumber)
             self.tiedMarkerDOMESNumber = SiteLog.simpleValue(localTie.tiedMarkerDOMESNumber)
+
             try:
                 self.dx = str(SiteLog.simpleValue(localTie.differentialComponentsGNSSMarkerToTiedMonumentITRS.dx))
             except:
@@ -540,8 +536,8 @@ class SurveyedLocalTieProperty(object):
                 self.dz = str(SiteLog.simpleValue(localTie.differentialComponentsGNSSMarkerToTiedMonumentITRS.dz))
             except:
                 self.dz = ""
-            accuracy = SiteLog.simpleValue(localTie.localSiteTiesAccuracy)
-            self.localSiteTiesAccuracy = str(accuracy) if accuracy > 0.0 else "" 
+
+            self.localSiteTiesAccuracy = SiteLog.simpleValue(localTie.localSiteTiesAccuracy)
             self.surveyMethod = SiteLog.simpleValue(localTie.surveyMethod)
             self.dateMeasured = SiteLog.dateTime(str(SiteLog.complexValue(localTie.dateMeasured)))
             self.notes = SiteLog.simpleValue(localTie.notes)
@@ -618,7 +614,7 @@ class FrequencyStandardProperty(object):
         def __init__(self, frequencyStandard):
             self.standardType = SiteLog.complexValue(frequencyStandard.standardType)
             frequency = SiteLog.simpleValue(frequencyStandard.inputFrequency)
-            self.inputFrequency = (str(int(frequency)) + " MHz") if frequency else ""
+            self.inputFrequency = SiteLog.simpleValue(frequencyStandard.inputFrequency, "{:.0f} Mhz")
             try:
                 begin = SiteLog.date(str(SiteLog.complexValue(frequencyStandard.validTime.AbstractTimePrimitive.beginPosition)))
                 if not str(begin):
@@ -789,12 +785,10 @@ class HumiditySensorProperty(object):
             self.type = SiteLog.complexValue(humiditySensor.type)
             self.manufacturer = SiteLog.simpleValue(humiditySensor.manufacturer)
             self.serialNumber = SiteLog.simpleValue(humiditySensor.serialNumber)
-            interval = SiteLog.simpleValue(humiditySensor.dataSamplingInterval)
-            self.dataSamplingInterval = (str(int(interval)) + " sec") if interval > 0.0 else ""
-            accuracy = SiteLog.simpleValue(humiditySensor.accuracy_percentRelativeHumidity)
-            self.accuracy_percentRelativeHumidity = '{:.2f}'.format(accuracy) if accuracy > 0.0 else ""
+            self.dataSamplingInterval = SiteLog.simpleValue(humiditySensor.dataSamplingInterval, "{:.0f} sec")
+            self.accuracy_percentRelativeHumidity = SiteLog.simpleValue(humiditySensor.accuracy_percentRelativeHumidity, "{:.2f}")
             self.aspiration = SiteLog.simpleValue(humiditySensor.aspiration)
-            self.heightDiffToAntenna = str(SiteLog.simpleValue(humiditySensor.heightDiffToAntenna)) + " m"
+            self.heightDiffToAntenna = SiteLog.simpleValue(humiditySensor.heightDiffToAntenna, "{} m")
             self.calibrationDate = SiteLog.date(str(SiteLog.complexValue(humiditySensor.calibrationDate)))
             try:
                 begin = SiteLog.date(str(SiteLog.complexValue(humiditySensor.validTime.AbstractTimePrimitive.beginPosition)))
@@ -890,10 +884,8 @@ class PressureSensorProperty(object):
             self.type = SiteLog.complexValue(pressureSensor.type)
             self.manufacturer = SiteLog.simpleValue(pressureSensor.manufacturer)
             self.serialNumber = SiteLog.simpleValue(pressureSensor.serialNumber)
-            interval = SiteLog.simpleValue(pressureSensor.dataSamplingInterval)
-            self.dataSamplingInterval = (str(int(interval)) + " sec") if interval > 0.0 else ""
-            accuracy = SiteLog.simpleValue(pressureSensor.accuracy_hPa)
-            self.accuracy_hPa = ('{:.2f}'.format(accuracy) + " hPa") if accuracy > 0.0 else ""
+            self.dataSamplingInterval = SiteLog.simpleValue(pressureSensor.dataSamplingInterval, "{:.0f} sec")
+            self.accuracy_hPa = SiteLog.simpleValue(pressureSensor.accuracy_hPa, "{:.2f} hPa")
             self.heightDiffToAntenna = str(SiteLog.simpleValue(pressureSensor.heightDiffToAntenna)) + " m"
             self.calibrationDate = SiteLog.date(str(SiteLog.complexValue(pressureSensor.calibrationDate)))
             try:
@@ -990,10 +982,8 @@ class TemperatureSensorProperty(object):
             self.type = SiteLog.complexValue(temperatureSensor.type)
             self.manufacturer = SiteLog.simpleValue(temperatureSensor.manufacturer)
             self.serialNumber = SiteLog.simpleValue(temperatureSensor.serialNumber)
-            interval = SiteLog.simpleValue(temperatureSensor.dataSamplingInterval)
-            self.dataSamplingInterval = (str(int(interval)) + " sec") if interval > 0.0 else ""
-            accuracy = SiteLog.simpleValue(temperatureSensor.accuracy_degreesCelcius)
-            self.accuracy_degreesCelcius = ('{:.2f}'.format(accuracy) + " deg C") if accuracy > 0.0 else ""
+            self.dataSamplingInterval = SiteLog.simpleValue(temperatureSensor.dataSamplingInterval, "{:.0f} sec")
+            self.accuracy_degreesCelcius = SiteLog.simpleValue(temperatureSensor.accuracy_degreesCelcius, "{:.2f} deg")
             self.aspiration = SiteLog.simpleValue(temperatureSensor.aspiration)
             self.heightDiffToAntenna = str(SiteLog.simpleValue(temperatureSensor.heightDiffToAntenna)) + " m"
             self.calibrationDate = SiteLog.date(str(SiteLog.complexValue(temperatureSensor.calibrationDate)))
