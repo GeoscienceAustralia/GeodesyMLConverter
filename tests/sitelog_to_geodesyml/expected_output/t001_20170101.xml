@@ -158,6 +158,48 @@
             </geo:SurveyedLocalTie>
             <geo:dateInserted></geo:dateInserted>
         </geo:surveyedLocalTie>
+        <geo:frequencyStandard>
+            <geo:FrequencyStandard gml:id="frequency-standard-1">
+                <geo:standardType codeSpace="urn:ga-gov-au:frequency-standard-type">CESIUM</geo:standardType>
+                <geo:inputFrequency>3.67</geo:inputFrequency>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="frequency-standard-1--time-period-1">
+                        <gml:beginPosition>2012-02-03</gml:beginPosition>
+                        <gml:endPosition>2014-03-04</gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes>notes</geo:notes>
+            </geo:FrequencyStandard>
+            <geo:dateInserted>2012-02-03</geo:dateInserted>
+        </geo:frequencyStandard>
+        <geo:frequencyStandard>
+            <geo:FrequencyStandard gml:id="frequency-standard-2">
+                <geo:standardType codeSpace="urn:ga-gov-au:frequency-standard-type">EXTERNAL</geo:standardType>
+                <geo:inputFrequency xsi:nil="true"></geo:inputFrequency>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="frequency-standard-2--time-period-2">
+                        <gml:beginPosition></gml:beginPosition>
+                        <gml:endPosition></gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes></geo:notes>
+            </geo:FrequencyStandard>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:frequencyStandard>
+        <geo:frequencyStandard>
+            <geo:FrequencyStandard gml:id="frequency-standard-3">
+                <geo:standardType codeSpace="urn:ga-gov-au:frequency-standard-type">INTERNAL</geo:standardType>
+                <geo:inputFrequency xsi:nil="true"></geo:inputFrequency>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="frequency-standard-3--time-period-3">
+                        <gml:beginPosition></gml:beginPosition>
+                        <gml:endPosition></gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes></geo:notes>
+            </geo:FrequencyStandard>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:frequencyStandard>
         <geo:humiditySensor>
             <geo:HumiditySensor gml:id="humidity-sensor-1">
                 <geo:type codeSpace="urn:ga-gov-au:humidity-sensor-type">Humidity Sensor Model A</geo:type>
@@ -167,7 +209,7 @@
                 <geo:heightDiffToAntenna>3.0</geo:heightDiffToAntenna>
                 <geo:calibrationDate>2017-10-10</geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="humidity-sensor-1--time-period-1">
+                    <gml:TimePeriod gml:id="humidity-sensor-1--time-period-4">
                         <gml:beginPosition>2017-10-10</gml:beginPosition>
                         <gml:endPosition>2018-10-10</gml:endPosition>
                     </gml:TimePeriod>
@@ -186,7 +228,7 @@
                 <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
                 <geo:calibrationDate></geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="humidity-sensor-2--time-period-2">
+                    <gml:TimePeriod gml:id="humidity-sensor-2--time-period-5">
                         <gml:beginPosition></gml:beginPosition>
                         <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
@@ -206,7 +248,7 @@
                 <geo:heightDiffToAntenna>3.4</geo:heightDiffToAntenna>
                 <geo:calibrationDate>2005-03-03</geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="pressure-sensor-1--time-period-3">
+                    <gml:TimePeriod gml:id="pressure-sensor-1--time-period-6">
                         <gml:beginPosition>2004-01-01</gml:beginPosition>
                         <gml:endPosition>2006-03-03</gml:endPosition>
                     </gml:TimePeriod>
@@ -224,7 +266,7 @@
                 <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
                 <geo:calibrationDate></geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="pressure-sensor-2--time-period-4">
+                    <gml:TimePeriod gml:id="pressure-sensor-2--time-period-7">
                         <gml:beginPosition></gml:beginPosition>
                         <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
@@ -243,7 +285,7 @@
                 <geo:heightDiffToAntenna>0.333333</geo:heightDiffToAntenna>
                 <geo:calibrationDate>2016-01-01</geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="temperature-sensor-1--time-period-5">
+                    <gml:TimePeriod gml:id="temperature-sensor-1--time-period-8">
                         <gml:beginPosition>2015-01-01</gml:beginPosition>
                         <gml:endPosition>2017-02-02</gml:endPosition>
                     </gml:TimePeriod>
@@ -262,7 +304,7 @@
                 <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
                 <geo:calibrationDate></geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="temperature-sensor-2--time-period-6">
+                    <gml:TimePeriod gml:id="temperature-sensor-2--time-period-9">
                         <gml:beginPosition></gml:beginPosition>
                         <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
@@ -282,7 +324,7 @@
                 <geo:heightDiffToAntenna>1.2</geo:heightDiffToAntenna>
                 <geo:calibrationDate>2001-10-10</geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="water-vapor-1--time-period-7">
+                    <gml:TimePeriod gml:id="water-vapor-1--time-period-10">
                         <gml:beginPosition>2002-10-01</gml:beginPosition>
                         <gml:endPosition>2013-10-10</gml:endPosition>
                     </gml:TimePeriod>
@@ -299,7 +341,7 @@
                 <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
                 <geo:calibrationDate></geo:calibrationDate>
                 <gml:validTime>
-                    <gml:TimePeriod gml:id="water-vapor-2--time-period-8">
+                    <gml:TimePeriod gml:id="water-vapor-2--time-period-11">
                         <gml:beginPosition></gml:beginPosition>
                         <gml:endPosition></gml:endPosition>
                     </gml:TimePeriod>
