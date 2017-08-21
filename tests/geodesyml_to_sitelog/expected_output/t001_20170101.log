@@ -283,6 +283,28 @@
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
        Notes                  : (multiple lines)
 
+8.3.1 Temp. Sensor Model      : Temperature Sensor Model A
+       Manufacturer           : Manufacturer A
+       Serial Number          : 48
+       Data Sampling Interval : 2 sec
+       Accuracy               : 0.89 deg
+       Aspiration             : FAN
+       Height Diff to Ant     : 0.333333 m
+       Calibration date       : 2016-01-01
+       Effective Dates        : 2015-01-01/2017-02-02
+       Notes                  : notes
+
+8.3.2 Temp. Sensor Model      : Temperature Sensor Model B
+       Manufacturer           : 
+       Serial Number          : 
+       Data Sampling Interval : 
+       Accuracy               : 
+       Aspiration             : 
+       Height Diff to Ant     : 
+       Calibration date       : (CCYY-MM-DD)
+       Effective Dates        : (CCYY-MM-DD)/(CCYY-MM-DD)
+       Notes                  : 
+
 8.3.x Temp. Sensor Model      :
        Manufacturer           :
        Serial Number          :

@@ -985,7 +985,7 @@ class TemperatureSensorProperty(object):
             self.dataSamplingInterval = SiteLog.simpleValue(temperatureSensor.dataSamplingInterval, "{:.0f} sec")
             self.accuracy_degreesCelcius = SiteLog.simpleValue(temperatureSensor.accuracy_degreesCelcius, "{:.2f} deg")
             self.aspiration = SiteLog.simpleValue(temperatureSensor.aspiration)
-            self.heightDiffToAntenna = str(SiteLog.simpleValue(temperatureSensor.heightDiffToAntenna)) + " m"
+            self.heightDiffToAntenna = SiteLog.simpleValue(temperatureSensor.heightDiffToAntenna, "{} m")
             self.calibrationDate = SiteLog.date(str(SiteLog.complexValue(temperatureSensor.calibrationDate)))
             try:
                 begin = SiteLog.date(str(SiteLog.complexValue(temperatureSensor.validTime.AbstractTimePrimitive.beginPosition)))
