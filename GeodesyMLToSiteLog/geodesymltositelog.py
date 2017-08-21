@@ -1478,7 +1478,7 @@ class AgencyProperty(object):
     Pattern           = re.compile(r'agencyPropertyType', re.IGNORECASE)
 
     def __init__(self, agencyProperty):
-        self.allCI_ResponsiblePartys = []
+        self.allCI_ResponsibleParties = []
         try:
             if re.match(type(self).Pattern, type(agencyProperty).__name__):
 # For siteOwner or siteMetadataCustodian mapping
@@ -1495,18 +1495,18 @@ class AgencyProperty(object):
             for i in range(0, 2):
                 responsibleParty = self.CI_ResponsibleParty(None)
                 responsibleParty.updateIndex(i)
-                self.allCI_ResponsiblePartys.append(responsibleParty)
+                self.allCI_ResponsibleParties.append(responsibleParty)
             return
 
         if re.match(type(self).Pattern, type(agencyProperty).__name__):
 # For siteOwner or siteMetadataCustodian mapping
             responsibleParty = self.CI_ResponsibleParty(agencyProperty.CI_ResponsibleParty)
             responsibleParty.updateIndex(0)
-            self.allCI_ResponsiblePartys.append(responsibleParty)
+            self.allCI_ResponsibleParties.append(responsibleParty)
 
             responsibleParty = self.CI_ResponsibleParty(None)
             responsibleParty.updateIndex(1)
-            self.allCI_ResponsiblePartys.append(responsibleParty)
+            self.allCI_ResponsibleParties.append(responsibleParty)
             return
 
 #For siteContact mapping
@@ -1517,45 +1517,45 @@ class AgencyProperty(object):
                 for i in range(0, 2):
                     responsibleParty = self.CI_ResponsibleParty(None)
                     responsibleParty.updateIndex(i)
-                    self.allCI_ResponsiblePartys.append(responsibleParty)
+                    self.allCI_ResponsibleParties.append(responsibleParty)
             elif count == 1:
                 responsibleParty = self.CI_ResponsibleParty(itemList[0].CI_ResponsibleParty)
                 responsibleParty.updateIndex(0)
-                self.allCI_ResponsiblePartys.append(responsibleParty)
+                self.allCI_ResponsibleParties.append(responsibleParty)
 
                 responsibleParty = self.CI_ResponsibleParty(None)
                 responsibleParty.updateIndex(1)
-                self.allCI_ResponsiblePartys.append(responsibleParty)
+                self.allCI_ResponsibleParties.append(responsibleParty)
             else:
                 i = 0
                 for item in itemList:
                     responsibleParty = self.CI_ResponsibleParty(item.CI_ResponsibleParty)
                     responsibleParty.updateIndex(i)
-                    self.allCI_ResponsiblePartys.append(responsibleParty)
+                    self.allCI_ResponsibleParties.append(responsibleParty)
                     i += 1
         else:
             for i in range(0, 2):
                 responsibleParty = self.CI_ResponsibleParty(None)
                 responsibleParty.updateIndex(i)
-                self.allCI_ResponsiblePartys.append(responsibleParty)
+                self.allCI_ResponsibleParties.append(responsibleParty)
 
     def output(self):
         io = StringIO()
         io.write(self.title)
         io.write("\n")
 
-        io.write(type(self).Agency + SiteLog.toMultiple(self.allCI_ResponsiblePartys[0].organisationName))
+        io.write(type(self).Agency + SiteLog.toMultiple(self.allCI_ResponsibleParties[0].organisationName))
         io.write(type(self).Abbreviation)
 
-        size = len(self.allCI_ResponsiblePartys[0].deliveryPoint)
+        size = len(self.allCI_ResponsibleParties[0].deliveryPoint)
         if size == 0:
             io.write(type(self).MailingAddress + "\n")
         else:
-            io.write(type(self).MailingAddress + self.allCI_ResponsiblePartys[0].deliveryPoint[0] + "\n")
+            io.write(type(self).MailingAddress + self.allCI_ResponsibleParties[0].deliveryPoint[0] + "\n")
             for z in range(size-1):
-                io.write("                                " + self.allCI_ResponsiblePartys[0].deliveryPoint[z+1] + "\n")
+                io.write("                                " + self.allCI_ResponsibleParties[0].deliveryPoint[z+1] + "\n")
 
-        for responsibleParty in self.allCI_ResponsiblePartys:
+        for responsibleParty in self.allCI_ResponsibleParties:
             io.write(responsibleParty.output())
 
         io.write(type(self).Additional)
