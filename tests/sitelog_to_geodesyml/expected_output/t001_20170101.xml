@@ -357,6 +357,46 @@
             </geo:OtherInstrumentation>
             <geo:dateInserted></geo:dateInserted>
         </geo:otherInstrumentation>
+        <geo:radioInterference>
+            <geo:RadioInterference gml:id="radio-interference-1">
+                <geo:possibleProblemSource>Radio Interferences</geo:possibleProblemSource>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="time-period-12">
+                        <gml:beginPosition>2012-03-04</gml:beginPosition>
+                        <gml:endPosition>2014-04-05</gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes>notes</geo:notes>
+                <geo:observedDegradation>Degradations</geo:observedDegradation>
+            </geo:RadioInterference>
+            <geo:dateInserted>2012-03-04</geo:dateInserted>
+        </geo:radioInterference>
+        <geo:multipathSource>
+            <geo:MultipathSource gml:id="multipath-1">
+                <geo:possibleProblemSource>Multipath Sources</geo:possibleProblemSource>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="time-period-13">
+                        <gml:beginPosition>2012-03-04</gml:beginPosition>
+                        <gml:endPosition>2014-04-05</gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes>notes</geo:notes>
+            </geo:MultipathSource>
+            <geo:dateInserted>2012-03-04</geo:dateInserted>
+        </geo:multipathSource>
+        <geo:signalObstruction>
+            <geo:SignalObstruction gml:id="signal-obstruction-1">
+                <geo:possibleProblemSource>Signal Obstructions</geo:possibleProblemSource>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="time-period-14">
+                        <gml:beginPosition>2012-03-04</gml:beginPosition>
+                        <gml:endPosition>2014-04-05</gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes>notes</geo:notes>
+            </geo:SignalObstruction>
+            <geo:dateInserted>2012-03-04</geo:dateInserted>
+        </geo:signalObstruction>
         <geo:siteContact gml:id="agency-1">
             <gmd:MD_SecurityConstraints>
                 <gmd:classification gco:nilReason="missing"/>
