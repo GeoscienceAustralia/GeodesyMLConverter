@@ -175,15 +175,6 @@
                                 <gmd:deliveryPoint>
                                     <gco:CharacterString>Address Line Two</gco:CharacterString>
                                 </gmd:deliveryPoint>
-                                <gmd:city>
-                                    <gco:CharacterString>City</gco:CharacterString>
-                                </gmd:city>
-                                <gmd:postalCode>
-                                    <gco:CharacterString>Postal Code</gco:CharacterString>
-                                </gmd:postalCode>
-                                <gmd:country>
-                                    <gco:CharacterString>Country</gco:CharacterString>
-                                </gmd:country>
                                 <gmd:electronicMailAddress>
                                     <gco:CharacterString>contact.c@gmail.com</gco:CharacterString>
                                 </gmd:electronicMailAddress>
