@@ -80,7 +80,7 @@
                 <geo:marker-arpUpEcc.>1.0</geo:marker-arpUpEcc.>
                 <geo:marker-arpNorthEcc.>2.0</geo:marker-arpNorthEcc.>
                 <geo:marker-arpEastEcc.>3.0</geo:marker-arpEastEcc.>
-                <geo:alignmentFromTrueNorth>5.0</geo:alignmentFromTrueNorth>
+                <geo:alignmentFromTrueNorth>0.0</geo:alignmentFromTrueNorth>
                 <geo:antennaRadomeType codeSpace="urn:igs-org:gnss-radome-model-code">Radome Type A</geo:antennaRadomeType>
                 <geo:radomeSerialNumber>123456</geo:radomeSerialNumber>
                 <geo:antennaCableType>Cable Type</geo:antennaCableType>

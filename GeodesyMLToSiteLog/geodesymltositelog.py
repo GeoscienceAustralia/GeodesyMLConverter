@@ -422,7 +422,7 @@ class GnssAntennaProperty(object):
             self.marker_arpEastEcc = SiteLog.simpleValue(antenna.marker_arpEastEcc, "{:08.4f}")
 
             trueNorth = SiteLog.simpleValue(antenna.alignmentFromTrueNorth, "{:+.0f} deg")
-            self.alignmentFromTrueNorth = "0" if trueNorth == "+0" else trueNorth
+            self.alignmentFromTrueNorth = "0 deg" if trueNorth == "+0 deg" else trueNorth
 
             self.antennaRadomeType = SiteLog.complexValue(antenna.antennaRadomeType)
             self.radomeSerialNumber = SiteLog.simpleValue(antenna.radomeSerialNumber)

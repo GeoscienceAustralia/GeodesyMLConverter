@@ -92,7 +92,7 @@
      Marker->ARP Up Ecc. (m)  : 001.0000
      Marker->ARP North Ecc(m) : 002.0000
      Marker->ARP East Ecc(m)  : 003.0000
-     Alignment from True N    : +5 deg
+     Alignment from True N    : 0 deg
      Antenna Radome Type      : Radome Type A
      Radome Serial Number     : 123456
      Antenna Cable Type       : Cable Type
