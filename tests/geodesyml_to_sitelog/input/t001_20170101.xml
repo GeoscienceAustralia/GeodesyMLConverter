@@ -397,6 +397,30 @@
             </geo:SignalObstruction>
             <geo:dateInserted>2012-03-04</geo:dateInserted>
         </geo:signalObstruction>
+        <geo:localEpisodicEffect>
+            <geo:LocalEpisodicEffect gml:id="episodic-effect-1">
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="time-period-15">
+                        <gml:beginPosition>2012-03-04</gml:beginPosition>
+                        <gml:endPosition>2014-04-05</gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:event>Event A</geo:event>
+            </geo:LocalEpisodicEffect>
+            <geo:dateInserted>2012-03-04</geo:dateInserted>
+        </geo:localEpisodicEffect>
+        <geo:localEpisodicEffect>
+            <geo:LocalEpisodicEffect gml:id="episodic-effect-2">
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="time-period-16">
+                        <gml:beginPosition>2013-01-01</gml:beginPosition>
+                        <gml:endPosition></gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:event>Event B</geo:event>
+            </geo:LocalEpisodicEffect>
+            <geo:dateInserted>2013-01-01</geo:dateInserted>
+        </geo:localEpisodicEffect>
         <geo:siteMetadataCustodian gml:id="agency-3">
             <gmd:MD_SecurityConstraints>
                 <gmd:classification gco:nilReason="missing"/>
