@@ -189,6 +189,21 @@
 
 6.   Frequency Standard
 
+6.1  Standard Type            : CESIUM
+       Input Frequency        : 4 Mhz
+       Effective Dates        : 2012-02-03/2014-03-04
+       Notes                  : notes
+
+6.2  Standard Type            : EXTERNAL
+       Input Frequency        : 
+       Effective Dates        : (CCYY-MM-DD)/(CCYY-MM-DD)
+       Notes                  : 
+
+6.3  Standard Type            : INTERNAL
+       Input Frequency        : 
+       Effective Dates        : (CCYY-MM-DD)/(CCYY-MM-DD)
+       Notes                  : 
+
 6.x  Standard Type            : (INTERNAL or EXTERNAL H-MASER/CESIUM/etc)
        Input Frequency        : (if external)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)

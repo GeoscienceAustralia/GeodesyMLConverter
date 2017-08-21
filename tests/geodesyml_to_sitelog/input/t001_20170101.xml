@@ -158,6 +158,48 @@
             </geo:SurveyedLocalTie>
             <geo:dateInserted></geo:dateInserted>
         </geo:surveyedLocalTie>
+        <geo:frequencyStandard>
+            <geo:FrequencyStandard gml:id="frequency-standard-1">
+                <geo:standardType codeSpace="urn:ga-gov-au:frequency-standard-type">CESIUM</geo:standardType>
+                <geo:inputFrequency>3.67</geo:inputFrequency>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="frequency-standard-1--time-period-1">
+                        <gml:beginPosition>2012-02-03</gml:beginPosition>
+                        <gml:endPosition>2014-03-04</gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes>notes</geo:notes>
+            </geo:FrequencyStandard>
+            <geo:dateInserted>2012-02-03</geo:dateInserted>
+        </geo:frequencyStandard>
+        <geo:frequencyStandard>
+            <geo:FrequencyStandard gml:id="frequency-standard-2">
+                <geo:standardType codeSpace="urn:ga-gov-au:frequency-standard-type">EXTERNAL</geo:standardType>
+                <geo:inputFrequency xsi:nil="true"></geo:inputFrequency>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="frequency-standard-2--time-period-2">
+                        <gml:beginPosition></gml:beginPosition>
+                        <gml:endPosition></gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes></geo:notes>
+            </geo:FrequencyStandard>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:frequencyStandard>
+        <geo:frequencyStandard>
+            <geo:FrequencyStandard gml:id="frequency-standard-3">
+                <geo:standardType codeSpace="urn:ga-gov-au:frequency-standard-type">INTERNAL</geo:standardType>
+                <geo:inputFrequency xsi:nil="true"></geo:inputFrequency>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="frequency-standard-3--time-period-3">
+                        <gml:beginPosition></gml:beginPosition>
+                        <gml:endPosition></gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:notes></geo:notes>
+            </geo:FrequencyStandard>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:frequencyStandard>
         <geo:humiditySensor>
             <geo:HumiditySensor gml:id="humidity-sensor-1">
                 <geo:type codeSpace="urn:ga-gov-au:humidity-sensor-type">Humidity Sensor Model A</geo:type>
