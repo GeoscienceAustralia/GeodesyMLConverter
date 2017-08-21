@@ -350,6 +350,13 @@
             </geo:WaterVaporSensor>
             <geo:dateInserted></geo:dateInserted>
         </geo:waterVaporSensor>
+        <geo:otherInstrumentation>
+            <geo:OtherInstrumentation gml:id="other-instrumentation-1">
+                <geo:instrumentation>1) Other Instrumentation A 2) Other Instrumentation B</geo:instrumentation>
+                <gml:validTime nilReason="not applicable"/>
+            </geo:OtherInstrumentation>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:otherInstrumentation>
         <geo:siteMetadataCustodian gml:id="agency-3">
             <gmd:MD_SecurityConstraints>
                 <gmd:classification gco:nilReason="missing"/>
