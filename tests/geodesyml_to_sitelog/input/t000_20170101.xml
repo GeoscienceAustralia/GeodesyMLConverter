@@ -40,7 +40,7 @@
                     <gco:CharacterString>Contact A</gco:CharacterString>
                 </gmd:individualName>
                 <gmd:organisationName>
-                    <gco:CharacterString>Agency B</gco:CharacterString>
+                    <gco:CharacterString>Agency A</gco:CharacterString>
                 </gmd:organisationName>
                 <gmd:contactInfo>
                     <gmd:CI_Contact>
