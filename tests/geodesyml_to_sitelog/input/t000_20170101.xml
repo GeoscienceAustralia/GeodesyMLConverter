@@ -31,48 +31,161 @@
             <geo:approximatePositionITRF/>
             <geo:notes></geo:notes>
         </geo:siteLocation>
-        <geo:siteMetadataCustodian gml:id="agency-3">
+        <geo:siteContact gml:id="agency-2">
             <gmd:MD_SecurityConstraints>
                 <gmd:classification gco:nilReason="missing"/>
             </gmd:MD_SecurityConstraints>
             <gmd:CI_ResponsibleParty>
                 <gmd:individualName>
-                    <gco:CharacterString></gco:CharacterString>
+                    <gco:CharacterString>Contact A</gco:CharacterString>
                 </gmd:individualName>
                 <gmd:organisationName>
-                    <gco:CharacterString></gco:CharacterString>
+                    <gco:CharacterString>Agency B</gco:CharacterString>
                 </gmd:organisationName>
                 <gmd:contactInfo>
                     <gmd:CI_Contact>
                         <gmd:phone>
                             <gmd:CI_Telephone>
                                 <gmd:voice>
-                                    <gco:CharacterString></gco:CharacterString>
+                                    <gco:CharacterString>123</gco:CharacterString>
                                 </gmd:voice>
                                 <gmd:voice>
-                                    <gco:CharacterString></gco:CharacterString>
+                                    <gco:CharacterString>456</gco:CharacterString>
                                 </gmd:voice>
                                 <gmd:facsimile>
-                                    <gco:CharacterString></gco:CharacterString>
+                                    <gco:CharacterString>789</gco:CharacterString>
                                 </gmd:facsimile>
                             </gmd:CI_Telephone>
                         </gmd:phone>
                         <gmd:address>
                             <gmd:CI_Address id="address-3">
                                 <gmd:deliveryPoint>
-                                    <gco:CharacterString></gco:CharacterString>
+                                    <gco:CharacterString>Address Line One</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>Address Line Two</gco:CharacterString>
                                 </gmd:deliveryPoint>
                                 <gmd:city>
-                                    <gco:CharacterString></gco:CharacterString>
+                                    <gco:CharacterString>City</gco:CharacterString>
                                 </gmd:city>
                                 <gmd:postalCode>
-                                    <gco:CharacterString></gco:CharacterString>
+                                    <gco:CharacterString>Postal Code</gco:CharacterString>
                                 </gmd:postalCode>
                                 <gmd:country>
-                                    <gco:CharacterString></gco:CharacterString>
+                                    <gco:CharacterString>Country</gco:CharacterString>
                                 </gmd:country>
                                 <gmd:electronicMailAddress>
-                                    <gco:CharacterString></gco:CharacterString>
+                                    <gco:CharacterString>contact.a@gmail.com</gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"></gmd:CI_RoleCode>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteContact>
+        <geo:siteContact gml:id="agency-2">
+            <gmd:MD_SecurityConstraints>
+                <gmd:classification gco:nilReason="missing"/>
+            </gmd:MD_SecurityConstraints>
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString>Contact B</gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString>Agency B</gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString>123</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:voice>
+                                    <gco:CharacterString>456</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString>789</gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address id="address-3">
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>Address Line One</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>Address Line Two</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString>City</gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString>Postal Code</gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString>Country</gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString>contact.b@gmail.com</gco:CharacterString>
+                                </gmd:electronicMailAddress>
+                            </gmd:CI_Address>
+                        </gmd:address>
+                    </gmd:CI_Contact>
+                </gmd:contactInfo>
+                <gmd:role>
+                    <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"></gmd:CI_RoleCode>
+                </gmd:role>
+            </gmd:CI_ResponsibleParty>
+        </geo:siteContact>
+        <geo:siteMetadataCustodian gml:id="agency-3">
+            <gmd:MD_SecurityConstraints>
+                <gmd:classification gco:nilReason="missing"/>
+            </gmd:MD_SecurityConstraints>
+            <gmd:CI_ResponsibleParty>
+                <gmd:individualName>
+                    <gco:CharacterString>Contact C</gco:CharacterString>
+                </gmd:individualName>
+                <gmd:organisationName>
+                    <gco:CharacterString>Agency C</gco:CharacterString>
+                </gmd:organisationName>
+                <gmd:contactInfo>
+                    <gmd:CI_Contact>
+                        <gmd:phone>
+                            <gmd:CI_Telephone>
+                                <gmd:voice>
+                                    <gco:CharacterString>123</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:voice>
+                                    <gco:CharacterString>456</gco:CharacterString>
+                                </gmd:voice>
+                                <gmd:facsimile>
+                                    <gco:CharacterString>789</gco:CharacterString>
+                                </gmd:facsimile>
+                            </gmd:CI_Telephone>
+                        </gmd:phone>
+                        <gmd:address>
+                            <gmd:CI_Address id="address-3">
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>Address Line One</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:deliveryPoint>
+                                    <gco:CharacterString>Address Line Two</gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                    <gco:CharacterString>City</gco:CharacterString>
+                                </gmd:city>
+                                <gmd:postalCode>
+                                    <gco:CharacterString>Postal Code</gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                    <gco:CharacterString>Country</gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                    <gco:CharacterString>contact.c@gmail.com</gco:CharacterString>
                                 </gmd:electronicMailAddress>
                             </gmd:CI_Address>
                         </gmd:address>
