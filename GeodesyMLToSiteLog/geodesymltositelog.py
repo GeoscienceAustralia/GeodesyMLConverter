@@ -886,7 +886,7 @@ class PressureSensorProperty(object):
             self.serialNumber = SiteLog.simpleValue(pressureSensor.serialNumber)
             self.dataSamplingInterval = SiteLog.simpleValue(pressureSensor.dataSamplingInterval, "{:.0f} sec")
             self.accuracy_hPa = SiteLog.simpleValue(pressureSensor.accuracy_hPa, "{:.2f} hPa")
-            self.heightDiffToAntenna = str(SiteLog.simpleValue(pressureSensor.heightDiffToAntenna)) + " m"
+            self.heightDiffToAntenna = SiteLog.simpleValue(pressureSensor.heightDiffToAntenna, "{} m")
             self.calibrationDate = SiteLog.date(str(SiteLog.complexValue(pressureSensor.calibrationDate)))
             try:
                 begin = SiteLog.date(str(SiteLog.complexValue(pressureSensor.validTime.AbstractTimePrimitive.beginPosition)))
