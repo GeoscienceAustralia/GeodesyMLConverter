@@ -614,7 +614,7 @@ class FrequencyStandardProperty(object):
         def __init__(self, frequencyStandard):
             self.standardType = SiteLog.complexValue(frequencyStandard.standardType)
             frequency = SiteLog.simpleValue(frequencyStandard.inputFrequency)
-            self.inputFrequency = SiteLog.simpleValue(frequencyStandard.inputFrequency, "{:.0f} Mhz")
+            self.inputFrequency = SiteLog.simpleValue(frequencyStandard.inputFrequency, "{:.0f} MHz")
             try:
                 begin = SiteLog.date(str(SiteLog.complexValue(frequencyStandard.validTime.AbstractTimePrimitive.beginPosition)))
                 if not str(begin):
