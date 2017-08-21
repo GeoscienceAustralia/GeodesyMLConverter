@@ -357,27 +357,27 @@
 
 9.  Local Ongoing Conditions Possibly Affecting Computed Position
 
-9.1.1 Radio Interferences     : (TV/CELL PHONE ANTENNA/RADAR/etc)
-       Observed Degradations  : (SN RATIO/DATA GAPS/etc)
-       Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Additional Information : (multiple lines)
+9.1.1 Radio Interferences     : Radio Interferences
+       Observed Degradations  : Degradations
+       Effective Dates        : 2012-03-04/2014-04-05
+       Additional Information : notes
 
 9.1.x Radio Interferences     : (TV/CELL PHONE ANTENNA/RADAR/etc)
        Observed Degradations  : (SN RATIO/DATA GAPS/etc)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
        Additional Information : (multiple lines)
 
-9.2.1 Multipath Sources       : (METAL ROOF/DOME/VLBI ANTENNA/etc)
-       Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Additional Information : (multiple lines)
+9.2.1 Multipath Sources       : Multipath Sources
+       Effective Dates        : 2012-03-04/2014-04-05
+       Additional Information : notes
 
 9.2.x Multipath Sources       : (METAL ROOF/DOME/VLBI ANTENNA/etc)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
        Additional Information : (multiple lines)
 
-9.3.1 Signal Obstructions     : (TREES/BUILDINGS/etc)
-       Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
-       Additional Information : (multiple lines)
+9.3.1 Signal Obstructions     : Signal Obstructions
+       Effective Dates        : 2012-03-04/2014-04-05
+       Additional Information : notes
 
 9.3.x Signal Obstructions     : (TREES/BUILDINGS/etc)
        Effective Dates        : (CCYY-MM-DD/CCYY-MM-DD)
