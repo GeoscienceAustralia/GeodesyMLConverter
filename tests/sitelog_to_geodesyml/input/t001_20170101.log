@@ -385,8 +385,11 @@
 
 10.  Local Episodic Effects Possibly Affecting Data Quality
 
-10.1 Date                     : (CCYY-MM-DD/CCYY-MM-DD)
-     Event                    : (TREE CLEARING/CONSTRUCTION/etc)
+10.1 Date                     : 2012-03-04/2014-04-05
+     Event                    : Event A
+
+10.2 Date                     : 2013-01-01/(CCYY-MM-DD)
+     Event                    : Event B
 
 10.x Date                     : (CCYY-MM-DD/CCYY-MM-DD)
      Event                    : (TREE CLEARING/CONSTRUCTION/etc)
