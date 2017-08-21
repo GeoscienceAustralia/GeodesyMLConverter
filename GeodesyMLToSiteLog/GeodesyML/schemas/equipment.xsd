@@ -292,7 +292,7 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
         <complexContent>
             <extension base="geo:BaseSensorEquipmentType">
                 <sequence>
-                    <element name="distanceToAntenna" type="double"/>
+                    <element name="distanceToAntenna" type="geo:NillableDouble" nillable="true"/>
                 </sequence>
             </extension>
         </complexContent>

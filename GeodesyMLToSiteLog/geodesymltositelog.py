@@ -1078,8 +1078,8 @@ class WaterVaporSensorProperty(object):
             self.type = SiteLog.complexValue(waterVaporSensor.type)
             self.manufacturer = SiteLog.simpleValue(waterVaporSensor.manufacturer)
             self.serialNumber = SiteLog.simpleValue(waterVaporSensor.serialNumber)
-            self.distanceToAntenna = str(SiteLog.simpleValue(waterVaporSensor.distanceToAntenna)) + " m"
-            self.heightDiffToAntenna = str(SiteLog.simpleValue(waterVaporSensor.heightDiffToAntenna)) + " m"
+            self.distanceToAntenna = SiteLog.simpleValue(waterVaporSensor.distanceToAntenna, "{} m")
+            self.heightDiffToAntenna = SiteLog.simpleValue(waterVaporSensor.heightDiffToAntenna, "{} m")
             self.calibrationDate = SiteLog.date(str(SiteLog.complexValue(waterVaporSensor.calibrationDate)))
             try:
                 begin = SiteLog.date(str(SiteLog.complexValue(waterVaporSensor.validTime.AbstractTimePrimitive.beginPosition)))
