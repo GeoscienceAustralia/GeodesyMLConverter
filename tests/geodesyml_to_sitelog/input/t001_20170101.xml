@@ -315,6 +315,41 @@
             </geo:TemperatureSensor>
             <geo:dateInserted></geo:dateInserted>
         </geo:temperatureSensor>
+        <geo:waterVaporSensor>
+            <geo:WaterVaporSensor gml:id="water-vapor-1">
+                <geo:type codeSpace="urn:ga-gov-au:water-vapor-sensor-type">Water Vapor Radiometer A</geo:type>
+                <geo:notes>notes</geo:notes>
+                <geo:manufacturer>Manufacturer A</geo:manufacturer>
+                <geo:serialNumber>86</geo:serialNumber>
+                <geo:heightDiffToAntenna>1.2</geo:heightDiffToAntenna>
+                <geo:calibrationDate>2001-10-10</geo:calibrationDate>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="water-vapor-1--time-period-10">
+                        <gml:beginPosition>2002-10-01</gml:beginPosition>
+                        <gml:endPosition>2013-10-10</gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:distanceToAntenna>8.8</geo:distanceToAntenna>
+            </geo:WaterVaporSensor>
+            <geo:dateInserted>2002-10-01</geo:dateInserted>
+        </geo:waterVaporSensor>
+        <geo:waterVaporSensor>
+            <geo:WaterVaporSensor gml:id="water-vapor-2">
+                <geo:type codeSpace="urn:ga-gov-au:water-vapor-sensor-type">Water Vapor Radiometer B</geo:type>
+                <geo:manufacturer></geo:manufacturer>
+                <geo:serialNumber></geo:serialNumber>
+                <geo:heightDiffToAntenna xsi:nil="true"></geo:heightDiffToAntenna>
+                <geo:calibrationDate></geo:calibrationDate>
+                <gml:validTime>
+                    <gml:TimePeriod gml:id="water-vapor-2--time-period-11">
+                        <gml:beginPosition></gml:beginPosition>
+                        <gml:endPosition></gml:endPosition>
+                    </gml:TimePeriod>
+                </gml:validTime>
+                <geo:distanceToAntenna xsi:nil="true"></geo:distanceToAntenna>
+            </geo:WaterVaporSensor>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:waterVaporSensor>
         <geo:siteMetadataCustodian gml:id="agency-3">
             <gmd:MD_SecurityConstraints>
                 <gmd:classification gco:nilReason="missing"/>
