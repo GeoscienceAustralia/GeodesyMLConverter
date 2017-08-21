@@ -1555,6 +1555,15 @@ class AgencyProperty(object):
             for z in range(size-1):
                 io.write("                                " + self.allCI_ResponsibleParties[0].deliveryPoint[z+1] + "\n")
 
+            if self.allCI_ResponsibleParties[0].city:
+                io.write("                                " + self.allCI_ResponsibleParties[0].city + "\n")
+
+            if self.allCI_ResponsibleParties[0].postalCode:
+                io.write("                                " + self.allCI_ResponsibleParties[0].postalCode + "\n")
+
+            if self.allCI_ResponsibleParties[0].country:
+                io.write("                                " + self.allCI_ResponsibleParties[0].country + "\n")
+
         for responsibleParty in self.allCI_ResponsibleParties:
             io.write(responsibleParty.output())
 
@@ -1581,6 +1590,9 @@ class AgencyProperty(object):
                 self.individualName = ""
                 self.organisationName = ""
                 self.deliveryPoint = []
+                self.city = ""
+                self.postalCode = ""
+                self.country = ""
                 self.electronicMailAddress = ""
                 self.primaryVoice = ""
                 self.secondVoice = ""
@@ -1597,6 +1609,21 @@ class AgencyProperty(object):
                     self.deliveryPoint.append(SiteLog.simpleValue(deliveryPoint.CharacterString))
             except:
                 self.deliveryPoint = []
+
+            try:
+                self.city = SiteLog.simpleValue(responsibleParty.contactInfo.CI_Contact.address.CI_Address.city.CharacterString)
+            except:
+                self.city = ""
+
+            try:
+                self.postalCode = SiteLog.simpleValue(responsibleParty.contactInfo.CI_Contact.address.CI_Address.postalCode.CharacterString)
+            except:
+                self.postalCode = ""
+
+            try:
+                self.country = SiteLog.simpleValue(responsibleParty.contactInfo.CI_Contact.address.CI_Address.country.CharacterString)
+            except:
+                self.country = ""
 
             try:
                 self.electronicMailAddress = SiteLog.simpleValue(responsibleParty.contactInfo.CI_Contact.address.CI_Address.electronicMailAddress[0].CharacterString)
