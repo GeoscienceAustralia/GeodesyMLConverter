@@ -13,6 +13,7 @@
             <geo:iersDOMESNumber></geo:iersDOMESNumber>
             <geo:cdpNumber></geo:cdpNumber>
             <geo:monumentDescription codeSpace="urn:ga-gov-au:monument-description-type"></geo:monumentDescription>
+            <geo:heightOfTheMonument>0.5</geo:heightOfTheMonument>
             <geo:monumentFoundation></geo:monumentFoundation>
             <geo:markerDescription></geo:markerDescription>
             <geo:dateInstalled></geo:dateInstalled>
