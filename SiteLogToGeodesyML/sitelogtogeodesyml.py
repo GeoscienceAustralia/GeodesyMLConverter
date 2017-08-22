@@ -1913,7 +1913,7 @@ class ContactAgency(object):
             voice.append(self.telephone[1])
 
             voice2 = gco.CharacterString_PropertyType()
-            voice2.append(self.telephone2[0])
+            voice2.append(self.telephone2[1])
 
             telephone = pyxb.BIND(voice, voice2)
             phoneProperty.append(telephone)

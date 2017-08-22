@@ -108,7 +108,7 @@
                                     <gco:CharacterString></gco:CharacterString>
                                 </gmd:voice>
                                 <gmd:voice>
-                                    <gco:CharacterString>456</gco:CharacterString>
+                                    <gco:CharacterString></gco:CharacterString>
                                 </gmd:voice>
                                 <gmd:facsimile>
                                     <gco:CharacterString></gco:CharacterString>
