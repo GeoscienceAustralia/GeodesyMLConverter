@@ -173,6 +173,10 @@ class SiteIdentification(object):
         io.close()
         return text
 
+def dd2dms(dd):
+    minutes, seconds = divmod(abs(dd) * 3600, 60)
+    degrees, minutes = divmod(minutes, 60)
+    return (degrees if dd >= 0 else -degrees, minutes, seconds)
 
 class SiteLocation(object):
 
@@ -200,29 +204,15 @@ class SiteLocation(object):
 
         try:
             latitude = siteLocation.approximatePositionITRF.geodeticPosition.Point.pos.value()[0]
-            value = math.fabs(latitude)
-            degree = math.floor(value)
-            temp = (value - degree) * 60.0 
-            minute = math.floor(temp)
-            second = (temp - minute) * 60.0
-            if latitude < 0.0:
-                self.lat = "-" + '{:02d}'.format(int(degree)) + '{:02d}'.format(int(minute)) + '{:05.2f}'.format(second)
-            else:
-                self.lat = "+" + '{:02d}'.format(int(degree)) + '{:02d}'.format(int(minute)) + '{:05.2f}'.format(second)
+            degrees, minutes, seconds = dd2dms(latitude)
+            self.lat = '{:+03.0f}'.format(degrees) + '{:02.0f}'.format(minutes) + '{:05.2f}'.format(seconds)
         except:
             self.lat = ""
 
         try:
             longitude = siteLocation.approximatePositionITRF.geodeticPosition.Point.pos.value()[1]
-            value = math.fabs(longitude)
-            degree = math.floor(value)
-            temp = (value - degree) * 60.0
-            minute = math.floor(temp)
-            second = (temp - minute) * 60.0
-            if longitude < 0.0:
-                self.lng = "-" + '{:03d}'.format(int(degree)) + '{:02d}'.format(int(minute)) + '{:05.2f}'.format(second)
-            else:
-                self.lng = "+" + '{:03d}'.format(int(degree)) + '{:02d}'.format(int(minute)) + '{:05.2f}'.format(second)
+            degrees, minutes, seconds = dd2dms(longitude)
+            self.lng = '{:+04.0f}'.format(degrees) + '{:02.0f}'.format(minutes) + '{:05.2f}'.format(seconds)
         except:
             self.lng = ""
 

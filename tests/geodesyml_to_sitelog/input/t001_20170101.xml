@@ -36,7 +36,7 @@
                 </geo:cartesianPosition>
                 <geo:geodeticPosition>
                     <gml:Point gml:id="itrf_geodetic" srsName="EPSG:7912">
-                        <gml:pos>12.2033888889 123.203388889 1.0</gml:pos>
+                        <gml:pos>41.05 123.20 1.0</gml:pos>
                     </gml:Point>
                 </geo:geodeticPosition>
             </geo:approximatePositionITRF>
