@@ -33,7 +33,7 @@ def errorMessage(line, content, comment):
 def infoMessage(line, content, comment):
     sys.stderr.write("{\n")
     sys.stderr.write("    Line no: %s\n" % line)
-    sys.stderr.write("    Content: %s\n" % content)
+    sys.stderr.write("    Content: %s\n" % content.encode('UTF-8'))
     sys.stderr.write("   #comment: %s\n" % comment)
     sys.stderr.write("}\n")
 

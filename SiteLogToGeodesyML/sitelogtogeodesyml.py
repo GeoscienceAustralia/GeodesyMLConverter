@@ -2136,8 +2136,7 @@ class SiteLog(object):
 
         for line in textLines:
             lineNo += 1
-            line = line.encode('ascii', 'xmlcharrefreplace')
-            print(line)
+            print(line.encode("utf-8"))
 
             if isEmpty(line):
                 continue
