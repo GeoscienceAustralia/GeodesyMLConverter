@@ -144,7 +144,7 @@
        dx (m)                 : 1
        dy (m)                 : 2
        dz (m)                 : 3
-     Accuracy (mm)            : 4
+     Accuracy (mm)            : +- 4
      Survey method            : TRIANGULATION
      Date Measured            : 2013-01-01T03:03Z
      Additional Information   : notes
@@ -230,7 +230,7 @@
        Manufacturer           : Manufacturer A
        Serial Number          : 123
        Data Sampling Interval : 12
-       Accuracy (% rel h)     : 2
+       Accuracy (% rel h)     : +-2
        Aspiration             : FAN
        Height Diff to Ant     : 3 (m)
        Calibration date       : 2017-10-10
@@ -263,7 +263,7 @@
        Manufacturer           : Manufacturer A
        Serial Number          : 94375
        Data Sampling Interval : 23.34456
-       Accuracy               : 2.32
+       Accuracy               : +/- 2.32
        Height Diff to Ant     : 3.4
        Calibration date       : 2005-03-03
        Effective Dates        : 2004-01-01/2006-03-03
@@ -293,7 +293,7 @@
        Manufacturer           : Manufacturer A
        Serial Number          : 48
        Data Sampling Interval : 2.333333
-       Accuracy               : 0.8888
+       Accuracy               : + - 0.8888
        Aspiration             : FAN
        Height Diff to Ant     : 0.333333
        Calibration date       : 2016-01-01
