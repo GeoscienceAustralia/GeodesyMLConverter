@@ -369,7 +369,7 @@ class HumiditySensor(object):
     SerialNumber = re.compile(r'^\s+(Serial Number\s*:)(?P<value>.*)$', re.IGNORECASE)
 
     Interval = re.compile(r'^\s+(Data Sampling Interval\s*:)(?P<value>.*)$', re.IGNORECASE)
-    Accuracy = re.compile(r'^\s+(Accuracy.*:)(?P<value>.*)$', re.IGNORECASE)
+    Accuracy = re.compile(r'^\s+(Accuracy.*:[^0-9\.]*)(?P<value>.*)$', re.IGNORECASE)
     Aspiration = re.compile(r'^\s+(Aspiration\s*:)(?P<value>.*)$', re.IGNORECASE)
     DiffToAnt = re.compile(r'^\s+(Height Diff to Ant\s*:)(?P<value>.*)$', re.IGNORECASE)
     CalibrationDate = re.compile(r'^\s+(Calibration date\s*:)(?P<value>.*)$', re.IGNORECASE)
@@ -551,7 +551,7 @@ class PressureSensor(object):
     SerialNumber = re.compile(r'^\s+(Serial Number\s*:)(?P<value>.*)$', re.IGNORECASE)
 
     Interval = re.compile(r'^\s+(Data Sampling Interval\s*:)(?P<value>.*)$', re.IGNORECASE)
-    Accuracy = re.compile(r'^\s+(Accuracy.*:)(?P<value>.*)$', re.IGNORECASE)
+    Accuracy = re.compile(r'^\s+(Accuracy.*:[^0-9\.]*)(?P<value>.*)$', re.IGNORECASE)
     DiffToAnt = re.compile(r'^\s+(Height Diff to Ant\s*:)(?P<value>.*)$', re.IGNORECASE)
     CalibrationDate = re.compile(r'^\s+(Calibration date\s*:)(?P<value>.*)$', re.IGNORECASE)
 
@@ -640,7 +640,7 @@ class TemperatureSensor(object):
     SerialNumber = re.compile(r'^\s+(Serial Number\s*:)(?P<value>.*)$', re.IGNORECASE)
 
     Interval = re.compile(r'^\s+(Data Sampling Interval\s*:)(?P<value>.*)$', re.IGNORECASE)
-    Accuracy = re.compile(r'^\s+(Accuracy.*:)(?P<value>.*)$', re.IGNORECASE)
+    Accuracy = re.compile(r'^\s+(Accuracy.*:[^0-9\.]*)(?P<value>.*)$', re.IGNORECASE)
     Aspiration = re.compile(r'^\s+(Aspiration\s*:)(?P<value>.*)$', re.IGNORECASE)
     DiffToAnt = re.compile(r'^\s+(Height Diff to Ant\s*:)(?P<value>.*)$', re.IGNORECASE)
     CalibrationDate = re.compile(r'^\s+(Calibration date\s*:)(?P<value>.*)$', re.IGNORECASE)
@@ -850,7 +850,7 @@ class LocalTie(object):
     DX = re.compile(r'^\s+(dx.*:)(?P<value>.*)$', re.IGNORECASE)
     DY = re.compile(r'^\s+(dy.*:)(?P<value>.*)$', re.IGNORECASE)
     DZ = re.compile(r'^\s+(dz.*:)(?P<value>.*)$', re.IGNORECASE)
-    Accuracy = re.compile(r'^\s+(Accuracy.*:\s*[+]?[-]?)(?P<value>.*)$', re.IGNORECASE)
+    Accuracy = re.compile(r'^\s+(Accuracy.*:[^0-9\.]*)(?P<value>.*)$', re.IGNORECASE)
 
     Method = re.compile(r'^\s+(Survey method\s*:)(?P<value>.*)$', re.IGNORECASE)
     DateMeasured  = re.compile(r'^\s+(Date Measured\s*:)(?P<value>.*)$', re.IGNORECASE)
