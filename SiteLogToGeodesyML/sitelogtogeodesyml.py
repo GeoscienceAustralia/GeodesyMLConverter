@@ -167,7 +167,7 @@ def parseCountryCodeType(target, field, pattern, text, line,
             except KeyError:
                 parser.errorMessage(line, country, "Country name not matching ISO 3166")
 
-        code = geo.countryCodeType(SiteLog.CountryCode, codeSpace=space, codeList=theCodeList, codeListValue=country)
+        code = geo.countryCodeType(SiteLog.CountryCode, codeSpace=space, codeList=theCodeList, codeListValue=SiteLog.CountryCode)
         setattr(target, field, code)
 
         return True
