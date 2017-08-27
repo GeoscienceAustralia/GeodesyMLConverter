@@ -119,6 +119,7 @@ def countryFullname(name):
     CountryFullnames['KOREA'] = "Korea, Republic of"
     CountryFullnames['KYRGHYZSTAN'] = "Kyrgyzstan"
     CountryFullnames['MICRONESIA'] = "Micronesia, Federated States of"
+    CountryFullnames['FALKLAND ISLANDS'] = "Falkland Islands (Malvinas)"
     CountryFullnames['FEDERATED STATES OF MICRONESIA'] = "Micronesia, Federated States of"
     CountryFullnames['NEGARA BRUNEI DARUSSALAM'] = "Brunei Darussalam"
     CountryFullnames['RUSSIA'] = "Russian Federation"
