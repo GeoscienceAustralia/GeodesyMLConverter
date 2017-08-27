@@ -152,7 +152,6 @@ def parseCountryCodeType(target, field, pattern, text, line,
         country = ok.group('value').strip()
 
         # set the three letter code if not specified on the command line
-        SiteLog.Country = country
         if not SiteLog.CountryCode:
             fullname = countryFullname(country)
             if not fullname:
