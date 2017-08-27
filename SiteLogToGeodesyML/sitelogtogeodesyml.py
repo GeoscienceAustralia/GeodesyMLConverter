@@ -136,6 +136,7 @@ def countryFullname(name):
     CountryFullnames['VIETNAM'] = "Viet Nam"
     CountryFullnames['DEPENDENT TERRITORY OF THE U.K.'] = "Saint Helena, Ascension and Tristan da Cunha"
     CountryFullnames['UNITED KINGDOM'] = "United Kingdom of Great Britain and Northern Ireland"
+    CountryFullnames['UNITED STATES OF AMERICA'] = "United States"
 
     index = name.upper()
     if CountryFullnames.has_key(index):
