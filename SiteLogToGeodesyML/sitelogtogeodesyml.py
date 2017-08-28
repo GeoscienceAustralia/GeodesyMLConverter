@@ -152,9 +152,7 @@ def parseCountryCodeType(target, field, pattern, text, line,
         country = ok.group('value').strip()
 
         # set the three letter code if not specified on the command line
-        SiteLog.Country = country
-        countryCode = SiteLog.CountryCode
-        if not countryCode:
+        if not SiteLog.CountryCode:
             fullname = countryFullname(country)
             if not fullname:
                 fullname = country
@@ -162,7 +160,6 @@ def parseCountryCodeType(target, field, pattern, text, line,
                 tuples = iso3166.countries.get(fullname)
                 code = tuples.alpha3
                 if code and len(code) == 3:
-                    countryCode = code
                     SiteLog.CountryCode = code
                 else:
                     parser.errorMessage(line, country, "No matching ISO 3166 alpha3 code")
