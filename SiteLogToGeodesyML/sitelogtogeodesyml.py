@@ -166,6 +166,9 @@ def parseCountryCodeType(target, field, pattern, text, line,
             except KeyError:
                 parser.errorMessage(line, country, "Country name not matching ISO 3166")
 
+        if not SiteLog.CountryCode:
+            SiteLog.CountryCode = country
+
         code = geo.countryCodeType(SiteLog.CountryCode, codeSpace=space, codeList=theCodeList, codeListValue=SiteLog.CountryCode)
         setattr(target, field, code)
 
@@ -2614,7 +2617,7 @@ def convert(logfile, xmlfile):
     ok = re.match(pattern, nineLetters)
     if ok:
         nineLetters = "_" + nineLetters
-    gml = geo.GeodesyMLType(id=nineLetters)
+    gml = geo.GeodesyMLType(id=gmlId(nineLetters))
     gml.append(element)
 
     contents = gml.toDOM(element_name="geo:GeodesyML").toprettyxml(indent='    ', encoding='utf-8')
@@ -2625,6 +2628,12 @@ def convert(logfile, xmlfile):
     SiteLog.Reset()
     # probably unnecessary
 
+def gmlId(id):
+    """
+    Given an id candidate string, return a valid GML id attribute value
+    by removing forbidden characters.
+    """
+    return re.sub('\W|^(?=\d)','_', id)
 
 def main():
     args = options()
@@ -2659,7 +2668,7 @@ def main():
     ok = re.match(pattern, nineLetters)
     if ok:
         nineLetters = "_" + nineLetters
-    gml = geo.GeodesyMLType(id=nineLetters)
+    gml = geo.GeodesyMLType(id=gmlId(nineLetters))
     gml.append(element)
     
     contents = gml.toDOM(element_name="geo:GeodesyML").toprettyxml(indent='    ', encoding='utf-8')
