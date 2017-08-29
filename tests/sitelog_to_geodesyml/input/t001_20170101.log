@@ -18,22 +18,22 @@
 
      Site Name                : 
      Four Character ID        : T001
-     Monument Inscription     : 
-     IERS DOMES Number        : (A9)
-     CDP Number               : (A4)
-     Monument Description     : (PILLAR/BRASS PLATE/STEEL MAST/etc)
+     Monument Inscription     : Monument Inscription
+     IERS DOMES Number        : 123456789
+     CDP Number               : 1234
+     Monument Description     : Monument Description
        Height of the Monument: 0.50 m
-       Monument Foundation    : (STEEL RODS, CONCRETE BLOCK, ROOF, etc)
-       Foundation Depth       : (m)
-     Marker Description       : (CHISELLED CROSS/DIVOT/BRASS NAIL/etc)
-     Date Installed           : (CCYY-MM-DDThh:mmZ)
-     Geologic Characteristic  : (BEDROCK/CLAY/CONGLOMERATE/GRAVEL/SAND/etc)
-       Bedrock Type           : (IGNEOUS/METAMORPHIC/SEDIMENTARY)
-       Bedrock Condition      : (FRESH/JOINTED/WEATHERED)
-       Fracture Spacing       : (1-10 cm/11-50 cm/51-200 cm/over 200 cm)
-       Fault zones nearby     : (YES/NO/Name of the zone)
-         Distance/activity    : (multiple lines)
-     Additional Information   : (multiple lines)
+       Monument Foundation    : Monument Foundation
+       Foundation Depth       : 3
+     Marker Description       : Marker Description
+     Date Installed           : 2011-01-01T12:12Z
+     Geologic Characteristic  : Geologic Characteristic
+       Bedrock Type           : Bedrock Type
+       Bedrock Condition      : Bedrock Condition
+       Fracture Spacing       : 1-10 cm
+       Fault zones nearby     : Yes
+         Distance/activity    : 11km
+     Additional Information   : notes
 
 
 2.   Site Location Information

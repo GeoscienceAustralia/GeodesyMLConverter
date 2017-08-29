@@ -9,20 +9,21 @@
         <geo:siteIdentification>
             <geo:siteName></geo:siteName>
             <geo:fourCharacterID>T001</geo:fourCharacterID>
-            <geo:monumentInscription></geo:monumentInscription>
-            <geo:iersDOMESNumber></geo:iersDOMESNumber>
-            <geo:cdpNumber></geo:cdpNumber>
-            <geo:monumentDescription codeSpace="urn:ga-gov-au:monument-description-type"></geo:monumentDescription>
+            <geo:monumentInscription>Monument Inscription</geo:monumentInscription>
+            <geo:iersDOMESNumber>123456789</geo:iersDOMESNumber>
+            <geo:cdpNumber>1234</geo:cdpNumber>
+            <geo:monumentDescription codeSpace="urn:ga-gov-au:monument-description-type">Monument Description</geo:monumentDescription>
             <geo:heightOfTheMonument>0.5</geo:heightOfTheMonument>
-            <geo:monumentFoundation></geo:monumentFoundation>
-            <geo:markerDescription></geo:markerDescription>
-            <geo:dateInstalled></geo:dateInstalled>
-            <geo:geologicCharacteristic codeSpace="urn:ga-gov-au:geologic-characteristic-type"></geo:geologicCharacteristic>
-            <geo:bedrockType></geo:bedrockType>
-            <geo:bedrockCondition></geo:bedrockCondition>
-            <geo:fractureSpacing></geo:fractureSpacing>
-            <geo:faultZonesNearby codeSpace="urn:ga-gov-au:fault-zones-type"></geo:faultZonesNearby>
-            <geo:notes></geo:notes>
+            <geo:monumentFoundation>Monument Foundation</geo:monumentFoundation>
+            <geo:foundationDepth>3.0</geo:foundationDepth>
+            <geo:markerDescription>Marker Description</geo:markerDescription>
+            <geo:dateInstalled>2011-01-01T12:12:00Z</geo:dateInstalled>
+            <geo:geologicCharacteristic codeSpace="urn:ga-gov-au:geologic-characteristic-type">Geologic Characteristic</geo:geologicCharacteristic>
+            <geo:bedrockType>Bedrock Type</geo:bedrockType>
+            <geo:bedrockCondition>Bedrock Condition</geo:bedrockCondition>
+            <geo:fractureSpacing>1-10 cm</geo:fractureSpacing>
+            <geo:faultZonesNearby codeSpace="urn:ga-gov-au:fault-zones-type">Yes</geo:faultZonesNearby>
+            <geo:notes>notes</geo:notes>
         </geo:siteIdentification>
         <geo:siteLocation>
             <geo:city></geo:city>
