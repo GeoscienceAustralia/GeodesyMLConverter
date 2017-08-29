@@ -119,7 +119,7 @@ def setNillableDoubleAttribute(target, field, pattern, text, line, mandatory=Tru
             bracketedFloatPattern = re.compile(r'\(.*(?P<float>[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?).*\)', re.IGNORECASE)
             # for a very special case as:            Marker->ARP East Ecc(m)  : (F8.4)
             # you should NOT extract '8.4' as the double value
-            special = re.search(bracketedFloatPattern, value)
+            special = re.match(bracketedFloatPattern, value)
             if special:
                 ok = False
             else:
