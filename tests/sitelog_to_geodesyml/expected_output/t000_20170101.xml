@@ -21,6 +21,7 @@
             <geo:bedrockCondition></geo:bedrockCondition>
             <geo:fractureSpacing></geo:fractureSpacing>
             <geo:faultZonesNearby codeSpace="urn:ga-gov-au:fault-zones-type"></geo:faultZonesNearby>
+            <geo:distance-Activity></geo:distance-Activity>
             <geo:notes></geo:notes>
         </geo:siteIdentification>
         <geo:siteLocation>

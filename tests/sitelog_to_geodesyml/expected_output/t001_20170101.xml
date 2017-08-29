@@ -23,6 +23,7 @@
             <geo:bedrockCondition>Bedrock Condition</geo:bedrockCondition>
             <geo:fractureSpacing>1-10 cm</geo:fractureSpacing>
             <geo:faultZonesNearby codeSpace="urn:ga-gov-au:fault-zones-type">Yes</geo:faultZonesNearby>
+            <geo:distance-Activity>11km</geo:distance-Activity>
             <geo:notes>notes</geo:notes>
         </geo:siteIdentification>
         <geo:siteLocation>

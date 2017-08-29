@@ -1517,7 +1517,7 @@ class SiteIdentification(object):
                 text, line, "urn:ga-gov-au:fault-zones-type"):
             return
 
-        if parser.setTextAttribute(self.siteIdentification, "distance-Activity", type(self).Distance_Activity, text, line):
+        if parser.setTextAttribute(self.siteIdentification, "distance_Activity", type(self).Distance_Activity, text, line):
             return
 
         if parser.assignNotes(self.notes, type(self).Notes, text, line):
