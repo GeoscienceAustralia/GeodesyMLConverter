@@ -17,7 +17,7 @@
             <geo:monumentFoundation>Monument Foundation</geo:monumentFoundation>
             <geo:foundationDepth>3.0</geo:foundationDepth>
             <geo:markerDescription>Marker Description</geo:markerDescription>
-            <geo:dateInstalled>2011-01-01T12:12:00Z</geo:dateInstalled>
+            <geo:dateInstalled>2011</geo:dateInstalled>
             <geo:geologicCharacteristic codeSpace="urn:ga-gov-au:geologic-characteristic-type">Geologic Characteristic</geo:geologicCharacteristic>
             <geo:bedrockType>Bedrock Type</geo:bedrockType>
             <geo:bedrockCondition>Bedrock Condition</geo:bedrockCondition>
@@ -55,11 +55,11 @@
                 <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GAL</geo:satelliteSystem>
                 <geo:firmwareVersion>0.11</geo:firmwareVersion>
                 <geo:elevationCutoffSetting>32.0</geo:elevationCutoffSetting>
-                <geo:dateInstalled>2017-01-01</geo:dateInstalled>
+                <geo:dateInstalled>2017-01</geo:dateInstalled>
                 <geo:dateRemoved></geo:dateRemoved>
                 <geo:temperatureStabilization>3.0</geo:temperatureStabilization>
             </geo:GnssReceiver>
-            <geo:dateInserted>2017-01-01</geo:dateInserted>
+            <geo:dateInserted>2017-01</geo:dateInserted>
         </geo:gnssReceiver>
         <geo:gnssReceiver>
             <geo:GnssReceiver gml:id="gnss-receiver-2">

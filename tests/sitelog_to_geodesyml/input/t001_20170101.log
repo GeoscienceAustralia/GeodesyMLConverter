@@ -26,7 +26,7 @@
        Monument Foundation    : Monument Foundation
        Foundation Depth       : 3
      Marker Description       : Marker Description
-     Date Installed           : 2011-01-01T12:12Z
+     Date Installed           : 2011-MM-DD
      Geologic Characteristic  : Geologic Characteristic
        Bedrock Type           : Bedrock Type
        Bedrock Condition      : Bedrock Condition
@@ -59,7 +59,7 @@
      Serial Number            : 123
      Firmware Version         : 0.11
      Elevation Cutoff Setting : 32
-     Date Installed           : 2017-01-01
+     Date Installed           : 2017-01-DD
      Date Removed             : 
      Temperature Stabiliz.    : 3
      Additional Information   : line one
