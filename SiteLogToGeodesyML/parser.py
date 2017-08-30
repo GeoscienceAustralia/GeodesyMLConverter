@@ -161,11 +161,8 @@ def setDateTimeAttribute(target, field, pattern, text, line, mandatory=True):
     if ok:
         value = ok.group('value').strip()
         try:
-            replacement = [""]
-            validateDateTime(value, replacement)
-            dateTime = gml.TimePositionType(replacement[0])
-            setattr(target, field, dateTime)
-        except pyxb.PyXBException as e:
+            setattr(target, field, timePosition(value))
+        except ValueError as e:
             if mandatory:
                 errorMessage(line, value, "A date time in format 'YYYY-MM-DD' or 'YYYY-MM-DDThh:mmZ' is expected")
             else:
@@ -329,11 +326,8 @@ def parseDateTime(variable, pattern, text, line, mandatory=True):
     if ok:
         value = ok.group('value').strip()
         try:
-            replacement = [""]
-            validateDateTime(value, replacement)
-            dateTime = gml.TimePositionType(replacement[0])
-            variable.append(dateTime)
-        except pyxb.PyXBException as e:
+            variable.append(timePosition(value))
+        except ValueError as e:
             if mandatory:
                 errorMessage(line, value, "A date time in format 'YYYY-MM-DD' or 'YYYY-MM-DDThh:mmZ' is expected")
             else:
@@ -358,10 +352,8 @@ def textToDateTime(text, line, mandatory = False):
         return gml.TimePositionType()
     else:
         try:
-            replacement = [""]
-            validateDateTime(text, replacement)
-            dateTime = gml.TimePositionType(replacement[0])
-        except pyxb.PyXBException as e:
+            dateTime = timePosition(text)
+        except ValueError as e:
             errorMessage(line, text, "A date time in format 'YYYY-MM-DD' or 'YYYY-MM-DDThh:mmZ' is expected")
             dateTime = gml.TimePositionType()
         except:
@@ -438,53 +430,37 @@ def parseTimePeriod(variable, pattern, text, line, siteLog, mandatory = True):
     else:
         return False
         
-        
-def validateDate(text, reference):
-    pattern = re.compile(r'^(\d{4})-(\d{2})-(\d{2})T*$', re.IGNORECASE)
-    ok = re.match(pattern, text)
-    if ok:
-        year = int(ok.group(1))
-        month = int(ok.group(2))
-        date = int(ok.group(3))
-        try:
-            theDate = xsd.dateTime(year, month, date)
-        except pyxb.PyXBException:
-            e = pyxb.PyXBException("incorrect date format")
-            raise e
-        except:
-            e = pyxb.PyXBException("incorrect date format")
-            raise e
-        reference[0] = ok.group(1) + "-" + ok.group(2) + "-" + ok.group(3)
-    else:
-        e = pyxb.PyXBException("incorrect date format")
-        raise e
-
-
-def validateDateTime(text, reference):
+def dateTimeWithoutSeconds(str):
     pattern = re.compile(r'^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})Z$', re.IGNORECASE)
-    ok = re.match(pattern, text)
-    if ok:
-        year = int(ok.group(1))
-        month = int(ok.group(2))
-        date = int(ok.group(3))
-        hour = int(ok.group(4))
-        minute = int(ok.group(5))
-        try:
-            theDate = xsd.dateTime(year, month, date, hour, minute)
-        except pyxb.PyXBException:
-            e = pyxb.PyXBException("incorrect date format")
-            raise e
-        except:
-            e = pyxb.PyXBException("incorrect date format")
-            raise e
+    matched = re.match(pattern, str)
+    if matched:
+        year = int(matched.group(1))
+        month = int(matched.group(2))
+        date = int(matched.group(3))
+        hour = int(matched.group(4))
+        minute = int(matched.group(5))
+        xsd.dateTime(year, month, date, hour, minute)
+        return '{:d}-{:02d}-{:02d}T{:02d}:{:02d}:00Z'.format(year, month, date, hour, minute)
+        
+    raise ValueError('Invalid date time without seconds: {}'.format(str))
 
-        reference[0] = ok.group(1)+"-"+ok.group(2)+"-"+ok.group(3)+"T"+ok.group(4)+":"+ok.group(5)+":00Z"
-
+def timePosition(str):
+    year = re.match(r'^(\d{4})-MM-DD', str)
+    if year:
+        str = year.group(1)
     else:
-        return validateDate(text, reference)
+        yearMonth = re.match(r'^(\d{4}-\d{2})-DD', str)
+        if yearMonth:
+            str = yearMonth.group(1)
 
+    dateTypes = [xsd.dateTime, dateTimeWithoutSeconds, xsd.date, xsd.gYearMonth, xsd.gYear]
+    for dateType in dateTypes:
+        try:
+            return gml.TimePositionType(dateType(str))
+        except (xsd.SimpleTypeValueError, ValueError):
+            pass
 
-
+    raise ValueError('Invalid date {}'.format(str))
 
 def assignNotes(variable, pattern, text, line):
     ok = re.match(pattern, text)
