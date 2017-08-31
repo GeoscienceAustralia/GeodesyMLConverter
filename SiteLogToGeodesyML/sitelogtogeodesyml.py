@@ -1445,7 +1445,7 @@ class SiteIdentification(object):
     IersDOMESNumber = re.compile(r'^\s+(((IERS)|(APREF))\s+DOMES\s+Number\s*:)(?P<value>.*)$', re.IGNORECASE)
     CdpNumber = re.compile(r'^\s+(CDP\s+Number\s*:)(?P<value>.*)$', re.IGNORECASE)
     MonumentDescription = re.compile(r'^\s+(Monument\s+Description\s*:)(?P<value>.*)$', re.IGNORECASE)
-    HeightOfTheMonument = re.compile(r'^\s+(Height\s+of\s+The\s+Monument\s*:)(?P<value>.*)$', re.IGNORECASE)
+    HeightOfTheMonument = re.compile(r'^\s+(Height\s+of\s+The\s+Monument\s*:[^0-9\.]*)(?P<value>.*)$', re.IGNORECASE)
     MonumentFoundation = re.compile(r'^\s+(Monument\s+Foundation\s*:)(?P<value>.*)$', re.IGNORECASE)
     FoundationDepth = re.compile(r'^\s+(Foundation\s+Depth\s*:)(?P<value>.*)$', re.IGNORECASE)
     MarkerDescription = re.compile(r'^\s+(Marker\s+Description\s*:)(?P<value>.*)$', re.IGNORECASE)
