@@ -52,7 +52,7 @@
                 <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GAL</geo:satelliteSystem>
                 <geo:firmwareVersion>0.11</geo:firmwareVersion>
                 <geo:elevationCutoffSetting>32.8</geo:elevationCutoffSetting>
-                <geo:dateInstalled>2017-01-01</geo:dateInstalled>
+                <geo:dateInstalled>2017-01-01T12:13:14Z</geo:dateInstalled>
                 <geo:dateRemoved></geo:dateRemoved>
                 <geo:temperatureStabilization>3.0</geo:temperatureStabilization>
             </geo:GnssReceiver>
