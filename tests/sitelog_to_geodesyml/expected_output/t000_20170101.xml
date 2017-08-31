@@ -61,13 +61,13 @@
                         <gmd:address>
                             <gmd:CI_Address id="address-1">
                                 <gmd:deliveryPoint>
-                                    <gco:CharacterString>Address Line One</gco:CharacterString>
+                                    <gco:CharacterString>GPO Box 378</gco:CharacterString>
                                 </gmd:deliveryPoint>
                                 <gmd:deliveryPoint>
-                                    <gco:CharacterString>Address Line Two</gco:CharacterString>
+                                    <gco:CharacterString>Canberra  ACT  2601</gco:CharacterString>
                                 </gmd:deliveryPoint>
                                 <gmd:deliveryPoint>
-                                    <gco:CharacterString>Address Line Three</gco:CharacterString>
+                                    <gco:CharacterString>AUSTRALIA</gco:CharacterString>
                                 </gmd:deliveryPoint>
                                 <gmd:city>
                                     <gco:CharacterString></gco:CharacterString>
@@ -119,13 +119,13 @@
                         <gmd:address>
                             <gmd:CI_Address id="address-2">
                                 <gmd:deliveryPoint>
-                                    <gco:CharacterString>Address Line One</gco:CharacterString>
+                                    <gco:CharacterString>GPO Box 378</gco:CharacterString>
                                 </gmd:deliveryPoint>
                                 <gmd:deliveryPoint>
-                                    <gco:CharacterString>Address Line Two</gco:CharacterString>
+                                    <gco:CharacterString>Canberra  ACT  2601</gco:CharacterString>
                                 </gmd:deliveryPoint>
                                 <gmd:deliveryPoint>
-                                    <gco:CharacterString>Address Line Three</gco:CharacterString>
+                                    <gco:CharacterString>AUSTRALIA</gco:CharacterString>
                                 </gmd:deliveryPoint>
                                 <gmd:city>
                                     <gco:CharacterString></gco:CharacterString>

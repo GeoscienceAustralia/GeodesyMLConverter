@@ -1839,33 +1839,14 @@ class ContactAgency(object):
             electronicMailAddress = gco.CharacterString_PropertyType()
             electronicMailAddress.append(self.email[0])
 
-            pattern = re.compile(r'(?P<city>[a-zA-Z]+)([,]?\s+)(\w{2,3})([,]?\s+)(?P<code>\d{4})([,]?\s+)AUSTRALIA', 
-                    re.MULTILINE | re.IGNORECASE)
-            ok = re.search(pattern, self.address[0])
-            if ok:
-                city = gco.CharacterString_PropertyType()
+            city = gco.CharacterString_PropertyType()
+            city.append("")
 
-                special = re.compile(r'Alice Springs', re.MULTILINE | re.IGNORECASE)
-                found = re.search(special, self.address[0])
-                if found:
-                    city.append('Alice Springs')
-                else:
-                    city.append(ok.group('city'))
+            country = gco.CharacterString_PropertyType()
+            country.append("")
 
-                country = gco.CharacterString_PropertyType()
-                country.append("Australia")
-
-                postalCode = gco.CharacterString_PropertyType()
-                postalCode.append(ok.group('code'))
-            else:
-                city = gco.CharacterString_PropertyType()
-                city.append("")
-
-                country = gco.CharacterString_PropertyType()
-                country.append("")
-
-                postalCode = gco.CharacterString_PropertyType()
-                postalCode.append("")
+            postalCode = gco.CharacterString_PropertyType()
+            postalCode.append("")
 
             addressProperty.CI_Address.city = city
             addressProperty.CI_Address.postalCode = postalCode
@@ -1940,32 +1921,14 @@ class ContactAgency(object):
             electronicMailAddress = gco.CharacterString_PropertyType()
             electronicMailAddress.append(self.email[1])
 
-            pattern = re.compile(r'(?P<city>[a-zA-Z]+)([,]?\s+)(\w{2,3})([,]?\s+)(?P<code>\d{4})([,]?\s+)AUSTRALIA', re.MULTILINE | re.IGNORECASE)
-            ok = re.search(pattern, self.address[0])
-            if ok:
-                city = gco.CharacterString_PropertyType()
+            city = gco.CharacterString_PropertyType()
+            city.append("")
 
-                special = re.compile(r'Alice Springs', re.MULTILINE | re.IGNORECASE)
-                found = re.search(special, self.address[0])
-                if found:
-                    city.append('Alice Springs')
-                else:
-                    city.append(ok.group('city'))
+            country = gco.CharacterString_PropertyType()
+            country.append("")
 
-                country = gco.CharacterString_PropertyType()
-                country.append("Australia")
-
-                postalCode = gco.CharacterString_PropertyType()
-                postalCode.append(ok.group('code'))
-            else:
-                city = gco.CharacterString_PropertyType()
-                city.append("")
-
-                country = gco.CharacterString_PropertyType()
-                country.append("")
-
-                postalCode = gco.CharacterString_PropertyType()
-                postalCode.append("")
+            postalCode = gco.CharacterString_PropertyType()
+            postalCode.append("")
 
             addressProperty.CI_Address.city = city
             addressProperty.CI_Address.postalCode = postalCode
