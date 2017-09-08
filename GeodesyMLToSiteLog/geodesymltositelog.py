@@ -45,8 +45,21 @@ class SiteLog(object):
 
     @classmethod
     def date(cls, timePosition, withTime=False):
-        timePositionUnion = timePosition._TypeDefinition
-        text = timePositionUnion.XsdLiteral(timePosition.value())
+        pattern = "{year:0>4}-{month:0>2}-{day:0>2}"
+        dateFields = { "year": "CCYY", "month": "MM", "day": "DD" }
+
+        if withTime:
+            pattern += "T{hour:0>2}:{minute:0>2}Z"
+            dateFields.update({ "hour": "hh", "minute": "mm" })
+
+        if timePosition:
+            timePositionUnion = timePosition._TypeDefinition
+            text = timePositionUnion.XsdLiteral(timePosition.value())
+        else:
+            text = None
+
+        if not text:
+            return "(" + pattern.format(**dateFields) + ")"
 
         # Note: To map 2017-02 to 2017-02-DD, add xsd.gYearMonth to dataTypes.
         dateTypes = [xsd.dateTime]
@@ -58,24 +71,13 @@ class SiteLog(object):
             except (xsd.SimpleTypeValueError, ValueError):
                 pass
 
-        pattern = "{year:0>4}-{month:0>2}-{day:0>2}"
-        dateFields = { "year": "CCYY", "month": "MM", "day": "DD" }
-
-        if withTime:
-            pattern += "T{hour:0>2}:{minute:0>2}Z"
-            dateFields.update({ "hour": "hh", "minute": "mm" })
-
         if date:
             for dateField in date._ValidFields if hasattr(date, "_ValidFields") else dateFields:
                 dateFields[dateField] = getattr(date, dateField)
 
-            result = pattern.format(**dateFields)
-        elif text:
-            result = text
+            return pattern.format(**dateFields)
         else:
-            result = "(" + pattern.format(**dateFields) + ")"
-
-        return result
+            return text
 
     @classmethod
     def toMultiple(cls, line):
