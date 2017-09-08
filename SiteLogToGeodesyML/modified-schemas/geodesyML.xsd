@@ -55,7 +55,7 @@ Copyright: Commonwealth Government (Geoscience Australia) 2016
                         <element ref="geo:AbstractMeasurementOperation"/>
                         <element ref="geo:AbstractDefinitionSource"/>
                         <element ref="geo:AbstractDefinitionOperation"/>
-                        <element ref="geo:AbstractSiteLog"/>
+                        <!-- <element ref="geo:AbstractSiteLog"/> -->
                         <element ref="geo:Project"/>
                         <element ref="geo:Document"/>
                         <element ref="geo:Setup"/>
