@@ -6,7 +6,7 @@ python:
 install:
   - pip -v install -r requirements-dev.txt
   - pip -v install -r requirements.txt
-  - pip -v install . --upgrade
+  - pip -v install .
 
 script:
   - pytest
