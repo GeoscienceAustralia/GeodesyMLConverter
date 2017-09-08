@@ -62,7 +62,7 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
                     <group ref="geo:RemarksGroup"/>
                     <element name="manufacturer" type="string"/>
                     <element name="serialNumber" type="string"/>
-                    <element name="heightDiffToAntenna" type="geo:NillableDouble" nillable="true"/>
+                    <element name="heightDiffToAntenna" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
                     <element name="calibrationDate" type="gml:TimePositionType"/>
                     <element ref="gml:validTime"/>
                 </sequence>
@@ -198,8 +198,8 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
         <complexContent>
             <extension base="geo:BaseSensorEquipmentType">
                 <sequence>
-                    <element name="dataSamplingInterval" type="geo:NillableDouble" nillable="true"/>
-                    <element name="accuracy-percentRelativeHumidity" type="geo:NillableDouble" nillable="true"/>
+                    <element name="dataSamplingInterval" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
+                    <element name="accuracy-percentRelativeHumidity" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
                     <element name="aspiration" type="string"/>
                 </sequence>
             </extension>
@@ -219,8 +219,8 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
         <complexContent>
             <extension base="geo:BaseSensorEquipmentType">
                 <sequence>
-                    <element name="dataSamplingInterval" type="geo:NillableDouble" nillable="true"/>
-                    <element name="accuracy-hPa" type="geo:NillableDouble" nillable="true"/>
+                    <element name="dataSamplingInterval" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
+                    <element name="accuracy-hPa" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
                 </sequence>
             </extension>
         </complexContent>
@@ -248,12 +248,12 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
                     <element name="tiedMarkerUsage" type="string"/>
                     <element name="tiedMarkerCDPNumber" type="string"/>
                     <element name="tiedMarkerDOMESNumber" type="string"/>
-                    <element name="differentialComponentsGNSSMarkerToTiedMonumentITRS" nillable="true">
+                    <element name="differentialComponentsGNSSMarkerToTiedMonumentITRS" nillable="true" minOccurs="0">
                         <complexType>
                             <sequence>
-                                <element name="dx" type="geo:NillableDouble" nillable="true"/>
-                                <element name="dy" type="geo:NillableDouble" nillable="true"/>
-                                <element name="dz" type="geo:NillableDouble" nillable="true"/>
+                                <element name="dx" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
+                                <element name="dy" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
+                                <element name="dz" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
                             </sequence>
                         </complexType>
                     </element>
@@ -281,8 +281,8 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
         <complexContent>
             <extension base="geo:BaseSensorEquipmentType">
                 <sequence>
-                    <element name="dataSamplingInterval" type="geo:NillableDouble" nillable="true"/>
-                    <element name="accuracy-degreesCelcius" type="geo:NillableDouble" nillable="true"/>
+                    <element name="dataSamplingInterval" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
+                    <element name="accuracy-degreesCelcius" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
                     <element name="aspiration" type="string"/>
                 </sequence>
             </extension>
@@ -292,7 +292,7 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
         <complexContent>
             <extension base="geo:BaseSensorEquipmentType">
                 <sequence>
-                    <element name="distanceToAntenna" type="geo:NillableDouble" nillable="true"/>
+                    <element name="distanceToAntenna" type="geo:NillableDouble" nillable="true" minOccurs="0"/>
                 </sequence>
             </extension>
         </complexContent>

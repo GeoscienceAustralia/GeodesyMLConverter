@@ -147,7 +147,7 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
     <complexType name="formInformationType">
         <sequence>
             <element name="preparedBy" type="string"/>
-            <element name="datePrepared" type="gml:TimePositionType"/>
+            <element name="datePrepared" type="gml:TimePositionType" minOccurs="0"/>
             <element name="reportType" type="string"/>
         </sequence>
     </complexType>
