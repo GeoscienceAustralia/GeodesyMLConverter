@@ -1,30 +1,35 @@
 language: python
-
 python:
-  - "2.7"
+- '2.7'
 
 install:
-  - pip -v install -r requirements-dev.txt
-  - pip -v install -r requirements.txt
-  - pip -v install .
+- pip -v install -r requirements-dev.txt
+- pip -v install -r requirements.txt
+- pip -v install .
 
 script:
-  - pytest
+- pytest
 
 after_success:
-  - curl -fSL "https://releases.hashicorp.com/terraform/0.6.15/terraform_0.6.15_linux_amd64.zip" -o terraform.zip
-  - sudo unzip terraform.zip -d /opt/terraform
-  - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
-  - rm -f terraform.zip
-  - ./aws/deploy.sh
+- curl -fSL "https://releases.hashicorp.com/terraform/0.6.15/terraform_0.6.15_linux_amd64.zip"
+  -o terraform.zip
+- sudo unzip terraform.zip -d /opt/terraform
+- sudo ln -s /opt/terraform/terraform /usr/bin/terraform
+- rm -f terraform.zip
+- ./aws/deploy.sh
 
 branches:
   only:
-    - master
-    - next
+  - master
+  - next
 
 cache:
-  - pip
-  - directories:
-    - $HOME/virtualenv
-    - $HOME/.cache/pip
+- pip
+- directories:
+  - $HOME/virtualenv
+  - $HOME/.cache/pip
+
+env:
+  global:
+  - secure: NaiCIm+m5kqdy4Do6s+PnGp/7c/DF6k6N5xbVZ6nhrAbMCBXwVK/jzizw6YzSEHHMnQ+hQUdi95b3lZmv9jYiUXqFmDUJvp66l1Bbn2O1rgVnA5p8gaKyGcxvnVAAQi95LzbEoMjVyEnnu+Q4HAI9cMwh4IMCxKVFvWCbFMwdVqyy1bcp9Tw6jHt2bdwv/SDTvQgmGH+1M233bk/lDV2dHkxgOwmQPwJDEDpjjvJZ1HNe24pgYagiUpDZFrNsj4xiOGjd4rD/fy4f+8OdQFO0RF18O4n4rM0YeIQ24Bj3GOkj4hdUMSYGN2NgMxc1/TxwxyCnCh2xKGb1c/y6Bx7nVCG73jMMpolHBaf1lze83GSnJJaLC9vZ5E07gM72K6ohLDJPAoWZyY3WlgxiM5mXGDcs5poVqhzA7wzPx2WEgCjO+ckXCEnNIc+PksTETcivpkR1tJ0Z6ncY7wNkPVkMY79owMxHbcxyJ8RqWVkNCr21UQOwXOTmu235+IiTJ/nhBo2YNF4oxjcGzPxIkmf6BBfC3i/xY3qwIGsrO09bIgicNMl6mHJ4q2Gfv8jPBPx6dlH4jYhmn5fs5ifrFn9+16a/zIz+nF+EZH3s2ut3QEmwR1LX8SQ39i8ej9LdAT+8OzT6G7o0wTRcZ6tq93Op9mOpXtxCFoY6tFgQZaN0+8=
+  - secure: Dppd5gVPbhjQVPUpYch/gIh+os3D/rDjLgoNyQNuURqsKQK92/LovbSKo7RqU2vz86Q1F4cNt1Bl+IWix3fPBXC1czd8P/fjIcr8rLu53YYFZ50Wh5/LD/D1bgYZurV032gOKL/CAK+iShes1In6qPU3tCcL5Zc0x0my9iMw4ptTg3qjTR576x4uapgZdMYL1UomGNEjTh2KBr1hIL5or/2uckV+kEkc3QHasPJL0h4RFUKtAgC2NDdq90TpQDujrm2zkYPK77BR56Ywvo8NgcaLWbM04OOMG+Eea9baCoERWdNG2dRQGpsi9x+daGCjBZb6+9RKaDw4NqJAa2NaMq3SPwa/uvqX4HhysXtWCHUIIlLfBUJ8lEUo11aoTL2kVBHBKcFvSIqZmRKrVTnu095MqUfEPUPSzip3ZyQ0/gR1Nz3SDwrSWLqpcp2eend1lZTpfFMixidaUhZtmJPFrJDldybI5wX711TGBeLmhX9s1p9EBmgi3G/Tzd7qJrHZQL2TIOe4e505OD/VHZMjeCbwEhN3i8PScZX+9TipJdk8276fYktrxdACeMpb6eAdMndcxTY+aogWdKhhAv8DRf9ltTvPVq7UsSprT1VbSrnZ8xONnxXXvCEk/diyxwA7tSn2rYrZr7bFqXQCLhmY0C/L70I0yCqTpelDtALORYo=
