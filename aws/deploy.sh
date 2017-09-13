@@ -5,7 +5,7 @@ environment=$1
 terraform_state=$2
 
 cd auscors-sitelogs-terraform/
-#./modules/lambda/create-deployment-package.sh
+./modules/lambda/create-deployment-package.sh
 
 terraform init \
 	-backend-config "bucket=${terraform_state}" \
@@ -14,4 +14,5 @@ terraform init \
 	-backend-config "key=auscors-sitelogs/${environment}/terraform.tfstate"
 
 terraform get
+terraform plan -var-file=$environment.tfvars
 terraform apply -var-file=$environment.tfvars
