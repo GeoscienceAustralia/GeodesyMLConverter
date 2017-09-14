@@ -12,7 +12,7 @@ install:
 
 script:
 - pytest
-- ./build.sh
+- ./travis/build.sh
 
 branches:
   only:
