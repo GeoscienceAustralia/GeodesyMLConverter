@@ -4,6 +4,7 @@ python:
 
 before_install:
 - ./travis/install-terraform.sh
+- pip install awscli
 
 install:
 - pip -v install -r requirements-dev.txt
