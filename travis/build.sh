@@ -2,6 +2,10 @@
 
 set -e
 
+cd aws
+./deploy.sh dev auscors-terraform-state-dev
+exit 0
+
 pytest
 
 cd aws/
