@@ -8,7 +8,18 @@ echo $scriptDir
 echo $sourceDir
 
 virtualenv "$scriptDir"/python2-env
+
+echo "activate*******"
+head "$scriptDir"/python2-env/bin/activate
+
+echo "pip*******"
+head "$scriptDir"/python2-env/bin/activate
+head "$scriptDir"/python2-env/bin/pip
+
+
 . "$scriptDir"/python2-env/bin/activate
+
+echo "&&&&&&&&&&"
 
 (cd "$sourceDir" && pip install -r requirements.txt)
 (cd "$sourceDir" && pip install . --upgrade)
