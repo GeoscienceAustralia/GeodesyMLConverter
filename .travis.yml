@@ -16,7 +16,7 @@ install:
 
 script:
 - pytest
-- ./aws/deploy.sh
+- ./build.sh
 
 branches:
   only:
