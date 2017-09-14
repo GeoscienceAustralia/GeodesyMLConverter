@@ -5,6 +5,7 @@ python:
 before_install:
 - ./travis/install-terraform.sh
 - pip install awscli
+- export PATH=$PATH:~/terraform
 
 install:
 - pip -v install -r requirements-dev.txt
@@ -24,7 +25,7 @@ cache:
 - directories:
   - $HOME/virtualenv
   - $HOME/.cache/pip
-  - /opt/terraform
+  - $HOME/terraform
 
 env:
   global:
