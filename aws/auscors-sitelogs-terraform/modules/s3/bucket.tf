@@ -15,6 +15,28 @@ resource "aws_s3_bucket" "data_bucket" {
     application = "${var.application}"
     owner       = "${var.owner}"
   }
+
+  policy = <<POLICY
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "${var.read_only_user_arn}"
+            },
+            "Action": [
+		"s3:ListBucket", 
+		"s3:PutObject"
+	    ],
+	    "Resource": [
+		"arn:aws:s3:::${var.application}-converted-${var.environment}",
+                "arn:aws:s3:::${var.application}-converted-${var.environment}/*"
+            ]
+        }
+    ]
+}
+POLICY
 }
 
 output "bucket_name" {
