@@ -3,8 +3,8 @@
 scriptDir=$(readlink -f "${BASH_SOURCE[0]%/*}")
 sourceDir=$(readlink -f "$scriptDir"/../../../..)
 
-virtualenv "$scriptDir"/python2-env
-. "$scriptDir"/python2-env/bin/activate
+virtualenv "$sourceDir"/python2-env
+. "$sourceDir"/python2-env/bin/activate
 
 (cd "$sourceDir" && pip install -r requirements.txt)
 (cd "$sourceDir" && pip install . --upgrade)
