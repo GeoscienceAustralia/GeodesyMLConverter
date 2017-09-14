@@ -7,7 +7,7 @@ echo "****************"
 echo $scriptDir
 echo $sourceDir
 
-virtualenv "$scriptDir"/python2-env
+virtualenv "$sourceDir"/python2-env
 
 echo "activate*******"
 head "$scriptDir"/python2-env/bin/activate
