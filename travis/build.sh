@@ -2,9 +2,17 @@
 
 set -e
 
+ls -l $HOME/terraform
+echo $PATH
+terraform --help
+
+exit 0
+
 pytest
 
 cd aws/
+
+
 
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 	aws configure set aws_access_key_id "${TRAVIS_AWS_ACCESS_KEY_ID}" --profile geodesy
