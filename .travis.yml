@@ -11,7 +11,6 @@ install:
 - pip -v install .
 
 script:
-- pytest
 - ./travis/build.sh
 
 branches:

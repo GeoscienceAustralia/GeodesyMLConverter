@@ -2,6 +2,8 @@
 
 set -e
 
+pytest
+
 cd aws/
 
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
