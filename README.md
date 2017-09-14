@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/GeoscienceAustralia/GeodesyMLConverter.svg?branch=master)](https://travis-ci.org/GeoscienceAustralia/GeodesyMLConverter)
 
+testing travis
+
 # GeodesyML Site Log Converter
 Command line tools for converting between GeodesyML site log and text site log formats:
 
