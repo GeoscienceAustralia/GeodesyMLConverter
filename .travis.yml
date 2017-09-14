@@ -2,6 +2,13 @@ language: python
 python:
 - '2.7'
 
+before_install:
+- curl -fSL "https://releases.hashicorp.com/terraform/0.6.15/terraform_0.6.15_linux_amd64.zip"
+  -o terraform.zip
+- sudo unzip terraform.zip -d /opt/terraform
+- sudo ln -s /opt/terraform/terraform /usr/bin/terraform
+- rm -f terraform.zip
+
 install:
 - pip -v install -r requirements-dev.txt
 - pip -v install -r requirements.txt
@@ -9,11 +16,6 @@ install:
 
 script:
 - pytest
-- curl -fSL "https://releases.hashicorp.com/terraform/0.6.15/terraform_0.6.15_linux_amd64.zip"
-  -o terraform.zip
-- sudo unzip terraform.zip -d /opt/terraform
-- sudo ln -s /opt/terraform/terraform /usr/bin/terraform
-- rm -f terraform.zip
 - ./aws/deploy.sh
 
 branches:
@@ -26,6 +28,7 @@ cache:
 - directories:
   - $HOME/virtualenv
   - $HOME/.cache/pip
+  - /opt/terraform
 
 env:
   global:
