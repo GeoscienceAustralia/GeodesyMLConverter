@@ -3,6 +3,10 @@
 scriptDir=$(readlink -f "${BASH_SOURCE[0]%/*}")
 sourceDir=$(readlink -f "$scriptDir"/../../../..)
 
+echo "****************"
+echo $scriptDir
+echo $sourceDir
+
 virtualenv "$scriptDir"/python2-env
 . "$scriptDir"/python2-env/bin/activate
 
