@@ -17,11 +17,13 @@ terraform {
 }
 
 module "s3" {
-  source      = "./modules/s3/"
+  source             = "./modules/s3/"
 
-  environment = "${var.environment}"
-  application = "${var.application}"
-  owner       = "${var.owner}"
+  read_only_user_arn = "${var.read_only_user_arn}"
+
+  environment        = "${var.environment}"
+  application        = "${var.application}"
+  owner              = "${var.owner}"
 }
 
 module iam {
