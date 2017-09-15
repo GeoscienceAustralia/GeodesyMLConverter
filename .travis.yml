@@ -15,6 +15,7 @@ branches:
   only:
   - master
   - next
+  - prod
 cache:
 - pip
 - directories:
