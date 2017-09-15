@@ -7,3 +7,5 @@ variable "region" {
 variable "application" {}
 variable "owner" {}
 variable "environment" {}
+
+variable "read_only_user_arn" {}

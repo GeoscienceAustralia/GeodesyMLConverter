@@ -36,3 +36,8 @@ variable "gws_url" {
   description = "Geodesy Web Services URL for Lambda to retrieve GeodesyML from."
   default     = "dev.geodesy.ga.gov.au"
 }
+
+variable "read_only_user_arn" {
+  description = "ARN for user with cross account access to bucket - for accessesing with service role at GA."
+  default     = "arn:aws:iam::688660191997:user/svc_fetch_geodesyml_sitelogs"
+}
