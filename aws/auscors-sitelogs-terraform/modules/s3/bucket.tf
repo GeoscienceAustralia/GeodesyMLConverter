@@ -27,7 +27,7 @@ resource "aws_s3_bucket" "data_bucket" {
             },
             "Action": [
 		"s3:ListBucket", 
-		"s3:PutObject"
+		"s3:GetObject"
 	    ],
 	    "Resource": [
 		"arn:aws:s3:::${var.application}-converted-${var.environment}",
