@@ -24,7 +24,7 @@ def lambda_handler(event, context):
         raise
 
     try:
-        request_url = 'https://{}/siteLogs/search/findByFourCharacterId?id={}'.format(
+        request_url = '{}/siteLogs/search/findByFourCharacterId?id={}'.format(
             gws_url, sns_message['fourCharacterId'])
         request = urllib2.Request(request_url, headers={'Accept': 'application/xml'})
         xml_string = urllib2.urlopen(request).read()
