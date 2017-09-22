@@ -45,6 +45,9 @@ def lambda_handler(event, context):
         gws_system_user_password = credstash.getSecret(os.environ['gws_system_user_password_key'],
                                                        dynamodb=dynamodb)
 
+        # Session expires in 12 hours, so let's get a new one everytime
+        credstash.get_session._cached_session = None
+
         response = requests.post(oauth2_url + '/access_token?realm=/',
                                  auth=(gws_oidc_client_id, gws_oidc_client_password),
                                  data={'grant_type': 'password',
