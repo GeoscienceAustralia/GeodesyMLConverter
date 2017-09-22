@@ -55,7 +55,7 @@ def lambda_handler(event, context):
         logger.info('Received {}'.format(key))
 
         obj = boto3.resource('s3').Object(bucket, key)
-        text_site_log = obj.get(VersionId=version_id)['Body'].read().decode('utf-8')
+        text_site_log = obj.get(VersionId=version_id)['Body'].read()
 
         text_site_log_file_name = os.path.join(tempfile.gettempdir(), key)
 
