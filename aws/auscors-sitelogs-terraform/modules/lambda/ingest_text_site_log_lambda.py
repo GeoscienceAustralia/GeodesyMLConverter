@@ -74,7 +74,11 @@ def lambda_handler(event, context):
         response.raise_for_status()
 
         logger.info('Uploaded generated xml to {}'.format(gws_url))
-    except:
+    except Exception as err:
+
+        logger.error(err)
+        logger.error(err.details())
+
         if text_site_log_file_name and os.path.exists(text_site_log_file_name):
             os.remove(text_site_log_file_name)
 
