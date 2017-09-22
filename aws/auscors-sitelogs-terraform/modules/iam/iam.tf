@@ -1,4 +1,9 @@
 resource "aws_iam_role" "iam_role" {
+  depends_on = [
+    "aws_iam_role_policy.s3_policy",
+    "aws_iam_role_policy.allow_log_creation",
+    "aws_iam_role_policy.publish_to_dlq"
+  ]
   name = "${var.application}_iam_role_${var.environment}"
   path = "/"
 
