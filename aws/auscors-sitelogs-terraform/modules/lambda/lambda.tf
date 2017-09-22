@@ -8,6 +8,10 @@ resource "aws_lambda_function" "xml_converter" {
   memory_size      = 512
   timeout          = 30
 
+  dead_letter_config {
+    target_arn = ${aws_sns_topic.dead_letter_queue.arn}
+  }
+
   environment {
     variables = {
       output_bucket_name = "${var.bucket_name}"
