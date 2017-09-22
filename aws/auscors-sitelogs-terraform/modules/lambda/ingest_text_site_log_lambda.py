@@ -52,6 +52,8 @@ def lambda_handler(event, context):
         key = s3_event['object']['key']
         version_id = s3_event['object']['versionId']
 
+        logger.info('Received {}'.format(key))
+
         obj = boto3.resource('s3').Object(bucket, key)
         text_site_log = obj.get(VersionId=version_id)['Body'].read().decode('utf-8')
 
