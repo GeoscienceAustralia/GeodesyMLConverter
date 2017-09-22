@@ -52,6 +52,8 @@ def lambda_handler(event, context):
         key = s3_event['object']['key']
         version_id = s3_event['object']['versionId']
 
+        logger.info('Received {}'.format(key))
+
         obj = boto3.resource('s3').Object(bucket, key)
         text_site_log = obj.get(VersionId=version_id)['Body'].read().decode('utf-8')
 
@@ -75,10 +77,6 @@ def lambda_handler(event, context):
 
         logger.info('Uploaded generated xml to {}'.format(gws_url))
     except Exception as err:
-
-        logger.error(err)
-        logger.error(err.details())
-
         if text_site_log_file_name and os.path.exists(text_site_log_file_name):
             os.remove(text_site_log_file_name)
 
