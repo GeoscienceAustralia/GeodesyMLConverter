@@ -29,8 +29,9 @@ module "s3" {
 module iam {
   source      = "./modules/iam/"
 
-  bucket_name = "${module.s3.bucket_name}"
+  dead_letter_queue_arn = "${module.lambda.dead_letter_queue_arn}"
 
+  bucket_name = "${module.s3.bucket_name}"
   environment = "${var.environment}"
   application = "${var.application}"
   owner       = "${var.owner}"

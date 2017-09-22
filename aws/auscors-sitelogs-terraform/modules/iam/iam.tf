@@ -61,6 +61,26 @@ resource "aws_iam_role_policy" "allow_log_creation" {
 POLICY
 }
 
+resource "aws_iam_role_policy" "publish_to_dlq" {
+  name   = "${var.application}-publish-to-dlq-${var.environment}"
+  role   = "${aws_iam_role.iam_role.id}"
+  policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "sns:Publish"
+      ],
+      "Effect": "Allow",
+      "Resource": "${var.dead_letter_queue_arn}"
+    }
+  ]
+}
+POLICY
+}
+
+
 output "iam_role_arn" {
   value = "${aws_iam_role.iam_role.arn}"
 }
