@@ -6,8 +6,8 @@ sourceDir=$(readlink -f "$scriptDir"/../../../..)
 if [ "$VIRTUAL_ENV" == "" ]; then
     virtualenv "$sourceDir"/python2-env
     . "$sourceDir"/python2-env/bin/activate
-    # (cd "$sourceDir" && pip install -r requirements.txt)
-    # (cd "$sourceDir" && pip install .)
+    (cd "$sourceDir" && pip install -r requirements.txt)
+    (cd "$sourceDir" && pip install .)
 fi
 
 pip install requests lambda-packages credstash

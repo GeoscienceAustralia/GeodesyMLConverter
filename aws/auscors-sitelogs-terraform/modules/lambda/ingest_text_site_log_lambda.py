@@ -1,6 +1,3 @@
-"""
-S3 -> text -> xml -> gws
-"""
 import boto3
 import json
 import logging
@@ -12,7 +9,9 @@ import tempfile
 from SiteLogToGeodesyML import sitelogtogeodesyml
 
 def lambda_handler(event, context):
-    """test"""
+    """
+    Receive a text site log file from an S3:Put event, convert it to GeodesyML, and upload it to GWS.
+    """
 
     text_site_log_file_name = None
     xml_site_log_file = None
@@ -83,4 +82,3 @@ def lambda_handler(event, context):
             os.remove(xml_site_log_file.name)
 
         raise
-
