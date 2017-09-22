@@ -39,6 +39,7 @@ module iam {
 
 module "lambda" {
   source       = "./modules/lambda/"
+  depends_on   = ["module.iam"]
 
   sns_arn      = "${var.sns_arn}"
   bucket_name  = "${module.s3.bucket_name}"
