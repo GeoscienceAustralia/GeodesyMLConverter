@@ -1,7 +1,7 @@
 resource "aws_lambda_function" "xml_converter" {
   filename         = "${path.module}/geodesymltositelog_lambda.zip"
   function_name    = "${var.application}-lambda-${var.environment}"
-  role             = "${var.iam_role_arn}"
+  role             = "${aws_iam_role.iam_role.arn}"
   handler          = "geodesymltositelog_lambda.lambda_handler"
   runtime          = "python2.7"
   source_code_hash = "${base64sha256(file("${path.module}/geodesymltositelog_lambda.zip"))}"

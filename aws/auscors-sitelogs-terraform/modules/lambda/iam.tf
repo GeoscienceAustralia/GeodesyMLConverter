@@ -1,9 +1,4 @@
 resource "aws_iam_role" "iam_role" {
-  depends_on = [
-    "aws_iam_role_policy.s3_policy",
-    "aws_iam_role_policy.allow_log_creation",
-    "aws_iam_role_policy.publish_to_dlq"
-  ]
   name = "${var.application}_iam_role_${var.environment}"
   path = "/"
 
@@ -78,14 +73,10 @@ resource "aws_iam_role_policy" "publish_to_dlq" {
         "sns:Publish"
       ],
       "Effect": "Allow",
-      "Resource": "${var.dead_letter_queue_arn}"
+      "Resource": "${aws_sns_topic.dead_letter_queue.arn}"
     }
   ]
 }
 POLICY
 }
 
-
-output "iam_role_arn" {
-  value = "${aws_iam_role.iam_role.arn}"
-}

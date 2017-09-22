@@ -26,23 +26,11 @@ module "s3" {
   owner              = "${var.owner}"
 }
 
-module iam {
-  source      = "./modules/iam/"
-
-  dead_letter_queue_arn = "${module.lambda.dead_letter_queue_arn}"
-
-  bucket_name = "${module.s3.bucket_name}"
-  environment = "${var.environment}"
-  application = "${var.application}"
-  owner       = "${var.owner}"
-}
-
 module "lambda" {
   source       = "./modules/lambda/"
 
   sns_arn      = "${var.sns_arn}"
   bucket_name  = "${module.s3.bucket_name}"
-  iam_role_arn = "${module.iam.iam_role_arn}"
   gws_url      = "${var.gws_url}"
 
   environment  = "${var.environment}"
