@@ -9,7 +9,7 @@ resource "aws_lambda_function" "xml_converter" {
   timeout          = 30
 
   dead_letter_config {
-    target_arn = ${aws_sns_topic.dead_letter_queue.arn}
+    target_arn = "${aws_sns_topic.dead_letter_queue.arn}"
   }
 
   environment {
