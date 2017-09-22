@@ -1,5 +1,5 @@
 environment="dev"
-sns_arn="arn:aws:sns:ap-southeast-2:094928090547:DevGeodesy-SiteLogReceived-EYB2P4K966EE"
+sns_arn="arn:aws:sns:ap-southeast-2:094928090547:DevGeodesy-SiteLogReceived-1IWPAM65IAEVH"
 gws_oidc_client_id_key="GwsOidcClientId"
 gws_oidc_client_password_key="DevGwsOidcClientPassword"
 gws_system_user_id_key="GwsSystemUser"
