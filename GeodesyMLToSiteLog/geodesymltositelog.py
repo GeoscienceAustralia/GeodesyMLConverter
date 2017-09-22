@@ -21,7 +21,7 @@ class SiteLog(object):
         doc = domutils.StringToDOM(xml)
         try:
             response = geodesymltositelog_bindings.CreateFromDOM(doc.documentElement)
-        except (pyxb.UnrecognizedContentError, pyxb.IncompleteElementContentError) as e:
+        except (pyxb.MissingAttributeError, pyxb.UnrecognizedContentError, pyxb.IncompleteElementContentError) as e:
             print(e.details())
             pyxb.RequireValidWhenParsing(False)
             response = geodesymltositelog_bindings.CreateFromDOM(doc.documentElement)

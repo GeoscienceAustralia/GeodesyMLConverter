@@ -26,22 +26,19 @@ module "s3" {
   owner              = "${var.owner}"
 }
 
-module iam {
-  source      = "./modules/iam/"
-
-  bucket_name = "${module.s3.bucket_name}"
-
-  environment = "${var.environment}"
-  application = "${var.application}"
-  owner       = "${var.owner}"
-}
-
 module "lambda" {
   source       = "./modules/lambda/"
 
   sns_arn      = "${var.sns_arn}"
+  incoming_bucket_name  = "${module.s3.incoming_bucket_name}"
+  incoming_bucket_arn  = "${module.s3.incoming_bucket_arn}"
   bucket_name  = "${module.s3.bucket_name}"
-  iam_role_arn = "${module.iam.iam_role_arn}"
+  credstash_role_arn  = "${var.credstash_role_arn}"
+  gws_oidc_client_id_key = "${var.gws_oidc_client_id_key}"
+  gws_oidc_client_password_key = "${var.gws_oidc_client_password_key}"
+  gws_system_user_key = "${var.gws_system_user_key}"
+  gws_system_user_password_key = "${var.gws_system_user_password_key}"
+  oauth2_url   = "${var.oauth2_url}"
   gws_url      = "${var.gws_url}"
 
   environment  = "${var.environment}"
