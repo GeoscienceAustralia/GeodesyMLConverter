@@ -32,9 +32,36 @@ variable "sns_arn" {
   default     = "arn:aws:sns:ap-southeast-2:094928090547:DevGeodesy-SiteLogReceived-EYB2P4K966EE"
 }
 
+variable "credstash_role_arn" {
+  description = "Credstash role to lookup Oauth2 credentials"
+  default     = "arn:aws:iam::094928090547:role/CredstashReader"
+}
+
+variable "oauth2_url" {
+  description = "Geodesy Web Services Oauth2 provider URL."
+}
+
 variable "gws_url" {
   description = "Geodesy Web Services URL for Lambda to retrieve GeodesyML from."
-  default     = "dev.geodesy.ga.gov.au"
+  default     = "https://dev.geodesy.ga.gov.au"
+}
+
+variable "gws_oidc_client_id_key" {
+  description = "Credstash key for Geodesy Web Services OpenId Connect client id."
+  default     = "GwsSystemUser"
+}
+
+variable "gws_oidc_client_password_key" {
+  description = "Credstash key for Geodesy Web Services OpenId Connect client password."
+}
+
+variable "gws_system_user_key" {
+  description = "Credstash key for Geodesy Web Services system user name."
+  default     = "GwsSystemUser"
+}
+
+variable "gws_system_user_password_key" {
+  description = "Credstash key for Geodesy Web Services system user name."
 }
 
 variable "read_only_user_arn" {

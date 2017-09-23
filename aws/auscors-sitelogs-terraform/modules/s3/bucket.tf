@@ -1,3 +1,30 @@
+resource "aws_s3_bucket" "incoming_bucket" {
+  bucket = "${var.application}-incoming-${var.environment}"
+
+  lifecycle {
+    # Will change to true before prod deployment
+    prevent_destroy = false
+  }
+
+  versioning {
+    enabled = true
+  }
+
+  tags {
+    environment = "${var.environment}"
+    application = "${var.application}"
+    owner       = "${var.owner}"
+  }
+}
+
+output "incoming_bucket_name" {
+  value = "${aws_s3_bucket.incoming_bucket.id}"
+}
+
+output "incoming_bucket_arn" {
+  value = "${aws_s3_bucket.incoming_bucket.arn}"
+}
+
 resource "aws_s3_bucket" "data_bucket" {
   bucket = "${var.application}-converted-${var.environment}"
 
