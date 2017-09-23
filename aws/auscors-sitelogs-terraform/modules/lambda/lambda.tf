@@ -7,7 +7,6 @@ resource "aws_lambda_function" "ingest_text_site_log" {
   source_code_hash = "${base64sha256(file("${path.module}/ingest_text_site_log_lambda.zip"))}"
   memory_size      = 512
   timeout          = 30
-  kms_key_arn      = "arn:aws:kms:ap-southeast-2:688660191997:key/b0d28d95-4b46-4afa-bb9e-4cc56a8b4e7c"
 
   dead_letter_config {
     target_arn = "${aws_sns_topic.dead_letter_queue.arn}"
