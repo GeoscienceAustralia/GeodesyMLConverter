@@ -21,13 +21,13 @@ resource "aws_s3_bucket" "incoming_bucket" {
             },
             "Action": [
 		"s3:ListBucket", 
-		"s3:GetObject"
+		"s3:GetObject",
 		"s3:PutObject"
 	    ],
 	    "Resource": [
-		"arn:aws:s3:::${var.application}-incoming-${var.environment}",
-                "arn:aws:s3:::${var.application}-incoming-${var.environment}/*"
-            ]
+            "arn:aws:s3:::${var.application}-incoming-${var.environment}",
+            "arn:aws:s3:::${var.application}-incoming-${var.environment}/*"
+        ]
         }
     ]
 }
