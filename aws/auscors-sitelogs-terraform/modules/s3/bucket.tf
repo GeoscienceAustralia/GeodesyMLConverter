@@ -10,6 +10,29 @@ resource "aws_s3_bucket" "incoming_bucket" {
     enabled = true
   }
 
+  policy = <<POLICY
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::688660191997:root"
+            },
+            "Action": [
+		"s3:ListBucket", 
+		"s3:GetObject"
+		"s3:PutObject"
+	    ],
+	    "Resource": [
+		"arn:aws:s3:::${var.application}-incoming-${var.environment}",
+                "arn:aws:s3:::${var.application}-incoming-${var.environment}/*"
+            ]
+        }
+    ]
+}
+POLICY
+
   tags {
     environment = "${var.environment}"
     application = "${var.application}"
