@@ -17,7 +17,7 @@ resource "aws_s3_bucket" "incoming_bucket" {
         {
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::688660191997:root"
+                "AWS": "${var.read_only_user_arn}"
             },
             "Action": [
 		"s3:ListBucket", 
