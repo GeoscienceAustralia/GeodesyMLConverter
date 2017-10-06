@@ -1,9 +1,28 @@
 #!/usr/bin/env bash
 
 set -e
-export TF_VAR_environment=$1
-export TF_VAR_tf_state_bucket=$2
-export TF_VAR_tf_state_table=$2
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -e|--env)
+        environment="$2"
+        shift
+        shift
+        ;;
+        -s|--state-bucket)
+        stateBucket="$2"
+        shift
+        shift
+        ;;
+        *)
+        shift
+        ;;
+    esac
+done
+
+export TF_VAR_environment=$environment
+export TF_VAR_tf_state_bucket=$stateBucket
+export TF_VAR_tf_state_table=$stateBucket
 
 cd auscors-sitelogs-terraform/
 ./modules/lambda/create-deployment-package.sh
