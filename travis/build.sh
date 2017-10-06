@@ -6,7 +6,7 @@ pytest
 
 cd aws/
 
-if [ "${TRAVIS_PULL_REQUEST}" ]; then
+if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then
     dryRun="--dry-run"
 fi
 
