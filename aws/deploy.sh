@@ -14,6 +14,10 @@ while [[ $# -gt 0 ]]; do
         shift
         shift
         ;;
+        --dry-run)
+        dryRun=true
+        shift
+        ;;
         *)
         shift
         ;;
@@ -36,4 +40,7 @@ terraform init \
 
 terraform get
 terraform plan -var-file=$TF_VAR_environment.tfvars
-terraform apply -var-file=$TF_VAR_environment.tfvars
+
+if ! $dryRun; then
+    terraform apply -var-file=$TF_VAR_environment.tfvars
+fi
