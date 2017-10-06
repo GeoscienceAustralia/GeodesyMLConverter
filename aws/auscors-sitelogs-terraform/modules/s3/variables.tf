@@ -9,3 +9,7 @@ variable "owner" {}
 variable "environment" {}
 
 variable "read_only_user_arn" {}
+
+variable "submitter_arns" {
+    type = "list"
+}
