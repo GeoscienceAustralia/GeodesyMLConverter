@@ -1,4 +1,5 @@
 environment="test"
+read_only_user_arn="arn:aws:iam::688660191997:root"
 sns_arn="arn:aws:sns:ap-southeast-2:094928090547:TestGeodesy-SiteLogReceived-CHQ3QI0J97RQ"
 gws_oidc_client_id_key="GwsOidcClientId"
 gws_oidc_client_password_key="TestGwsOidcClientPassword"
