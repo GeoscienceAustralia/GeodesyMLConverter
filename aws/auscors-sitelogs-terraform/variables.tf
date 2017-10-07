@@ -67,3 +67,9 @@ variable "gws_system_user_password_key" {
 variable "read_only_user_arn" {
   description = "ARN for user with cross account access to bucket - for accessesing with service role at GA."
 }
+
+variable "submitter_arns" {
+  description = "ARNs for users who can submit text site logs to the incoming bucket"
+  type = "list"
+  default = ["arn:aws:iam::688660191997:root"]
+}
