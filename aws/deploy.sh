@@ -41,6 +41,6 @@ terraform init \
 terraform get
 terraform plan -var-file=$TF_VAR_environment.tfvars
 
-if ! $dryRun; then
+if [ -z "$dryRun" ]; then
     terraform apply -var-file=$TF_VAR_environment.tfvars
 fi
