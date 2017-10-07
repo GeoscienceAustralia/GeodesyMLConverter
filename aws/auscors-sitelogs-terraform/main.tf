@@ -20,6 +20,7 @@ module "s3" {
   source             = "./modules/s3/"
 
   read_only_user_arn = "${var.read_only_user_arn}"
+  submitter_arns     = "${var.submitter_arns}"
 
   environment        = "${var.environment}"
   application        = "${var.application}"
