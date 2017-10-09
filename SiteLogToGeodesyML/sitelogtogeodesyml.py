@@ -2093,6 +2093,14 @@ class SiteLog(object):
         textLines = SiteLog.PreprocessAddress(textLines)
         textLines = SiteLog.Preprocess(textLines)
 
+        ok = re.match(r'...._(\d{4})(\d{2})(\d{2})\.log$', os.path.split(self.filename)[1])
+        datePrepared = None
+        if ok:
+            year = ok.group(1)
+            month = ok.group(2)
+            day = ok.group(3)
+            datePrepared = '{}-{}-{}'.format(year, month, day)
+
         SiteLog.Update(textLines)
 
         flag = -8
@@ -2119,6 +2127,8 @@ class SiteLog(object):
                 continue
             elif re.match(type(self).Identification, line):
                 self.siteLog.formInformation = FormInformation.Detach()
+                if datePrepared:
+                    self.siteLog.formInformation.datePrepared = parser.timePosition(datePrepared)
 
                 SiteIdentification.Begin()
                 section = SiteIdentification.Current
