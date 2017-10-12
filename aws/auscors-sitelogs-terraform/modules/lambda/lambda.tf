@@ -1,3 +1,45 @@
+resource "aws_lambda_function" "fetch_site_logs_from_ftp_sites" {
+  filename         = "${path.module}/fetch_site_logs_from_ftp_sites_lambda.zip"
+  function_name    = "${var.application}-fetch-from-ftp-sites-lambda-${var.environment}"
+  role             = "${aws_iam_role.iam_role.arn}"
+  handler          = "fetch_site_logs_from_ftp_sites.lambda_handler"
+  runtime          = "python2.7"
+  source_code_hash = "${base64sha256(file("${path.module}/fetch_site_logs_from_ftp_sites_lambda.zip"))}"
+  memory_size      = 512
+  timeout          = 180
+
+  dead_letter_config {
+    target_arn = "${aws_sns_topic.dead_letter_queue.arn}"
+  }
+
+  environment {
+    variables = {
+      incoming_bucket_name         = "${var.incoming_bucket_name}"
+      gws_url                      = "${var.gws_url}"
+    }
+  }
+}
+
+resource "aws_cloudwatch_event_rule" "every_five_minutes" {
+    name = "every-five-minutes"
+    description = "Fires every five minutes"
+    schedule_expression = "rate(5 minutes)"
+}
+
+resource "aws_cloudwatch_event_target" "check_remote_site_logs_every_five_minutes" {
+    rule = "${aws_cloudwatch_event_rule.every_five_minutes.name}"
+    target_id = "fetch_site_logs_from_ftp_sites"
+    arn = "${aws_lambda_function.fetch_site_logs_from_ftp_sites.arn}"
+}
+
+resource "aws_lambda_permission" "allow_cloudwatch_to_call_fetch_site_logs_from_ftp_sites" {
+    statement_id = "AllowExecutionFromCloudWatch"
+    action = "lambda:InvokeFunction"
+    function_name = "${aws_lambda_function.fetch_site_logs_from_ftp_sites.function_name}"
+    principal = "events.amazonaws.com"
+    source_arn = "${aws_cloudwatch_event_rule.every_five_minutes.arn}"
+}
+
 resource "aws_lambda_function" "ingest_text_site_log" {
   filename         = "${path.module}/ingest_text_site_log_lambda.zip"
   function_name    = "${var.application}-ingest-incoming-lambda-${var.environment}"
