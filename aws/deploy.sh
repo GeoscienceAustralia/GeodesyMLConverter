@@ -31,6 +31,7 @@ export TF_VAR_tf_state_table=$stateBucket
 cd auscors-sitelogs-terraform/
 ./modules/lambda/create-deployment-package.sh
 ./modules/lambda/create-ingest-text-site-log-package.sh
+./modules/lambda/create-fetch-site-logs-from-ftp-sites-package.sh
 
 terraform init \
     -backend-config "bucket=${TF_VAR_tf_state_bucket}" \
