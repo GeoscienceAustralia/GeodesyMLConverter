@@ -145,7 +145,7 @@ def countryFullname(name):
         return None
  
 def parseCountryCodeType(target, field, pattern, text, line,
-        space="urn:xml-gov-au:icsm:egeodesy:0.4",
+        space="urn:xml-gov-au:icsm:egeodesy:0.5",
         theCodeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode"):
     ok = re.match(pattern, text)
     if ok:
