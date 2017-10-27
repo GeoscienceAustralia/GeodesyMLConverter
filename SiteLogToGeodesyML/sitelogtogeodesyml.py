@@ -1151,7 +1151,7 @@ class SiteLocation(object):
     NotesAddition = re.compile(r'^(\s{31,})(?P<value>.*)$', re.IGNORECASE)
 
     def __init__(self):
-        self.siteLocation = geo.siteLocationType()
+        self.siteLocation = geo.SiteLocationType()
         self.notes = [""]
         self.notesAppended = False
         self.x = [None]
@@ -2142,7 +2142,7 @@ class SiteLog(object):
                 flag = 2
                 continue
             elif re.match(type(self).ReceiverInfo, line):
-                self.siteLog.siteLocation = SiteLocation.Detach()
+                self.siteLog.siteLocation = geo.SiteLocationPropertyType(SiteLocation.Detach())
 
                 flag = 3
                 continue

@@ -212,7 +212,7 @@ def dd2dms(dd):
 class SiteLocation(object):
 
     def __init__(self, siteLog):
-        siteLocation = siteLog.siteLocation
+        siteLocation = siteLog.siteLocation.SiteLocation
         self.city = SiteLog.simpleValue(siteLocation.city)
         self.state = SiteLog.simpleValue(siteLocation.state)
         self.countryCodeISO = SiteLog.complexValue(siteLocation.countryCodeISO)

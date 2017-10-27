@@ -25,12 +25,14 @@
             <geo:notes></geo:notes>
         </geo:siteIdentification>
         <geo:siteLocation>
-            <geo:city></geo:city>
-            <geo:state></geo:state>
-            <geo:countryCodeISO codeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode" codeListValue="" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.5"></geo:countryCodeISO>
-            <geo:tectonicPlate codeSpace="urn:ga-gov-au:plate-type"></geo:tectonicPlate>
-            <geo:approximatePositionITRF/>
-            <geo:notes></geo:notes>
+            <geo:SiteLocation>
+                <geo:city></geo:city>
+                <geo:state></geo:state>
+                <geo:countryCodeISO codeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode" codeListValue="" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.5"></geo:countryCodeISO>
+                <geo:tectonicPlate codeSpace="urn:ga-gov-au:plate-type"></geo:tectonicPlate>
+                <geo:approximatePositionITRF/>
+                <geo:notes></geo:notes>
+            </geo:SiteLocation>
         </geo:siteLocation>
         <geo:siteContact gml:id="agency-1">
             <gmd:MD_SecurityConstraints>
