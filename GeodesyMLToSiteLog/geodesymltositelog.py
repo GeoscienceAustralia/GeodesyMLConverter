@@ -1504,6 +1504,8 @@ class AgencyProperty(object):
             if re.match(type(self).Pattern, type(agencyProperty).__name__):
 # For siteOwner or siteMetadataCustodian mapping
                 type(self).Title = "12.  Responsible Agency (if different from 11.)"
+            else:
+                type(self).Title = "11.  On-Site, Point of Contact Agency Information\n"
         except:
 # For siteOwner mapping only, which could have one or zero instance, could be a None
 # siteMetadataCustodian must have one instance, never be a None type
