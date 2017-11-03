@@ -23,7 +23,7 @@ class SiteLogFtpSource(object):
         self.path = path
 
 site_log_ftp_sources = [ # pylint: disable=invalid-name
-    SiteLogFtpSource('igscb.jpl.nasa.gov', '/pub/station/log'),
+    SiteLogFtpSource('ftp.igs.org', '/pub/station/log'),
     SiteLogFtpSource('161.65.59.67', '/gps/sitelogs/logs'),
 ]
 
