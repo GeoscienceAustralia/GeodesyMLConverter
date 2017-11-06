@@ -1488,8 +1488,6 @@ class LocalEpisodicEffectProperty(object):
 
 class AgencyProperty(object):
 # For siteContact mapping only
-    Title             = "11.  On-Site, Point of Contact Agency Information\n"
-
     Agency            = "     Agency                   : "
     Abbreviation      = "     Preferred Abbreviation   : \n"
     MailingAddress    = "     Mailing Address          : "
@@ -1498,22 +1496,9 @@ class AgencyProperty(object):
 
     Pattern           = re.compile(r'agencyPropertyType', re.IGNORECASE)
 
-    def __init__(self, agencyProperty):
+    def __init__(self, agencyProperty, title):
         self.allCI_ResponsibleParties = []
-        try:
-            if re.match(type(self).Pattern, type(agencyProperty).__name__):
-# For siteOwner or siteMetadataCustodian mapping
-                type(self).Title = "12.  Responsible Agency (if different from 11.)"
-            else:
-                type(self).Title = "11.  On-Site, Point of Contact Agency Information\n"
-        except:
-# For siteOwner mapping only, which could have one or zero instance, could be a None
-# siteMetadataCustodian must have one instance, never be a None type
-# Even siteContact could be an empty list type, never be a None type
-            type(self).Title = "12.  Responsible Agency (if different from 11.)"
-
-        self.title = type(self).Title
-
+        self.title = title + '\n'
         if not agencyProperty:
             for i in range(0, 2):
                 responsibleParty = self.CI_ResponsibleParty(None)
@@ -1842,12 +1827,12 @@ def parseXML(xml):
 
     localEpisodicEffectList = LocalEpisodicEffectProperty(siteLogType)
 
-    siteContactList = AgencyProperty(siteLogType.siteContact)
+    siteContactList = AgencyProperty(siteLogType.siteContact, '11.  On-Site, Point of Contact Agency Information')
 
 ####    siteOwner = AgencyProperty(siteLogType.siteOwner)
 ####    print(siteOwner.output())
 
-    siteMetadataCustodian = AgencyProperty(siteLogType.siteMetadataCustodian)
+    siteMetadataCustodian = AgencyProperty(siteLogType.siteMetadataCustodian, '12.  Responsible Agency (if different from 11.)')
 
     moreInformation = MoreInformation(siteLogType)
 
