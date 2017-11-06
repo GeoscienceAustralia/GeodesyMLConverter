@@ -1,4 +1,4 @@
-     T000 Site Information Form (site log)
+     T002 Site Information Form (site log)
      International GNSS Service
      See Instructions at:
        ftp://igs.org/pub/station/general/sitelog_instr.txt
@@ -16,7 +16,7 @@
 1.   Site Identification of the GNSS Monument
 
      Site Name                : 
-     Four Character ID        : T000
+     Four Character ID        : T002
      Monument Inscription     : 
      IERS DOMES Number        : 
      CDP Number               : 
@@ -184,40 +184,35 @@
 
 11.  On-Site, Point of Contact Agency Information
 
-     Agency                   : Agency A
+     Agency                   : 
      Preferred Abbreviation   : 
-     Mailing Address          : Address Line One
-                                Address Line Two
-                                City
-                                Postal Code
-                                Country
+     Mailing Address          : 
      Primary Contact
-       Contact Name           : Contact A
-       Telephone (primary)    : 123
-       Telephone (secondary)  : 456
-       Fax                    : 789
-       E-mail                 : contact.a@gmail.com
+       Contact Name           : 
+       Telephone (primary)    : 
+       Telephone (secondary)  : 
+       Fax                    : 
+       E-mail                 : 
      Secondary Contact
-       Contact Name           : Contact B
-       Telephone (primary)    : 123
-       Telephone (secondary)  : 456
-       Fax                    : 789
-       E-mail                 : contact.b@gmail.com
+       Contact Name           : 
+       Telephone (primary)    : 
+       Telephone (secondary)  : 
+       Fax                    : 
+       E-mail                 : 
      Additional Information   : (multiple lines)
 
 
 12.  Responsible Agency (if different from 11.)
 
-     Agency                   : Agency C
+     Agency                   : 
      Preferred Abbreviation   : 
-     Mailing Address          : Address Line One
-                                Address Line Two
+     Mailing Address          : 
      Primary Contact
-       Contact Name           : Contact C
-       Telephone (primary)    : 123
-       Telephone (secondary)  : 456
-       Fax                    : 789
-       E-mail                 : contact.c@gmail.com
+       Contact Name           : 
+       Telephone (primary)    : 
+       Telephone (secondary)  : 
+       Fax                    : 
+       E-mail                 : 
      Secondary Contact
        Contact Name           : 
        Telephone (primary)    : 
