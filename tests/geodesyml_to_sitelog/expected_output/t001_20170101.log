@@ -86,14 +86,14 @@
 
 4.   GNSS Antenna Information
 
-4.1  Antenna Type             : Antenna Type A
+4.1  Antenna Type             : AntennaType     NONE
      Serial Number            : 1234
      Antenna Reference Point  : BPA
      Marker->ARP Up Ecc. (m)  : 001.0000
      Marker->ARP North Ecc(m) : 002.0000
      Marker->ARP East Ecc(m)  : 003.0000
      Alignment from True N    : 0 deg
-     Antenna Radome Type      : Radome Type A
+     Antenna Radome Type      : NONE
      Radome Serial Number     : 123456
      Antenna Cable Type       : Cable Type
      Antenna Cable Length     : 3.2345 m
@@ -101,14 +101,14 @@
      Date Removed             : 2017-01-02T00:01Z
      Additional Information   : notes
 
-4.2  Antenna Type             : Antenna Type B
+4.2  Antenna Type             : AntennaType     NONE
      Serial Number            : 
      Antenna Reference Point  : 
      Marker->ARP Up Ecc. (m)  : 000.0000
      Marker->ARP North Ecc(m) : 000.0000
      Marker->ARP East Ecc(m)  : 000.0000
      Alignment from True N    : 
-     Antenna Radome Type      : 
+     Antenna Radome Type      : NONE
      Radome Serial Number     : 
      Antenna Cable Type       : 
      Antenna Cable Length     : 
