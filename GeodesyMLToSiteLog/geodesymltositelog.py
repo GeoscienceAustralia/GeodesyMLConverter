@@ -435,7 +435,24 @@ class GnssAntennaProperty(object):
         Additional =           "     Additional Information   : "
 
         def __init__(self, antenna):
-            self.antennaModel = SiteLog.complexValue(antenna.igsModelCode)
+
+            antennaAndDomeTypes = SiteLog.complexValue(antenna.igsModelCode).split()
+
+            if len(antennaAndDomeTypes) > 0:
+                antennaType = antennaAndDomeTypes[0]
+            else:
+                antennaType = ''
+
+            if len(antennaAndDomeTypes) > 1:
+                domeType = antennaAndDomeTypes[1]
+            else:
+                domeType = SiteLog.complexValue(antenna.antennaRadomeType)
+
+            if not domeType:
+                domeType = 'NONE'
+
+            self.antennaModel = '{0: <16}{1: <4}'.format(antennaType, domeType)
+
             self.manufacturerSerialNumber = SiteLog.simpleValue(antenna.manufacturerSerialNumber)
             self.antennaReferencePoint = SiteLog.complexValue(antenna.antennaReferencePoint)
             self.marker_arpUpEcc = SiteLog.simpleValue(antenna.marker_arpUpEcc, "{:08.4f}")
