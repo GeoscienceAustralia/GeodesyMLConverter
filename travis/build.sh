@@ -15,18 +15,18 @@ case "${TRAVIS_BRANCH}" in
         aws configure set aws_access_key_id "${TRAVIS_AWS_ACCESS_KEY_ID}"
         aws configure set aws_secret_access_key "${TRAVIS_AWS_SECRET_KEY_ID}"
         aws configure set region ap-southeast-2
-        ./deploy.sh --env dev --state-bucket auscors-terraform-state-dev $dryRun
+        ./deploy.sh --env dev $dryRun
     ;;
     "master")
         aws configure set aws_access_key_id "${TRAVIS_AWS_ACCESS_KEY_ID}"
         aws configure set aws_secret_access_key "${TRAVIS_AWS_SECRET_KEY_ID}"
         aws configure set region ap-southeast-2
-        ./deploy.sh --env test --state-bucket auscors-terraform-state-dev $dryRun
+        ./deploy.sh --env test $dryRun
     ;;
     "prod")
         aws configure set aws_access_key_id "${TRAVIS_AWS_ACCESS_KEY_ID_PROD}"
         aws configure set aws_secret_access_key "${TRAVIS_AWS_SECRET_KEY_ID_PROD}"
         aws configure set region ap-southeast-2
-        ./deploy.sh --env prod --state-bucket auscors-terraform-state-prod $dryRun
+        ./deploy.sh --env prod $dryRun
     ;;
 esac
