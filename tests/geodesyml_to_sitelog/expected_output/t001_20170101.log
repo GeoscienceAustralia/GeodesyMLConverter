@@ -101,14 +101,29 @@
      Date Removed             : 2017-01-02T00:01Z
      Additional Information   : notes
 
-4.2  Antenna Type             : AntennaType     NONE
+4.2  Antenna Type             : AntennaType     SNOW
      Serial Number            : 
      Antenna Reference Point  : 
      Marker->ARP Up Ecc. (m)  : 000.0000
      Marker->ARP North Ecc(m) : 000.0000
      Marker->ARP East Ecc(m)  : 000.0000
      Alignment from True N    : 
-     Antenna Radome Type      : NONE
+     Antenna Radome Type      : SNOW
+     Radome Serial Number     : 
+     Antenna Cable Type       : 
+     Antenna Cable Length     : 
+     Date Installed           : (CCYY-MM-DDThh:mmZ)
+     Date Removed             : (CCYY-MM-DDThh:mmZ)
+     Additional Information   : 
+
+4.3  Antenna Type             : AntennaType     NONE
+     Serial Number            : 
+     Antenna Reference Point  : 
+     Marker->ARP Up Ecc. (m)  : 000.0000
+     Marker->ARP North Ecc(m) : 000.0000
+     Marker->ARP East Ecc(m)  : 000.0000
+     Alignment from True N    : 
+     Antenna Radome Type      : 
      Radome Serial Number     : 
      Antenna Cable Type       : 
      Antenna Cable Length     : 

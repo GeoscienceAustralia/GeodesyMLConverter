@@ -75,7 +75,7 @@
             <geo:GnssAntenna gml:id="gnss-antenna-1">
                 <geo:notes>notes</geo:notes>
                 <geo:manufacturerSerialNumber>1234</geo:manufacturerSerialNumber>
-                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="AntennaType NONE" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">AntennaType     NONE</geo:igsModelCode>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="AntennaType" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">AntennaType</geo:igsModelCode>
                 <geo:antennaReferencePoint codeSpace="urn:ga-gov-au:antenna-reference-point-type">BPA</geo:antennaReferencePoint>
                 <geo:marker-arpUpEcc.>1.0</geo:marker-arpUpEcc.>
                 <geo:marker-arpNorthEcc.>2.0</geo:marker-arpNorthEcc.>
@@ -93,13 +93,31 @@
         <geo:gnssAntenna>
             <geo:GnssAntenna gml:id="gnss-antenna-2">
                 <geo:manufacturerSerialNumber></geo:manufacturerSerialNumber>
-                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="AntennaType NONE" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">AntennaType     NONE</geo:igsModelCode>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="AntennaType SNOW" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">AntennaType SNOW</geo:igsModelCode>
                 <geo:antennaReferencePoint codeSpace="urn:ga-gov-au:antenna-reference-point-type"></geo:antennaReferencePoint>
                 <geo:marker-arpUpEcc.>0.0</geo:marker-arpUpEcc.>
                 <geo:marker-arpNorthEcc.>0.0</geo:marker-arpNorthEcc.>
                 <geo:marker-arpEastEcc.>0.0</geo:marker-arpEastEcc.>
                 <geo:alignmentFromTrueNorth xsi:nil="true"></geo:alignmentFromTrueNorth>
-                <geo:antennaRadomeType codeSpace="urn:igs-org:gnss-radome-model-code">NONE</geo:antennaRadomeType>
+                <geo:antennaRadomeType codeSpace="urn:igs-org:gnss-radome-model-code">SNOW</geo:antennaRadomeType>
+                <geo:radomeSerialNumber></geo:radomeSerialNumber>
+                <geo:antennaCableType></geo:antennaCableType>
+                <geo:antennaCableLength xsi:nil="true"></geo:antennaCableLength>
+                <geo:dateInstalled></geo:dateInstalled>
+                <geo:dateRemoved></geo:dateRemoved>
+            </geo:GnssAntenna>
+            <geo:dateInserted></geo:dateInserted>
+        </geo:gnssAntenna>
+        <geo:gnssAntenna>
+            <geo:GnssAntenna gml:id="gnss-antenna-3">
+                <geo:manufacturerSerialNumber></geo:manufacturerSerialNumber>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="AntennaType" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">AntennaType</geo:igsModelCode>
+                <geo:antennaReferencePoint codeSpace="urn:ga-gov-au:antenna-reference-point-type"></geo:antennaReferencePoint>
+                <geo:marker-arpUpEcc.>0.0</geo:marker-arpUpEcc.>
+                <geo:marker-arpNorthEcc.>0.0</geo:marker-arpNorthEcc.>
+                <geo:marker-arpEastEcc.>0.0</geo:marker-arpEastEcc.>
+                <geo:alignmentFromTrueNorth xsi:nil="true"></geo:alignmentFromTrueNorth>
+                <geo:antennaRadomeType codeSpace="urn:igs-org:gnss-radome-model-code"></geo:antennaRadomeType>
                 <geo:radomeSerialNumber></geo:radomeSerialNumber>
                 <geo:antennaCableType></geo:antennaCableType>
                 <geo:antennaCableLength xsi:nil="true"></geo:antennaCableLength>
