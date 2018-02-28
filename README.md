@@ -6,6 +6,9 @@ Command line tools for converting between GeodesyML site log and text site log f
 * `sitelog-to-geodesyml`
 * `geodesyml-to-sitelog`
 
+## Requirements
+* Python 2
+
 ## Installation
 
 ```bash
