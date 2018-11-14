@@ -20,14 +20,14 @@ resource "aws_lambda_function" "fetch_site_logs_from_ftp_sites" {
   }
 }
 
-resource "aws_cloudwatch_event_rule" "every_five_minutes" {
-    name = "every-five-minutes"
-    description = "Fires every five minutes"
-    schedule_expression = "rate(5 minutes)"
+resource "aws_cloudwatch_event_rule" "every_15_minutes" {
+    name = "every-15-minutes"
+    description = "Fires every 15 minutes"
+    schedule_expression = "rate(15 minutes)"
 }
 
-resource "aws_cloudwatch_event_target" "check_remote_site_logs_every_five_minutes" {
-    rule = "${aws_cloudwatch_event_rule.every_five_minutes.name}"
+resource "aws_cloudwatch_event_target" "check_remote_site_logs_every_15_minutes" {
+    rule = "${aws_cloudwatch_event_rule.every_15_minutes.name}"
     target_id = "fetch_site_logs_from_ftp_sites"
     arn = "${aws_lambda_function.fetch_site_logs_from_ftp_sites.arn}"
 }
@@ -37,7 +37,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_fetch_site_logs_from_
     action = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.fetch_site_logs_from_ftp_sites.function_name}"
     principal = "events.amazonaws.com"
-    source_arn = "${aws_cloudwatch_event_rule.every_five_minutes.arn}"
+    source_arn = "${aws_cloudwatch_event_rule.every_15_minutes.arn}"
 }
 
 resource "aws_lambda_function" "ingest_text_site_log" {
