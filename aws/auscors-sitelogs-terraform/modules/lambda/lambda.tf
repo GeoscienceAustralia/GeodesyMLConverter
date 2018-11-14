@@ -6,7 +6,7 @@ resource "aws_lambda_function" "fetch_site_logs_from_ftp_sites" {
   runtime          = "python2.7"
   source_code_hash = "${base64sha256(file("${path.module}/fetch_site_logs_from_ftp_sites_lambda.zip"))}"
   memory_size      = 512
-  timeout          = 180
+  timeout          = 300
 
   dead_letter_config {
     target_arn = "${aws_sns_topic.dead_letter_queue.arn}"
