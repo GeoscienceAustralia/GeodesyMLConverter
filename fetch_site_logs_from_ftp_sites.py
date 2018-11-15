@@ -108,7 +108,7 @@ class LogHunter(object):
             four_char_id, date_prepared = parse_site_log_file_name(remote_file_name[1])
 
             if four_char_id in self.current_site_logs:
-                if date_prepared > self.current_site_logs[four_char_id]:
+                if not self.current_site_logs[four_char_id] or date_prepared > self.current_site_logs[four_char_id]:
                     remote_site_logs[four_char_id] = (remote_file_name[0], remote_file_name[1])
 
         return remote_site_logs
