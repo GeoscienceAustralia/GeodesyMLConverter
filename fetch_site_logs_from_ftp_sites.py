@@ -120,7 +120,8 @@ def gws_list_site_logs():
     response = requests.get(gws_url + '/siteLogs?projection=datePrepared&size=10000')
     response.raise_for_status()
     for site_log in response.json()['_embedded']['siteLogs']:
-        site_logs[site_log['fourCharacterId'].lower()] = dateutil.parser.parse(site_log['datePrepared']).date()
+        datePrepared = site_log['datePrepared']
+        site_logs[site_log['fourCharacterId'].lower()] = dateutil.parser.parse(datePrepared).date() if datePrepared else None
 
     return site_logs
 
