@@ -71,6 +71,9 @@
             </geo:GnssReceiver>
             <geo:dateInserted></geo:dateInserted>
         </geo:gnssReceiver>
+        <geo:gnssReceiver>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:gnssReceiver>
         <geo:gnssAntenna>
             <geo:GnssAntenna gml:id="gnss-antenna-1">
                 <geo:notes>notes</geo:notes>
@@ -126,6 +129,12 @@
             </geo:GnssAntenna>
             <geo:dateInserted></geo:dateInserted>
         </geo:gnssAntenna>
+        <geo:gnssAntenna>
+            <geo:GnssAntenna>
+                <geo:igsModelCode></geo:igsModelCode>
+            </geo:GnssAntenna>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:gnssAntenna>
         <geo:surveyedLocalTie>
             <geo:SurveyedLocalTie gml:id="local-tie-1">
                 <geo:tiedMarkerName>Marker A</geo:tiedMarkerName>
@@ -176,6 +185,12 @@
             </geo:SurveyedLocalTie>
             <geo:dateInserted></geo:dateInserted>
         </geo:surveyedLocalTie>
+        <geo:surveyedLocalTie>
+            <geo:SurveyedLocalTie>
+                <geo:tiedMarkerName></geo:tiedMarkerName>
+            </geo:SurveyedLocalTie>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:surveyedLocalTie>
         <geo:frequencyStandard>
             <geo:FrequencyStandard gml:id="frequency-standard-1">
                 <geo:standardType codeSpace="urn:ga-gov-au:frequency-standard-type">CESIUM</geo:standardType>
@@ -218,6 +233,18 @@
             </geo:FrequencyStandard>
             <geo:dateInserted></geo:dateInserted>
         </geo:frequencyStandard>
+        <geo:frequencyStandard>
+            <geo:FrequencyStandard>
+                <geo:standardType></geo:standardType>
+            </geo:FrequencyStandard>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:frequencyStandard>
+        <geo:collocationInformation>
+            <geo:CollocationInformation>
+                <geo:instrumentationType></geo:instrumentationType>
+            </geo:CollocationInformation>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:collocationInformation>
         <geo:humiditySensor>
             <geo:HumiditySensor gml:id="humidity-sensor-1">
                 <geo:type codeSpace="urn:ga-gov-au:humidity-sensor-type">Humidity Sensor Model A</geo:type>
@@ -257,6 +284,12 @@
             </geo:HumiditySensor>
             <geo:dateInserted></geo:dateInserted>
         </geo:humiditySensor>
+        <geo:humiditySensor>
+            <geo:HumiditySensor>
+                <geo:type></geo:type>
+            </geo:HumiditySensor>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:humiditySensor>
         <geo:pressureSensor>
             <geo:PressureSensor gml:id="pressure-sensor-1">
                 <geo:type codeSpace="urn:ga-gov-au:pressure-sensor-type">Pressure Sensor Model A</geo:type>
@@ -293,6 +326,12 @@
                 <geo:accuracy-hPa xsi:nil="true"></geo:accuracy-hPa>
             </geo:PressureSensor>
             <geo:dateInserted></geo:dateInserted>
+        </geo:pressureSensor>
+        <geo:pressureSensor>
+            <geo:PressureSensor>
+                <geo:type></geo:type>
+            </geo:PressureSensor>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
         </geo:pressureSensor>
         <geo:temperatureSensor>
             <geo:TemperatureSensor gml:id="temperature-sensor-1">
@@ -333,6 +372,12 @@
             </geo:TemperatureSensor>
             <geo:dateInserted></geo:dateInserted>
         </geo:temperatureSensor>
+        <geo:temperatureSensor>
+            <geo:TemperatureSensor>
+                <geo:type></geo:type>
+            </geo:TemperatureSensor>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:temperatureSensor>
         <geo:waterVaporSensor>
             <geo:WaterVaporSensor gml:id="water-vapor-1">
                 <geo:type codeSpace="urn:ga-gov-au:water-vapor-sensor-type">Water Vapor Radiometer A</geo:type>
@@ -368,12 +413,24 @@
             </geo:WaterVaporSensor>
             <geo:dateInserted></geo:dateInserted>
         </geo:waterVaporSensor>
+        <geo:waterVaporSensor>
+            <geo:WaterVaporSensor>
+                <geo:type></geo:type>
+            </geo:WaterVaporSensor>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:waterVaporSensor>
         <geo:otherInstrumentation>
             <geo:OtherInstrumentation gml:id="other-instrumentation-1">
                 <geo:instrumentation>1) Other Instrumentation A 2) Other Instrumentation B</geo:instrumentation>
                 <gml:validTime nilReason="not applicable"/>
             </geo:OtherInstrumentation>
             <geo:dateInserted></geo:dateInserted>
+        </geo:otherInstrumentation>
+        <geo:otherInstrumentation>
+            <geo:OtherInstrumentation>
+                <geo:instrumentation></geo:instrumentation>
+            </geo:OtherInstrumentation>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
         </geo:otherInstrumentation>
         <geo:radioInterference>
             <geo:RadioInterference gml:id="radio-interference-1">
@@ -389,6 +446,12 @@
             </geo:RadioInterference>
             <geo:dateInserted>2012-03-04</geo:dateInserted>
         </geo:radioInterference>
+        <geo:radioInterference>
+            <geo:RadioInterference>
+                <geo:possibleProblemSource></geo:possibleProblemSource>
+            </geo:RadioInterference>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:radioInterference>
         <geo:multipathSource>
             <geo:MultipathSource gml:id="multipath-1">
                 <geo:possibleProblemSource>Multipath Sources</geo:possibleProblemSource>
@@ -402,6 +465,12 @@
             </geo:MultipathSource>
             <geo:dateInserted>2012-03-04</geo:dateInserted>
         </geo:multipathSource>
+        <geo:multipathSource>
+            <geo:MultipathSource>
+                <geo:possibleProblemSource>Multipath Sources</geo:possibleProblemSource>
+            </geo:MultipathSource>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
+        </geo:multipathSource>
         <geo:signalObstruction>
             <geo:SignalObstruction gml:id="signal-obstruction-1">
                 <geo:possibleProblemSource>Signal Obstructions</geo:possibleProblemSource>
@@ -414,6 +483,12 @@
                 <geo:notes>notes</geo:notes>
             </geo:SignalObstruction>
             <geo:dateInserted>2012-03-04</geo:dateInserted>
+        </geo:signalObstruction>
+        <geo:signalObstruction>
+            <geo:SignalObstruction>
+                <geo:possibleProblemSource></geo:possibleProblemSource>
+            </geo:SignalObstruction>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
         </geo:signalObstruction>
         <geo:localEpisodicEffect>
             <geo:LocalEpisodicEffect gml:id="episodic-effect-1">
@@ -438,6 +513,12 @@
                 <geo:event>Event B</geo:event>
             </geo:LocalEpisodicEffect>
             <geo:dateInserted>2013-01-01</geo:dateInserted>
+        </geo:localEpisodicEffect>
+        <geo:localEpisodicEffect>
+            <geo:LocalEpisodicEffect>
+                <geo:event></geo:event>
+            </geo:LocalEpisodicEffect>
+            <geo:dateDeleted>2017-01-01T12:13:14Z</geo:dateDeleted>
         </geo:localEpisodicEffect>
         <geo:siteMetadataCustodian gml:id="agency-3">
             <gmd:MD_SecurityConstraints>
