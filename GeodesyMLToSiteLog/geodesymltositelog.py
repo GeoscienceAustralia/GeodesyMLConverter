@@ -275,6 +275,8 @@ class SiteLocation(object):
         io.close()
         return text
 
+def isItemDeleted(item):
+    return item.dateDeleted is not None or item.deletedReason is not None
 
 class GnssReceiverProperty(object):
 
@@ -297,6 +299,8 @@ class GnssReceiverProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 gnssReceiver = self.GnssReceiver(item.GnssReceiver)
                 gnssReceiver.updateIndex(i)
                 self.allReceivers.append(gnssReceiver)
@@ -398,6 +402,8 @@ class GnssAntennaProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 gnssAntenna = self.GnssAntenna(item.GnssAntenna)
                 gnssAntenna.updateIndex(i)
                 self.allAntennas.append(gnssAntenna)
@@ -522,6 +528,8 @@ class SurveyedLocalTieProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 localTie = self.SurveyedLocalTie(item.SurveyedLocalTie)
                 localTie.updateIndex(i)
                 self.allLocalTies.append(localTie)
@@ -622,6 +630,8 @@ class FrequencyStandardProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 frequencyStandard = self.FrequencyStandard(item.FrequencyStandard)
                 frequencyStandard.updateIndex(i)
                 self.allFrequencyStandards.append(frequencyStandard)
@@ -702,6 +712,8 @@ class CollocationInformationProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 collocationInformation = self.CollocationInformation(item.CollocationInformation)
                 collocationInformation.updateIndex(i)
                 self.allCollocationInformations.append(collocationInformation)
@@ -787,6 +799,8 @@ class HumiditySensorProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 humiditySensor = self.HumiditySensor(item.HumiditySensor)
                 humiditySensor.updateIndex(i)
                 self.allHumiditySensors.append(humiditySensor)
@@ -888,6 +902,8 @@ class PressureSensorProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 pressureSensor = self.PressureSensor(item.PressureSensor)
                 pressureSensor.updateIndex(i)
                 self.allPressureSensors.append(pressureSensor)
@@ -986,6 +1002,8 @@ class TemperatureSensorProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 temperatureSensor = self.TemperatureSensor(item.TemperatureSensor)
                 temperatureSensor.updateIndex(i)
                 self.allTemperatureSensors.append(temperatureSensor)
@@ -1084,6 +1102,8 @@ class WaterVaporSensorProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 waterVaporSensor = self.WaterVaporSensor(item.WaterVaporSensor)
                 waterVaporSensor.updateIndex(i)
                 self.allWaterVaporSensors.append(waterVaporSensor)
@@ -1169,6 +1189,8 @@ class OtherInstrumentationProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 otherInstrumentation = self.OtherInstrumentation(item.OtherInstrumentation)
                 otherInstrumentation.updateIndex(i)
                 self.allOtherInstrumentations.append(otherInstrumentation)
@@ -1225,6 +1247,8 @@ class RadioInterferenceProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 radioInterference = self.RadioInterference(item.RadioInterference)
                 radioInterference.updateIndex(i)
                 self.allRadioInterferences.append(radioInterference)
@@ -1302,6 +1326,8 @@ class MultipathSourceProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 multipathSource = self.MultipathSource(item.MultipathSource)
                 multipathSource.updateIndex(i)
                 self.allMultipathSources.append(multipathSource)
@@ -1374,6 +1400,8 @@ class SignalObstructionProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 signalObstruction = self.SignalObstruction(item.SignalObstruction)
                 signalObstruction.updateIndex(i)
                 self.allSignalObstructions.append(signalObstruction)
@@ -1446,6 +1474,8 @@ class LocalEpisodicEffectProperty(object):
         if itemList:
             i = 1
             for item in itemList:
+                if isItemDeleted(item):
+                    continue
                 localEpisodicEffect = self.LocalEpisodicEffect(item.LocalEpisodicEffect)
                 localEpisodicEffect.updateIndex(i)
                 self.allLocalEpisodicEffects.append(localEpisodicEffect)
