@@ -21,6 +21,10 @@ See `tests/test_console_scripts.py` for examples of usage.
 
 ## Tests
 
+```bash
+pip install -r requirements-dev.txt
+```
+
 ``` bash
 python setup.py build
 python setup.py test
