@@ -1,6 +1,6 @@
 environment="dev"
 read_only_user_arn="arn:aws:iam::688660191997:root"
-sns_arn="arn:aws:sns:ap-southeast-2:094928090547:DevGeodesy-SiteLogReceived-1IWPAM65IAEVH"
+sns_arn="arn:aws:sns:ap-southeast-2:094928090547:DevGeodesy-SiteLogReceived-DMR00D4K5T26"
 gws_oidc_client_id_key="GwsOidcClientId"
 gws_oidc_client_password_key="DevGwsOidcClientPassword"
 gws_system_user_id_key="GwsSystemUser"
