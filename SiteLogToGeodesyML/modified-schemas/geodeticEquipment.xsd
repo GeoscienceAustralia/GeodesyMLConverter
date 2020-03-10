@@ -66,21 +66,10 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
         <complexContent>
             <extension base="geo:InstrumentType">
                 <sequence>
-                    <!-- -->
-                    <!-- Manufacturer Name -->
-                    <!-- -->
-                    <!-- -->
-                    <!-- Manufacturer Model -->
-                    <!-- -->
-                    <!-- -->
-                    <!-- Manufacturer Part Number -->
-                    <!-- -->
-                    <!-- -->
-                    <!-- Manufacturer Description -->
-                    <!-- -->
-                    <!-- -->
-                    <!-- Manufacturer Serial Number -->
-                    <!-- -->
+                    <element minOccurs="0" name="manufacturerName" type="string"/>
+                    <element minOccurs="0" name="manufacturerModel" type="string"/>
+                    <element minOccurs="0" name="manufacturerPartNumber" type="string"/>
+                    <element minOccurs="0" name="manufacturerDescription" type="string"/>
                     <element name="manufacturerSerialNumber" type="string"/>
                 </sequence>
             </extension>
