@@ -10,7 +10,7 @@ if [ "$VIRTUAL_ENV" == "" ]; then
     (cd "$sourceDir" && pip install .)
 fi
 
-pip install requests lambda-packages credstash
+pip install requests lambda-packages cryptography==2.7 credstash==1.16.1
 
 sitePackages=$(pip show requests | grep ^Location: | cut -f2 -d: | sed 's/^ //')
 
