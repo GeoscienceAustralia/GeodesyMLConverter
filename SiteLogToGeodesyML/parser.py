@@ -81,7 +81,6 @@ def setTextAttribute(target, field, pattern, text, line, mandatory=False):
         if mandatory:
             setattr(target, field, "")    
         return False
-  
 
 def setDoubleAttribute(target, field, pattern, text, line, mandatory=False, withDefault=False, output=True):
     floatPattern = re.compile(r'(?P<float>[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?)', re.IGNORECASE)
@@ -294,7 +293,7 @@ def parseRadomeModelCodeType(variable, pattern, text, line,
         return False
     
 def parseAntennaModelCodeType(variable, pattern, text, line, versionRef,
-        space="urn:xml-gov-au:icsm:egeodesy:0.4",
+        space="urn:xml-gov-au:icsm:egeodesy:0.5",
         theCodeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode"):
     ok = re.match(pattern, text)
     if ok:
@@ -308,7 +307,7 @@ def parseAntennaModelCodeType(variable, pattern, text, line, versionRef,
 
 
 def parseReceiverModelCodeType(variable, pattern, text, line, versionRef,
-        space="urn:xml-gov-au:icsm:egeodesy:0.4",
+        space="urn:xml-gov-au:icsm:egeodesy:0.5",
         theCodeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode"):
     ok = re.match(pattern, text)
     if ok:
