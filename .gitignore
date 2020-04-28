@@ -1,6 +1,11 @@
 *.pyc
 .terraform/
 .eggs
+*.egg-info/
+xmlOutput/
+p2/
 build
 tests/sitelog_to_geodesyml/generated_output
 tests/geodesyml_to_sitelog/generated_output
+GeodesyMLToSiteLog/geodesymltositelog_bindings.py
+SiteLogToGeodesyML/sitelogtogeodesyml_bindings.py

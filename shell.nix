@@ -18,6 +18,7 @@ let
     paths = [
       python2Packages.virtualenv
       terraform_0_10
+      wget
     ];
   };
 in
@@ -26,6 +27,11 @@ in
       devEnv
     ];
     shellHook = ''
+      unset SOURCE_DATE_EPOCH
+      if [ -e "p2" ]; then
+        . p2/bin/activate
+      fi
+
       if [ -e "./aws/aws-env.sh" ]; then
         . ./aws/aws-env.sh
       fi
