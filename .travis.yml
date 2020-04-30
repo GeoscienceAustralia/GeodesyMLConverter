@@ -1,27 +1,17 @@
-language: python
-python:
-- '2.7'
-before_install:
-- ./travis/install-terraform.sh
-- pip install awscli
-- export PATH=$PATH:$HOME/terraform
+sudo: required
 install:
-- pip -v install -r requirements-dev.txt
-- pip -v install -r requirements.txt
-- pip -v install .
+- sudo apt-get install -y ccrypt
+- echo $TRAVIS_AWS_ACCESS_KEY_ID_PROD > info.txt
+- ccencrypt info.txt -K TRAVIS_AWS_ACCESS_KEY_ID_PROD
+- cat info.txt.cpt | base64
 script:
-- ./travis/build.sh
+  - echo 'done!'
 branches:
   only:
   - master
   - next
   - prod
-cache:
-- pip
-- directories:
-  - $HOME/virtualenv
-  - $HOME/.cache/pip
-  - $HOME/terraform
+  - get-encrypted-key-id
 env:
   global:
   - secure: NaiCIm+m5kqdy4Do6s+PnGp/7c/DF6k6N5xbVZ6nhrAbMCBXwVK/jzizw6YzSEHHMnQ+hQUdi95b3lZmv9jYiUXqFmDUJvp66l1Bbn2O1rgVnA5p8gaKyGcxvnVAAQi95LzbEoMjVyEnnu+Q4HAI9cMwh4IMCxKVFvWCbFMwdVqyy1bcp9Tw6jHt2bdwv/SDTvQgmGH+1M233bk/lDV2dHkxgOwmQPwJDEDpjjvJZ1HNe24pgYagiUpDZFrNsj4xiOGjd4rD/fy4f+8OdQFO0RF18O4n4rM0YeIQ24Bj3GOkj4hdUMSYGN2NgMxc1/TxwxyCnCh2xKGb1c/y6Bx7nVCG73jMMpolHBaf1lze83GSnJJaLC9vZ5E07gM72K6ohLDJPAoWZyY3WlgxiM5mXGDcs5poVqhzA7wzPx2WEgCjO+ckXCEnNIc+PksTETcivpkR1tJ0Z6ncY7wNkPVkMY79owMxHbcxyJ8RqWVkNCr21UQOwXOTmu235+IiTJ/nhBo2YNF4oxjcGzPxIkmf6BBfC3i/xY3qwIGsrO09bIgicNMl6mHJ4q2Gfv8jPBPx6dlH4jYhmn5fs5ifrFn9+16a/zIz+nF+EZH3s2ut3QEmwR1LX8SQ39i8ej9LdAT+8OzT6G7o0wTRcZ6tq93Op9mOpXtxCFoY6tFgQZaN0+8=
