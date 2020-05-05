@@ -13,8 +13,9 @@ script:
 - ./travis/build.sh
 branches:
   only:
+  - geodesyml-0.4
   - master
-  - next
+  - test
   - prod
 cache:
 - pip
