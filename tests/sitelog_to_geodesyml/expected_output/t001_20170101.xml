@@ -1,55 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<geo:GeodesyML gml:id="T00100GBR" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.4" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<geo:GeodesyML gml:id="T00100GBR" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.5" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <geo:siteLog gml:id="t001_20170101.log">
         <geo:formInformation>
-            <geo:preparedBy></geo:preparedBy>
-            <geo:datePrepared>2017-01-01</geo:datePrepared>
-            <geo:reportType></geo:reportType>
+            <geo:FormInformation gml:id="form-information">
+                <geo:preparedBy></geo:preparedBy>
+                <geo:datePrepared>2017-01-01</geo:datePrepared>
+                <geo:reportType></geo:reportType>
+            </geo:FormInformation>
         </geo:formInformation>
         <geo:siteIdentification>
-            <geo:siteName></geo:siteName>
-            <geo:fourCharacterID>T001</geo:fourCharacterID>
-            <geo:monumentInscription>Monument Inscription</geo:monumentInscription>
-            <geo:iersDOMESNumber>123456789</geo:iersDOMESNumber>
-            <geo:cdpNumber>1234</geo:cdpNumber>
-            <geo:monumentDescription codeSpace="urn:ga-gov-au:monument-description-type">Monument Description</geo:monumentDescription>
-            <geo:heightOfTheMonument>0.5</geo:heightOfTheMonument>
-            <geo:monumentFoundation>Monument Foundation</geo:monumentFoundation>
-            <geo:foundationDepth>3.0</geo:foundationDepth>
-            <geo:markerDescription>Marker Description</geo:markerDescription>
-            <geo:dateInstalled>2011</geo:dateInstalled>
-            <geo:geologicCharacteristic codeSpace="urn:ga-gov-au:geologic-characteristic-type">Geologic Characteristic</geo:geologicCharacteristic>
-            <geo:bedrockType>Bedrock Type</geo:bedrockType>
-            <geo:bedrockCondition>Bedrock Condition</geo:bedrockCondition>
-            <geo:fractureSpacing>1-10 cm</geo:fractureSpacing>
-            <geo:faultZonesNearby codeSpace="urn:ga-gov-au:fault-zones-type">Yes</geo:faultZonesNearby>
-            <geo:distance-Activity>11km</geo:distance-Activity>
-            <geo:notes>notes</geo:notes>
+            <geo:SiteIdentification gml:id="site-identification">
+                <geo:siteName></geo:siteName>
+                <geo:fourCharacterID>T001</geo:fourCharacterID>
+                <geo:monumentInscription>Monument Inscription</geo:monumentInscription>
+                <geo:iersDOMESNumber>123456789</geo:iersDOMESNumber>
+                <geo:cdpNumber>1234</geo:cdpNumber>
+                <geo:monumentDescription codeSpace="urn:ga-gov-au:monument-description-type">Monument Description</geo:monumentDescription>
+                <geo:heightOfTheMonument>0.5</geo:heightOfTheMonument>
+                <geo:monumentFoundation>Monument Foundation</geo:monumentFoundation>
+                <geo:foundationDepth>3.0</geo:foundationDepth>
+                <geo:markerDescription>Marker Description</geo:markerDescription>
+                <geo:dateInstalled>2011</geo:dateInstalled>
+                <geo:geologicCharacteristic codeSpace="urn:ga-gov-au:geologic-characteristic-type">Geologic Characteristic</geo:geologicCharacteristic>
+                <geo:bedrockType>Bedrock Type</geo:bedrockType>
+                <geo:bedrockCondition>Bedrock Condition</geo:bedrockCondition>
+                <geo:fractureSpacing>1-10 cm</geo:fractureSpacing>
+                <geo:faultZonesNearby codeSpace="urn:ga-gov-au:fault-zones-type">Yes</geo:faultZonesNearby>
+                <geo:distance-Activity>11km</geo:distance-Activity>
+                <geo:notes>notes</geo:notes>
+            </geo:SiteIdentification>
         </geo:siteIdentification>
         <geo:siteLocation>
-            <geo:city></geo:city>
-            <geo:state></geo:state>
-            <geo:countryCodeISO codeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode" codeListValue="GBR" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">GBR</geo:countryCodeISO>
-            <geo:tectonicPlate codeSpace="urn:ga-gov-au:plate-type"></geo:tectonicPlate>
-            <geo:approximatePositionITRF>
-                <geo:cartesianPosition>
-                    <gml:Point gml:id="itrf_cartesian" srsName="EPSG:7789">
-                        <gml:pos>1.0 2.0 3.0</gml:pos>
-                    </gml:Point>
-                </geo:cartesianPosition>
-                <geo:geodeticPosition>
-                    <gml:Point gml:id="itrf_geodetic" srsName="EPSG:7912">
-                        <gml:pos>12.2033888889 123.203388889 1.0</gml:pos>
-                    </gml:Point>
-                </geo:geodeticPosition>
-            </geo:approximatePositionITRF>
-            <geo:notes></geo:notes>
+            <geo:SiteLocation gml:id="site-location">
+                <geo:city></geo:city>
+                <geo:state></geo:state>
+                <geo:countryCodeISO codeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode" codeListValue="GBR" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.5">GBR</geo:countryCodeISO>
+                <geo:tectonicPlate codeSpace="urn:ga-gov-au:plate-type"></geo:tectonicPlate>
+                <geo:approximatePositionITRF>
+                    <geo:cartesianPosition>
+                        <gml:Point gml:id="itrf_cartesian" srsName="EPSG:7789">
+                            <gml:pos>1.0 2.0 3.0</gml:pos>
+                        </gml:Point>
+                    </geo:cartesianPosition>
+                    <geo:geodeticPosition>
+                        <gml:Point gml:id="itrf_geodetic" srsName="EPSG:7912">
+                            <gml:pos>12.2033888889 123.203388889 1.0</gml:pos>
+                        </gml:Point>
+                    </geo:geodeticPosition>
+                </geo:approximatePositionITRF>
+                <geo:notes></geo:notes>
+            </geo:SiteLocation>
         </geo:siteLocation>
         <geo:gnssReceiver>
             <geo:GnssReceiver gml:id="gnss-receiver-1">
                 <geo:notes>line one line two</geo:notes>
                 <geo:manufacturerSerialNumber>123</geo:manufacturerSerialNumber>
-                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="Receiver Type A" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">Receiver Type A</geo:igsModelCode>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="Receiver Type A" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.5">Receiver Type A</geo:igsModelCode>
                 <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GPS</geo:satelliteSystem>
                 <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GLO</geo:satelliteSystem>
                 <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type">GAL</geo:satelliteSystem>
@@ -64,7 +70,7 @@
         <geo:gnssReceiver>
             <geo:GnssReceiver gml:id="gnss-receiver-2">
                 <geo:manufacturerSerialNumber></geo:manufacturerSerialNumber>
-                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="Receiver Type B" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">Receiver Type B</geo:igsModelCode>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSReceiverTypeCode" codeListValue="Receiver Type B" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.5">Receiver Type B</geo:igsModelCode>
                 <geo:satelliteSystem codeSpace="urn:ga-gov-au:satellite-system-type"></geo:satelliteSystem>
                 <geo:firmwareVersion></geo:firmwareVersion>
                 <geo:elevationCutoffSetting xsi:nil="true"></geo:elevationCutoffSetting>
@@ -78,7 +84,7 @@
             <geo:GnssAntenna gml:id="gnss-antenna-1">
                 <geo:notes>notes</geo:notes>
                 <geo:manufacturerSerialNumber>1234</geo:manufacturerSerialNumber>
-                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="Antenna Type A" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">Antenna Type A</geo:igsModelCode>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="Antenna Type A" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.5">Antenna Type A</geo:igsModelCode>
                 <geo:antennaReferencePoint codeSpace="urn:ga-gov-au:antenna-reference-point-type">BPA</geo:antennaReferencePoint>
                 <geo:marker-arpUpEcc.>1.0</geo:marker-arpUpEcc.>
                 <geo:marker-arpNorthEcc.>2.0</geo:marker-arpNorthEcc.>
@@ -96,7 +102,7 @@
         <geo:gnssAntenna>
             <geo:GnssAntenna gml:id="gnss-antenna-2">
                 <geo:manufacturerSerialNumber></geo:manufacturerSerialNumber>
-                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="Antenna Type B" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4">Antenna Type B</geo:igsModelCode>
+                <geo:igsModelCode codeList="http://xml.gov.au/icsm/geodesyml/codelists/antenna-receiver-codelists.xml#GeodesyML_GNSSAntennaTypeCode" codeListValue="Antenna Type B" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.5">Antenna Type B</geo:igsModelCode>
                 <geo:antennaReferencePoint codeSpace="urn:ga-gov-au:antenna-reference-point-type"></geo:antennaReferencePoint>
                 <geo:marker-arpUpEcc.>0.0</geo:marker-arpUpEcc.>
                 <geo:marker-arpNorthEcc.>0.0</geo:marker-arpNorthEcc.>
@@ -581,18 +587,20 @@
             </gmd:CI_ResponsibleParty>
         </geo:siteMetadataCustodian>
         <geo:moreInformation>
-            <geo:dataCenter></geo:dataCenter>
-            <geo:dataCenter></geo:dataCenter>
-            <geo:urlForMoreInformation></geo:urlForMoreInformation>
-            <geo:siteMap></geo:siteMap>
-            <geo:siteDiagram></geo:siteDiagram>
-            <geo:horizonMask></geo:horizonMask>
-            <geo:monumentDescription></geo:monumentDescription>
-            <geo:sitePictures></geo:sitePictures>
-            <geo:notes></geo:notes>
-            <geo:antennaGraphicsWithDimensions></geo:antennaGraphicsWithDimensions>
-            <geo:insertTextGraphicFromAntenna></geo:insertTextGraphicFromAntenna>
-            <geo:DOI codeSpace="urn:ga-gov-au:self.moreInformation-type">TODO</geo:DOI>
+            <geo:MoreInformation gml:id="more-information">
+                <geo:dataCenter></geo:dataCenter>
+                <geo:dataCenter></geo:dataCenter>
+                <geo:urlForMoreInformation></geo:urlForMoreInformation>
+                <geo:siteMap></geo:siteMap>
+                <geo:siteDiagram></geo:siteDiagram>
+                <geo:horizonMask></geo:horizonMask>
+                <geo:monumentDescription></geo:monumentDescription>
+                <geo:sitePictures></geo:sitePictures>
+                <geo:notes></geo:notes>
+                <geo:antennaGraphicsWithDimensions></geo:antennaGraphicsWithDimensions>
+                <geo:insertTextGraphicFromAntenna></geo:insertTextGraphicFromAntenna>
+                <geo:DOI codeSpace="urn:ga-gov-au:self.moreInformation-type">TODO</geo:DOI>
+            </geo:MoreInformation>
         </geo:moreInformation>
     </geo:siteLog>
 </geo:GeodesyML>

@@ -126,7 +126,7 @@ class FormInformation(object):
       Modified/Added Sections : (n.n,n.n,...)\n"""
 
     def __init__(self, siteLog):
-        formInformation = siteLog.formInformation
+        formInformation = siteLog.formInformation.FormInformation
         self.reportType = SiteLog.simpleValue(formInformation.reportType)
         self.preparedBy = SiteLog.simpleValue(formInformation.preparedBy)
         self.datePrepared = SiteLog.date(formInformation.datePrepared)
@@ -148,7 +148,7 @@ class FormInformation(object):
 class SiteIdentification(object):
 
     def __init__(self, siteLog):
-        siteIdentification = siteLog.siteIdentification
+        siteIdentification = siteLog.siteIdentification.SiteIdentification
         self.siteName = SiteLog.simpleValue(siteIdentification.siteName)
         self.fourCharacterID = SiteLog.simpleValue(siteIdentification.fourCharacterID)
         self.monumentInscription = SiteLog.simpleValue(siteIdentification.monumentInscription)
@@ -212,7 +212,7 @@ def dd2dms(dd):
 class SiteLocation(object):
 
     def __init__(self, siteLog):
-        siteLocation = siteLog.siteLocation
+        siteLocation = siteLog.siteLocation.SiteLocation
         self.city = SiteLog.simpleValue(siteLocation.city)
         self.state = SiteLog.simpleValue(siteLocation.state)
         self.countryCodeISO = SiteLog.complexValue(siteLocation.countryCodeISO)
@@ -1737,12 +1737,13 @@ class MoreInformation(object):
      (insert text graphic from file antenna.gra)\n"""
 
     def __init__(self, siteLog):
-        moreInformation = siteLog.moreInformation
-        if not moreInformation:
+        moreInformationPropertyType = siteLog.moreInformation
+        if not moreInformationPropertyType:
 # MoreInformation can be a None type
             self.isEmpty = True
             return
 
+        moreInformation = moreInformationPropertyType.MoreInformation
         self.isEmpty = False
         self.primary = ""
         self.secondary = ""
