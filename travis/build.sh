@@ -10,23 +10,18 @@ if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then
     dryRun="--dry-run"
 fi
 
+export AWS_DEFAULT_REGION=ap-southeast-2
+
 case "${TRAVIS_BRANCH}" in
     "test")
-        aws configure set aws_access_key_id "${AWS_ACCESS_KEY_ID}"
-        aws configure set aws_secret_access_key "${AWS_SECRET_ACCESS_KEY}"
-        aws configure set region ap-southeast-2
         ./deploy.sh --env test $dryRun
     ;;
     "prod")
-        aws configure set aws_access_key_id "${AWS_ACCESS_KEY_ID_PROD}"
-        aws configure set aws_secret_access_key "${AWS_SECRET_ACCESS_KEY_PROD}"
-        aws configure set region ap-southeast-2
+        export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_PROD
+        export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_PROD
         ./deploy.sh --env prod $dryRun
     ;;
     *)
-        aws configure set aws_access_key_id "${AWS_ACCESS_KEY_ID}"
-        aws configure set aws_secret_access_key "${AWS_SECRET_ACCESS_KEY}"
-        aws configure set region ap-southeast-2
         ./deploy.sh --env dev $dryRun
     ;;
 esac
