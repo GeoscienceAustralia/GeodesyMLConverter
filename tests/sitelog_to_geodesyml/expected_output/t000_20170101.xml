@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<geo:GeodesyML gml:id="T00000" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.4" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2">
+<geo:GeodesyML gml:id="T00000" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.5" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2">
     <geo:siteLog gml:id="t000_20170101.log">
         <geo:formInformation>
-            <geo:preparedBy></geo:preparedBy>
-            <geo:datePrepared>2017-01-01</geo:datePrepared>
-            <geo:reportType></geo:reportType>
+            <geo:FormInformation gml:id="form-information">
+                <geo:preparedBy></geo:preparedBy>
+                <geo:datePrepared>2017-01-01</geo:datePrepared>
+                <geo:reportType></geo:reportType>
+            </geo:FormInformation>
         </geo:formInformation>
         <geo:siteIdentification>
-            <geo:siteName></geo:siteName>
-            <geo:fourCharacterID>T000</geo:fourCharacterID>
-            <geo:monumentInscription></geo:monumentInscription>
-            <geo:iersDOMESNumber></geo:iersDOMESNumber>
-            <geo:cdpNumber></geo:cdpNumber>
-            <geo:monumentDescription codeSpace="urn:ga-gov-au:monument-description-type"></geo:monumentDescription>
-            <geo:monumentFoundation></geo:monumentFoundation>
-            <geo:markerDescription></geo:markerDescription>
-            <geo:dateInstalled></geo:dateInstalled>
-            <geo:geologicCharacteristic codeSpace="urn:ga-gov-au:geologic-characteristic-type"></geo:geologicCharacteristic>
-            <geo:bedrockType></geo:bedrockType>
-            <geo:bedrockCondition></geo:bedrockCondition>
-            <geo:fractureSpacing></geo:fractureSpacing>
-            <geo:faultZonesNearby codeSpace="urn:ga-gov-au:fault-zones-type"></geo:faultZonesNearby>
-            <geo:distance-Activity></geo:distance-Activity>
-            <geo:notes></geo:notes>
+            <geo:SiteIdentification gml:id="site-identification">
+                <geo:siteName></geo:siteName>
+                <geo:fourCharacterID>T000</geo:fourCharacterID>
+                <geo:monumentInscription></geo:monumentInscription>
+                <geo:iersDOMESNumber></geo:iersDOMESNumber>
+                <geo:cdpNumber></geo:cdpNumber>
+                <geo:monumentDescription codeSpace="urn:ga-gov-au:monument-description-type"></geo:monumentDescription>
+                <geo:monumentFoundation></geo:monumentFoundation>
+                <geo:markerDescription></geo:markerDescription>
+                <geo:dateInstalled></geo:dateInstalled>
+                <geo:geologicCharacteristic codeSpace="urn:ga-gov-au:geologic-characteristic-type"></geo:geologicCharacteristic>
+                <geo:bedrockType></geo:bedrockType>
+                <geo:bedrockCondition></geo:bedrockCondition>
+                <geo:fractureSpacing></geo:fractureSpacing>
+                <geo:faultZonesNearby codeSpace="urn:ga-gov-au:fault-zones-type"></geo:faultZonesNearby>
+                <geo:distance-Activity></geo:distance-Activity>
+                <geo:notes></geo:notes>
+            </geo:SiteIdentification>
         </geo:siteIdentification>
         <geo:siteLocation>
-            <geo:city></geo:city>
-            <geo:state></geo:state>
-            <geo:countryCodeISO codeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode" codeListValue="" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.4"></geo:countryCodeISO>
-            <geo:tectonicPlate codeSpace="urn:ga-gov-au:plate-type"></geo:tectonicPlate>
-            <geo:approximatePositionITRF/>
-            <geo:notes></geo:notes>
+            <geo:SiteLocation gml:id="site-location">
+                <geo:city></geo:city>
+                <geo:state></geo:state>
+                <geo:countryCodeISO codeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode" codeListValue="" codeSpace="urn:xml-gov-au:icsm:egeodesy:0.5"></geo:countryCodeISO>
+                <geo:tectonicPlate codeSpace="urn:ga-gov-au:plate-type"></geo:tectonicPlate>
+                <geo:approximatePositionITRF/>
+                <geo:notes></geo:notes>
+            </geo:SiteLocation>
         </geo:siteLocation>
         <geo:siteContact gml:id="agency-1">
             <gmd:MD_SecurityConstraints>
@@ -201,18 +207,20 @@
             </gmd:CI_ResponsibleParty>
         </geo:siteMetadataCustodian>
         <geo:moreInformation>
-            <geo:dataCenter></geo:dataCenter>
-            <geo:dataCenter></geo:dataCenter>
-            <geo:urlForMoreInformation></geo:urlForMoreInformation>
-            <geo:siteMap></geo:siteMap>
-            <geo:siteDiagram></geo:siteDiagram>
-            <geo:horizonMask></geo:horizonMask>
-            <geo:monumentDescription></geo:monumentDescription>
-            <geo:sitePictures></geo:sitePictures>
-            <geo:notes></geo:notes>
-            <geo:antennaGraphicsWithDimensions></geo:antennaGraphicsWithDimensions>
-            <geo:insertTextGraphicFromAntenna></geo:insertTextGraphicFromAntenna>
-            <geo:DOI codeSpace="urn:ga-gov-au:self.moreInformation-type">TODO</geo:DOI>
+            <geo:MoreInformation gml:id="more-information">
+                <geo:dataCenter></geo:dataCenter>
+                <geo:dataCenter></geo:dataCenter>
+                <geo:urlForMoreInformation></geo:urlForMoreInformation>
+                <geo:siteMap></geo:siteMap>
+                <geo:siteDiagram></geo:siteDiagram>
+                <geo:horizonMask></geo:horizonMask>
+                <geo:monumentDescription></geo:monumentDescription>
+                <geo:sitePictures></geo:sitePictures>
+                <geo:notes></geo:notes>
+                <geo:antennaGraphicsWithDimensions></geo:antennaGraphicsWithDimensions>
+                <geo:insertTextGraphicFromAntenna></geo:insertTextGraphicFromAntenna>
+                <geo:DOI codeSpace="urn:ga-gov-au:self.moreInformation-type">TODO</geo:DOI>
+            </geo:MoreInformation>
         </geo:moreInformation>
     </geo:siteLog>
 </geo:GeodesyML>

@@ -3,7 +3,7 @@
 License: CC By 4.0 (http://creativecommons.org/licenses/by/4.0/legalcode)
 Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Government (Geoscience Australia) 2016
 -->
-<schema elementFormDefault="qualified" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.4" version="0.4" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.4" xml:lang="en" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2">
+<schema elementFormDefault="qualified" targetNamespace="urn:xml-gov-au:icsm:egeodesy:0.5" version="0.5" xmlns:geo="urn:xml-gov-au:icsm:egeodesy:0.5" xml:lang="en" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2">
     <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
     <import namespace="http://www.isotc211.org/2005/gco" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd"/>
     <include schemaLocation="fieldMeasurement.xsd"/>
@@ -114,7 +114,9 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
                     </documentation>
                 </annotation>
                 <simpleType>
-                    <restriction base="geo:NillableDouble">
+                    <restriction base="decimal">
+                        <totalDigits value="6"/>
+                        <fractionDigits value="3"/>
                     </restriction>
                 </simpleType>
             </element>
@@ -149,7 +151,9 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
                     </documentation>
                 </annotation>
                 <simpleType>
-                    <restriction base="geo:NillableDouble">
+                    <restriction base="decimal">
+                        <totalDigits value="6"/>
+                        <fractionDigits value="4"/>
                     </restriction>
                 </simpleType>
             </element>
@@ -291,7 +295,9 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
                     </documentation>
                 </annotation>
                 <simpleType>
-                    <restriction base="geo:NillableDouble">
+                    <restriction base="decimal">
+                        <totalDigits value="6"/>
+                        <fractionDigits value="0"/>
                     </restriction>
                 </simpleType>
             </element>
@@ -304,7 +310,9 @@ Copyright: Scripps Orbit and Permanent Array Center (SOPAC), Commonwealth Govern
                     </documentation>
                 </annotation>
                 <simpleType>
-                    <restriction base="geo:NillableDouble">
+                    <restriction base="decimal">
+                        <totalDigits value="4"/>
+                        <fractionDigits value="1"/>
                     </restriction>
                 </simpleType>
             </element>

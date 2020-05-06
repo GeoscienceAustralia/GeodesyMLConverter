@@ -145,7 +145,7 @@ def countryFullname(name):
         return None
  
 def parseCountryCodeType(target, field, pattern, text, line,
-        space="urn:xml-gov-au:icsm:egeodesy:0.4",
+        space="urn:xml-gov-au:icsm:egeodesy:0.5",
         theCodeList="http://xml.gov.au/icsm/geodesyml/codelists/country-codes-codelist.xml#GeodesyML_CountryCode"):
     ok = re.match(pattern, text)
     if ok:
@@ -233,7 +233,7 @@ class FormInformation(object):
     ReportType = re.compile(r'^\s+(Report\s+Type\s*:)(?P<value>.*)$', re.IGNORECASE)
 
     def __init__(self):
-        self.formInformation = geo.formInformationType()
+        self.formInformation = geo.FormInformationType(id="form-information")
 
     def parse(self, text, line):
         if parser.parseText(self.formInformation, type(self).PreparedBy, text, line):
@@ -1151,7 +1151,7 @@ class SiteLocation(object):
     NotesAddition = re.compile(r'^(\s{31,})(?P<value>.*)$', re.IGNORECASE)
 
     def __init__(self):
-        self.siteLocation = geo.siteLocationType()
+        self.siteLocation = geo.SiteLocationType(id="site-location")
         self.notes = [""]
         self.notesAppended = False
         self.x = [None]
@@ -1461,7 +1461,7 @@ class SiteIdentification(object):
     NotesAddition = re.compile(r'^(\s{31,})(?P<value>.*)$', re.IGNORECASE)
 
     def __init__(self):
-        self.siteIdentification = geo.siteIdentificationType()
+        self.siteIdentification = geo.SiteIdentificationType(id="site-identification")
         self.notes = [""]
         self.notesAppended = False
 
@@ -1569,8 +1569,7 @@ class MoreInformation(object):
     StopLine = re.compile(r'Antenna Graphics with Dimensions', re.IGNORECASE)
 
     def __init__(self, sequence):
-        text = "more-information-" + str(sequence)
-        self.moreInformation = geo.moreInformationType()
+        self.moreInformation = geo.MoreInformationType(id="more-information")
 
         self.done = False
 
@@ -2126,23 +2125,23 @@ class SiteLog(object):
                 section = FormInformation.Current
                 continue
             elif re.match(type(self).Identification, line):
-                self.siteLog.formInformation = FormInformation.Detach()
+                self.siteLog.formInformation = geo.FormInformationPropertyType(FormInformation.Detach())
                 if datePrepared:
-                    self.siteLog.formInformation.datePrepared = parser.timePosition(datePrepared)
+                    self.siteLog.formInformation.FormInformation.datePrepared = parser.timePosition(datePrepared)
 
                 SiteIdentification.Begin()
                 section = SiteIdentification.Current
                 flag = 1
                 continue
             elif re.match(type(self).Location, line):
-                self.siteLog.siteIdentification = SiteIdentification.Detach()
+                self.siteLog.siteIdentification = geo.SiteIdentificationPropertyType(SiteIdentification.Detach())
 
                 SiteLocation.Begin()
                 section = SiteLocation.Current
                 flag = 2
                 continue
             elif re.match(type(self).ReceiverInfo, line):
-                self.siteLog.siteLocation = SiteLocation.Detach()
+                self.siteLog.siteLocation = geo.SiteLocationPropertyType(SiteLocation.Detach())
 
                 flag = 3
                 continue
@@ -2357,7 +2356,7 @@ class SiteLog(object):
                 section.parse(line, lineNo)
                 continue
 
-        self.siteLog.moreInformation = MoreInformation.Detach()
+        self.siteLog.moreInformation = geo.MoreInformationPropertyType(MoreInformation.Detach())
 
         return
 
