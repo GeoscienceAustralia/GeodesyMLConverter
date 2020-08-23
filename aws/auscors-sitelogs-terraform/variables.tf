@@ -64,12 +64,13 @@ variable "gws_system_user_password_key" {
   description = "Credstash key for Geodesy Web Services system user name."
 }
 
-variable "read_only_user_arn" {
+variable "read_only_user_arns" {
   description = "ARN for user with cross account access to bucket - for accessesing with service role at GA."
+  type = list(string)
 }
 
 variable "submitter_arns" {
   description = "ARNs for users who can submit text site logs to the incoming bucket"
-  type = "list"
+  type = list(string)
   default = ["arn:aws:iam::688660191997:root"]
 }

@@ -50,7 +50,7 @@ resource "aws_s3_bucket" "data_bucket" {
         {
             "Effect": "Allow",
             "Principal": {
-                "AWS": "${var.read_only_user_arn}"
+                "AWS": ["${join("\",\"", var.read_only_users_arns)}"]
             },
             "Action": [
 		"s3:ListBucket", 
