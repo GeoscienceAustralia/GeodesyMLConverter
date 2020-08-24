@@ -9,9 +9,9 @@ variable "owner" {}
 variable "environment" {}
 
 variable "read_only_user_arns" {
-  type = list(string)
+  type = "list"
 }
 
 variable "submitter_arns" {
-  type = list(string)
+  type = "list"
 }
