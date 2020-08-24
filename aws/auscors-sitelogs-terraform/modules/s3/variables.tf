@@ -8,8 +8,10 @@ variable "application" {}
 variable "owner" {}
 variable "environment" {}
 
-variable "read_only_user_arn" {}
+variable "read_only_user_arns" {
+  type = "list"
+}
 
 variable "submitter_arns" {
-    type = "list"
+  type = "list"
 }
