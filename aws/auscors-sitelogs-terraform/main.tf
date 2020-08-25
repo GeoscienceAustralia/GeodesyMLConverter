@@ -17,14 +17,14 @@ terraform {
 }
 
 module "s3" {
-  source             = "./modules/s3/"
+  source = "./modules/s3/"
 
-  read_only_user_arn = "${var.read_only_user_arn}"
-  submitter_arns     = "${var.submitter_arns}"
+  read_only_user_arns = "${var.read_only_user_arns}"
+  submitter_arns      = "${var.submitter_arns}"
 
-  environment        = "${var.environment}"
-  application        = "${var.application}"
-  owner              = "${var.owner}"
+  environment = "${var.environment}"
+  application = "${var.application}"
+  owner       = "${var.owner}"
 }
 
 module "lambda" {
