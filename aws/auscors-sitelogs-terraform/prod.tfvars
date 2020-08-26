@@ -1,7 +1,9 @@
 environment="prod"
 read_only_user_arns=[
   "arn:aws:iam::688660191997:user/svc_fetch_geodesyml_sitelogs",
-  "arn:aws:iam::621723668284:root"
+  "arn:aws:iam::621723668284:root",
+  "arn:aws:iam::604917042985:root",
+  "arn:aws:iam::434115853596:root"
 ]
 sns_arn="arn:aws:sns:ap-southeast-2:094928090547:ProdGeodesy-SiteLogReceived-H4450D6513IG"
 gws_oidc_client_id_key="GwsOidcClientId"
