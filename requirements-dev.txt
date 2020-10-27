@@ -1,2 +1,2 @@
 pytest
-pytest-console-scripts
+pytest-console-scripts==0.2.0
