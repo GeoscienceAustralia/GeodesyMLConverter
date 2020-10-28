@@ -117,11 +117,21 @@ def gws_list_site_logs():
     site_logs = {}
 
     gws_url = os.environ['gws_url']
-    response = requests.get(gws_url + '/siteLogs?projection=datePrepared&size=10000')
-    response.raise_for_status()
-    for site_log in response.json()['_embedded']['siteLogs']:
-        datePrepared = site_log['datePrepared']
-        site_logs[site_log['fourCharacterId'].lower()] = dateutil.parser.parse(datePrepared).date() if datePrepared else None
+    pageRequest = gws_url + '/siteLogs?projection=datePrepared&size=500'
+
+    while True:
+        response = requests.get(pageRequest)
+        response.raise_for_status()
+
+        for site_log in response.json()['_embedded']['siteLogs']:
+            datePrepared = site_log['datePrepared']
+            site_logs[site_log['fourCharacterId'].lower()] = dateutil.parser.parse(datePrepared).date() if datePrepared else None
+
+        links = response.json()['_links']
+        if 'next' not in links:
+            break
+
+        pageRequest = links['next']['href'] + '&projection=datePrepared'
 
     return site_logs
 
