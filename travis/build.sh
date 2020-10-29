@@ -2,7 +2,7 @@
 
 set -e
 
-pytest
+python -m pytest
 
 cd aws/
 
