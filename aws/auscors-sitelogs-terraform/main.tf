@@ -41,7 +41,11 @@ module "lambda" {
   gws_system_user_password_key = "${var.gws_system_user_password_key}"
   oauth2_url   = "${var.oauth2_url}"
   gws_url      = "${var.gws_url}"
-
+  ftp_sitelogs = "${var.ftp_sitelogs}"
+  sitelog_ftp_host         = "${var.sitelog_ftp_host}"
+  sitelog_ftp_username     = "${var.sitelog_ftp_username}"
+  sitelog_ftp_password_key = "${var.sitelog_ftp_password_key}"
+  parameter_store_role_arn = "${var.parameter_store_role_arn}"
   environment  = "${var.environment}"
   application  = "${var.application}"
   owner        = "${var.owner}"
