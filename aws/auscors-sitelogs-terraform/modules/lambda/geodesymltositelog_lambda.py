@@ -3,13 +3,16 @@ import json
 import urllib2
 import logging
 import boto3
+from boto3.session import Session
+from ftplib import FTP
+from StringIO import StringIO
 
 from GeodesyMLToSiteLog import geodesymltositelog
 
-def lambda_handler(event, context):
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
+def lambda_handler(event, context):
     output_bucket_name, gws_url = os.environ['output_bucket_name'], os.environ['gws_url']
 
     try:
@@ -55,6 +58,37 @@ def lambda_handler(event, context):
             output_bucket_name, site_log_filename))
         raise
 
+    ftp_sitelogs = os.environ['ftp_sitelogs']
+    if bool(int(ftp_sitelogs)):
+        ftp(site_log_filename, site_log_data)
+    else:
+        logger.info('Not uploading file {} to FTP, option "ftp_sitelogs" is "{}"'.format(site_log_filename, ftp_sitelogs))
+
+def ftp(filename, content):
+    ftp_host = os.environ['ftp_host']
+    try:
+        ftp_username = os.environ['ftp_username']
+        ftp_password = lookup_password(os.environ['ftp_password_key'])
+        ftp = FTP(ftp_host)
+        ftp.login(ftp_username, ftp_password)
+        ftp.storlines('STOR {}'.format(filename), StringIO(content))
+        ftp.quit()
+    except:
+        logger.error('Failed to FTP file {} to {}'.format(filename, ftp_host))
+        raise
+
+    logger.info('Uploaded file {} to {}'.format(filename, ftp_host))
+
+def lookup_password(key):
+    ssm = session(os.environ['parameter_store_role_arn']).client('ssm')
+    return ssm.get_parameter(Name=key, WithDecryption=True)['Parameter']['Value']
+
+def session(role_arn):
+    sts_client = boto3.client("sts")
+    credentials = sts_client.assume_role(RoleArn=role_arn, RoleSessionName="upload-sitelog-to-ftp")['Credentials']
+    return Session(aws_access_key_id=credentials['AccessKeyId'],
+                    aws_secret_access_key=credentials['SecretAccessKey'],
+                    aws_session_token=credentials['SessionToken'])
 
     # Get XML from SNS message
     #sns_message = json.loads(event['Records'][0]['Sns']['Message'])

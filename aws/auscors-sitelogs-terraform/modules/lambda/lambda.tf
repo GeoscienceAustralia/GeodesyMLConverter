@@ -101,6 +101,11 @@ resource "aws_lambda_function" "xml_converter" {
     variables = {
       output_bucket_name = "${var.bucket_name}"
       gws_url            = "${var.gws_url}"
+      ftp_sitelogs       = "${var.ftp_sitelogs}"
+      ftp_host           = "${var.sitelog_ftp_host}"
+      ftp_username       = "${var.sitelog_ftp_username}"
+      ftp_password_key   = "${var.sitelog_ftp_password_key}"
+      parameter_store_role_arn = "${var.parameter_store_role_arn}"
     }
   }
 }

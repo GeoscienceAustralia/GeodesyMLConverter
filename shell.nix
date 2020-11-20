@@ -19,6 +19,7 @@ let
       python2Packages.virtualenv
       terraform_0_10
       wget
+      zip
     ];
   };
 in
