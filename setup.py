@@ -35,6 +35,6 @@ setup(
     ],
     install_requires=[
         'iso3166',
-        'pyxb',
+        'pyxb'
     ],
 )

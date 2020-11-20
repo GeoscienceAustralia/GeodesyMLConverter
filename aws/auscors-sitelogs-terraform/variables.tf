@@ -74,3 +74,23 @@ variable "submitter_arns" {
   type = "list"
   default = ["arn:aws:iam::688660191997:root"]
 }
+
+variable "ftp_sitelogs" {
+  type = "string"
+}
+
+variable "sitelog_ftp_host" {
+  type = "string"
+}
+
+variable "sitelog_ftp_username" {
+  type = "string"
+}
+
+variable "sitelog_ftp_password_key" {
+  type = "string"
+}
+
+variable "parameter_store_role_arn" {
+  type = "string"
+}
