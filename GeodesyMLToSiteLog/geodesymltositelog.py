@@ -101,7 +101,7 @@ class SiteLog(object):
     @classmethod
     def country(cls, code):
         try:
-            return iso3166.countries.get(code).name
+            return "China" if code == 'HKG' else iso3166.countries.get(code).name
         except KeyError:
             return code
 

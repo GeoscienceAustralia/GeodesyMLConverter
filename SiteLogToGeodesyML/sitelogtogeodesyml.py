@@ -1229,6 +1229,15 @@ class SiteLocation(object):
             self.notes[0] = parser.processingNotes(self.notes[0])
             self.siteLocation.notes = self.notes[0]            
             self.notesAppended = True
+
+        if self.siteLocation.state == 'Hong Kong':
+            self.siteLocation.countryCodeISO = geo.countryCodeType(
+                'HKG',
+                codeSpace=self.siteLocation.countryCodeISO.codeSpace,
+                codeList=self.siteLocation.countryCodeISO.codeList,
+                codeListValue='HKG'
+            )
+
         return self.siteLocation
     
 
@@ -2633,8 +2642,8 @@ def main():
 
     siteLog.parse()
     element = siteLog.complete()
-        
-    nineLetters = SiteLog.FourLetters + "00" + SiteLog.CountryCode
+
+    nineLetters = SiteLog.FourLetters + "00" + element.siteLocation.SiteLocation.countryCodeISO.codeListValue
     pattern = re.compile(r'^\d\w{8}$', re.IGNORECASE)
     ok = re.match(pattern, nineLetters)
     if ok:
