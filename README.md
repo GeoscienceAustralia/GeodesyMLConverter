@@ -3,6 +3,8 @@
 # GeodesyML Site Log Converter
 Command line tools for converting between GeodesyML site log and text site log formats:
 
+ARCHIVED: Use https://bitbucket.org/geoscienceaustralia/geodesyml-converter.
+
 * `sitelog-to-geodesyml`
 * `geodesyml-to-sitelog`
 
